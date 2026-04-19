@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>内容管理后台 | 稳胜石材</title>
+    <meta name="description" content="稳胜石材内容管理后台原型，用于发布产品、博客和素材内容。">
+    <meta name="theme-color" content="#13261d">
+    <meta property="og:title" content="内容管理后台 | 稳胜石材">
+    <meta property="og:description" content="用于产品、博客和素材内容发布的静态后台界面原型。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/logo.png">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body class="studio-page">
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header studio-header" data-header>
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="https://winwinstonecustom.com/" aria-label="稳胜石材">
+          <img src="assets/images/logo.png" alt="" width="36" height="39">
+          <span>稳胜石材</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+          <span class="sr-only">打开导航</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="nav-links" id="primary-nav" data-nav-links>
+          <a class="is-active" href="#" data-studio-static>管理后台</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="studio-main" id="main">
+      <aside class="studio-rail" aria-label="后台栏目">
+        <div>
+          <span class="studio-kicker">工作台</span>
+          <h1>内容管理后台</h1>
+        </div>
+        <nav class="studio-tabs" role="tablist" aria-label="发布栏目">
+          <button class="active" type="button" data-studio-tab="products" role="tab" aria-selected="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5z"/><path d="M9 5v14M5 10h14"/></svg>
+            产品
+          </button>
+          <button type="button" data-studio-tab="blog" role="tab" aria-selected="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h6"/></svg>
+            博客
+          </button>
+          <button type="button" data-studio-tab="media" role="tab" aria-selected="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4z"/><path d="m8 15 3-3 2 2 2-3 3 4"/></svg>
+            素材
+          </button>
+        </nav>
+        <div class="studio-status">
+          <strong>原型界面</strong>
+          <span>当前仅本地预览</span>
+        </div>
+      </aside>
+
+      <section class="studio-workspace">
+        <div class="studio-topbar">
+          <div>
+            <p class="eyebrow">内容发布</p>
+            <h2>产品、博客和视觉素材。</h2>
+          </div>
+          <a class="button secondary" href="https://winwinstonecustom.vercel.app/">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            查看官网
+          </a>
+        </div>
+
+        <div class="studio-metrics" aria-label="发布概览">
+          <div>
+            <span>产品</span>
+            <strong>9</strong>
+            <small>7 个已发布，2 个草稿</small>
+          </div>
+          <div>
+            <span>博客</span>
+            <strong>6</strong>
+            <small>4 篇指南，2 篇流程说明</small>
+          </div>
+          <div>
+            <span>素材</span>
+            <strong>10</strong>
+            <small>目录图片已就绪</small>
+          </div>
+        </div>
+
+        <section class="studio-panel" data-studio-panel="products" aria-labelledby="product-editor-title">
+          <div class="studio-panel-heading">
+            <div>
+              <p class="eyebrow">产品录入</p>
+              <h3 id="product-editor-title">发布石材产品参考。</h3>
+            </div>
+            <span class="content-state" data-preview-status>草稿</span>
+          </div>
+          <div class="editor-grid">
+            <form class="studio-form" data-preview-form data-fallback-title="未命名石材产品" data-fallback-summary="填写适合发布的产品摘要。">
+              <label>
+                产品标题
+                <input name="title" value="绿色大理石立柱盆">
+              </label>
+              <div class="form-row">
+                <label>
+                  分类
+                  <select name="category">
+                    <option>台盆</option>
+                    <option>浴室</option>
+                    <option>餐桌</option>
+                    <option>工程定制</option>
+                  </select>
+                </label>
+                <label>
+                  材料
+                  <select name="material">
+                    <option>绿色大理石</option>
+                    <option>卡拉卡塔大理石</option>
+                    <option>洞石</option>
+                    <option>石英岩</option>
+                    <option>缟玛瑙</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                图片路径
+                <input name="image" value="assets/images/green-marble-sink.jpg">
+              </label>
+              <label>
+                URL 标识
+                <input name="slug" value="green-marble-pedestal-sink">
+              </label>
+              <label>
+                产品摘要
+                <textarea name="summary" rows="5">天然绿色大理石定制浴室立柱盆，可调整尺寸、排水位置和表面工艺。</textarea>
+              </label>
+              <label>
+                可定制选项
+                <textarea name="options" rows="4">材料选择、尺寸、表面工艺、水龙头孔、排水位置、边型细节、出口包装。</textarea>
+              </label>
+              <div class="studio-actions">
+                <button class="button secondary" type="button">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/></svg>
+                  保存草稿
+                </button>
+                <button class="button primary" type="submit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  发布
+                </button>
+              </div>
+            </form>
+            <aside class="studio-preview" aria-label="产品预览">
+              <img src="assets/images/green-marble-sink.jpg" alt="产品预览" data-preview-image>
+              <div>
+                <span class="product-type" data-preview-meta>台盆 / 绿色大理石</span>
+                <strong data-preview-title>绿色大理石立柱盆</strong>
+                <p data-preview-text>天然绿色大理石定制浴室立柱盆，可调整尺寸、排水位置和表面工艺。</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="studio-panel" data-studio-panel="blog" aria-labelledby="blog-editor-title" hidden>
+          <div class="studio-panel-heading">
+            <div>
+              <p class="eyebrow">博客录入</p>
+              <h3 id="blog-editor-title">发布材料文章。</h3>
+            </div>
+            <span class="content-state" data-preview-status>草稿</span>
+          </div>
+          <div class="editor-grid">
+            <form class="studio-form" data-preview-form data-fallback-title="未命名文章" data-fallback-summary="填写适合文章卡片的摘要。">
+              <label>
+                文章标题
+                <input name="title" value="如何为定制浴室台盆选择石材">
+              </label>
+              <div class="form-row">
+                <label>
+                  分类
+                  <select name="category">
+                    <option>石材指南</option>
+                    <option>产品灵感</option>
+                    <option>工厂流程</option>
+                    <option>保养</option>
+                  </select>
+                </label>
+                <label>
+                  作者
+                  <input name="author" value="稳胜石材">
+                </label>
+              </div>
+              <label>
+                封面图片路径
+                <input name="image" value="assets/images/calacatta-sink.jpg">
+              </label>
+              <label>
+                URL 标识
+                <input name="slug" value="choose-stone-custom-bathroom-sink">
+              </label>
+              <label>
+                摘要
+                <textarea name="summary" rows="5">一篇关于如何为定制台盆项目选择大理石、洞石、石英岩和缟玛瑙的实用指南。</textarea>
+              </label>
+              <label>
+                正文提纲
+                <textarea name="body" rows="4">石材表现、表面工艺、厚度、排水、密封、包装和报价信息。</textarea>
+              </label>
+              <div class="studio-actions">
+                <button class="button secondary" type="button">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/></svg>
+                  保存草稿
+                </button>
+                <button class="button primary" type="submit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  发布
+                </button>
+              </div>
+            </form>
+            <aside class="studio-preview article-preview" aria-label="文章预览">
+              <img src="assets/images/calacatta-sink.jpg" alt="文章预览" data-preview-image>
+              <div>
+                <span class="product-type" data-preview-meta>石材指南 / 稳胜石材</span>
+                <strong data-preview-title>如何为定制浴室台盆选择石材</strong>
+                <p data-preview-text>一篇关于如何为定制台盆项目选择大理石、洞石、石英岩和缟玛瑙的实用指南。</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="studio-panel" data-studio-panel="media" aria-labelledby="media-title" hidden>
+          <div class="studio-panel-heading">
+            <div>
+              <p class="eyebrow">素材库</p>
+              <h3 id="media-title">产品图片和材料素材。</h3>
+            </div>
+            <a class="button secondary" href="https://winwinstonecustom.com/products.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              产品目录
+            </a>
+          </div>
+          <div class="media-grid">
+            <figure>
+              <img src="assets/images/green-marble-sink.jpg" alt="绿色大理石台盆">
+              <figcaption>green-marble-sink.jpg</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/calacatta-sink.jpg" alt="卡拉卡塔台盆">
+              <figcaption>calacatta-sink.jpg</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/minimalist-table.jpg" alt="洞石餐桌">
+              <figcaption>minimalist-table.jpg</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/marble-bathtub.jpg" alt="大理石浴缸">
+              <figcaption>marble-bathtub.jpg</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="activity-panel" aria-labelledby="activity-title">
+          <div class="studio-panel-heading">
+            <div>
+              <p class="eyebrow">最近动态</p>
+              <h3 id="activity-title">发布队列</h3>
+            </div>
+          </div>
+          <ol class="activity-list" data-studio-feed>
+            <li>
+              <strong>极简洞石餐桌</strong>
+              <span>产品已更新</span>
+            </li>
+            <li>
+              <strong>适合静奢空间的洞石餐桌</strong>
+              <span>博客草稿已编辑</span>
+            </li>
+            <li>
+              <strong>天然大理石浴缸</strong>
+              <span>素材已替换</span>
+            </li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
