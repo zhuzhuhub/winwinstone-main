@@ -153,107 +153,149 @@
       <section class="products section-pad" id="products" aria-labelledby="products-title">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Latest Products</p>
+            <p class="eyebrow">Our Products</p>
             <h2 id="products-title">Custom stone pieces ready for OEM/ODM projects.</h2>
             <p>Explore sinks, vanities, bathtubs, and dining tables. Every product can be adapted by material, size, finish, edge detail, and packing requirement.</p>
           </div>
-          <div class="filter-bar" role="tablist" aria-label="Product filters">
-            <button class="filter-button active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
-            <button class="filter-button" type="button" data-filter="sinks" role="tab" aria-selected="false">Sinks</button>
-            <button class="filter-button" type="button" data-filter="tables" role="tab" aria-selected="false">Tables</button>
-            <button class="filter-button" type="button" data-filter="bathroom" role="tab" aria-selected="false">Bathroom</button>
+          
+          <!-- 最新上传的产品 -->
+          <div class="latest-products">
+            <h3>Latest Products</h3>
+            <div class="latest-product-grid">
+              <article class="latest-product-card">
+                <a href="products.html">
+                  <img src="assets/images/green-marble-sink.jpg" alt="Luxury green marble pedestal sink">
+                  <span class="latest-product-body">
+                    <strong>Luxury green marble pedestal sink</strong>
+                    <span>Custom size, material, and design.</span>
+                  </span>
+                </a>
+              </article>
+              <article class="latest-product-card">
+                <a href="products.html">
+                  <img src="assets/images/calacatta-sink.jpg" alt="Calacatta pedestal sink">
+                  <span class="latest-product-body">
+                    <strong>Calacatta pedestal sink</strong>
+                    <span>Custom-made in 100% natural stone.</span>
+                  </span>
+                </a>
+              </article>
+              <article class="latest-product-card">
+                <a href="products.html">
+                  <img src="assets/images/vessel-sink.jpg" alt="Hand-crafted vessel sink">
+                  <span class="latest-product-body">
+                    <strong>Hand-crafted vessel sink</strong>
+                    <span>Designed for residential and business orders.</span>
+                  </span>
+                </a>
+              </article>
+              <article class="latest-product-card">
+                <a href="products.html">
+                  <img src="assets/images/minimalist-table.jpg" alt="Minimalist travertine dining table">
+                  <span class="latest-product-body">
+                    <strong>Minimalist travertine dining table</strong>
+                    <span>Modern form with natural texture.</span>
+                  </span>
+                </a>
+              </article>
+              <article class="latest-product-card">
+                <a href="products.html">
+                  <img src="assets/images/marble-bathtub.jpg" alt="Natural marble bathtub">
+                  <span class="latest-product-body">
+                    <strong>Natural marble bathtub</strong>
+                    <span>Luxury stone bathing centerpiece.</span>
+                  </span>
+                </a>
+              </article>
+            </div>
           </div>
-          <div class="product-grid" data-product-grid>
-            <article class="product-card" data-category="sinks bathroom" data-title="Luxury green marble pedestal sink" data-title-zh="奢华绿色大理石立柱盆" data-description="Custom-made bathroom pedestal sink in natural green marble. Material, dimensions, drain position, and finish can be produced to match the project brief." data-description-zh="天然绿色大理石定制浴室立柱盆。可根据项目需求定制材料、尺寸、排水位置和表面工艺。">
-              <button class="product-open" type="button">
-                <img src="assets/images/green-marble-sink.jpg" alt="Luxury green marble pedestal sink">
-                <span class="product-body">
-                  <span class="product-type">Sinks</span>
-                  <strong>Luxury green marble pedestal sink</strong>
-                  <span>Custom size, material, and design.</span>
+          
+          <!-- 产品目录 -->
+          <div class="product-categories">
+            <h3>Product Categories</h3>
+            <div class="category-grid">
+              <a href="products.html" class="category-card">
+                <span class="category-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10z"/></svg>
                 </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="sinks bathroom" data-title="Calacatta pedestal sink" data-title-zh="卡拉卡塔大理石立柱盆" data-description="A custom-made bathroom pedestal sink built from natural Calacatta marble with bespoke proportion, polishing, and packing options." data-description-zh="采用天然卡拉卡塔大理石制作的定制浴室立柱盆，可定制比例、抛光效果和包装方式。">
-              <button class="product-open" type="button">
-                <img src="assets/images/calacatta-sink.jpg" alt="Calacatta marble pedestal sink">
-                <span class="product-body">
-                  <span class="product-type">Sinks</span>
-                  <strong>Calacatta pedestal sink</strong>
-                  <span>Custom-made in 100% natural stone.</span>
+                <h4>Sinks</h4>
+                <p>Custom stone sinks in various styles and materials</p>
+              </a>
+              <a href="products.html" class="category-card">
+                <span class="category-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14z"/></svg>
                 </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="sinks bathroom" data-title="Hand-crafted vessel sink" data-title-zh="手工石材台上盆" data-description="Hand-crafted bathroom vessel sink with marble variety, size, and design selected around the customer's space and product line." data-description-zh="手工打造的浴室台上盆，可围绕客户空间或产品线选择大理石品种、尺寸和设计。">
-              <button class="product-open" type="button">
-                <img src="assets/images/vessel-sink.jpg" alt="Hand-crafted marble vessel sink">
-                <span class="product-body">
-                  <span class="product-type">Sinks</span>
-                  <strong>Hand-crafted vessel sink</strong>
-                  <span>Designed for residential and business orders.</span>
+                <h4>Tables</h4>
+                <p>Natural stone dining and coffee tables</p>
+              </a>
+              <a href="products.html" class="category-card">
+                <span class="category-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM18 20H6V4h7v5h5v11z"/></svg>
                 </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="tables" data-title="Minimalist travertine dining table" data-title-zh="极简洞石餐桌" data-description="Yellow travertine dining table with sculptural leg detail, organic veining, and a clean minimalist silhouette for residential or commercial interiors." data-description-zh="黄色洞石餐桌，搭配雕塑感桌腿、天然纹理和简洁轮廓，适合住宅与商业空间。">
-              <button class="product-open" type="button">
-                <img src="assets/images/minimalist-table.jpg" alt="Minimalist travertine dining table">
-                <span class="product-body">
-                  <span class="product-type">Tables</span>
-                  <strong>Minimalist travertine dining table</strong>
-                  <span>Modern form with natural texture.</span>
+                <h4>Bathroom</h4>
+                <p>Marble bathtubs and vanities</p>
+              </a>
+              <a href="products.html" class="category-card">
+                <span class="category-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="tables" data-title="Graceful travertine dining table" data-title-zh="优雅洞石餐桌" data-description="Yellow travertine dining table with elegant leg lines, warm stone texture, and OEM/ODM-ready customization." data-description-zh="黄色洞石餐桌，线条优雅、石纹温润，支持 OEM/ODM 定制。">
-              <button class="product-open" type="button">
-                <img src="assets/images/graceful-table.jpg" alt="Graceful travertine dining table">
-                <span class="product-body">
-                  <span class="product-type">Tables</span>
-                  <strong>Graceful travertine dining table</strong>
-                  <span>OEM/ODM orders and global delivery.</span>
-                </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="tables" data-title="Simple travertine dining table" data-title-zh="简约洞石餐桌" data-description="A simple travertine table designed to pair easily with minimal interiors while preserving the natural personality of stone." data-description-zh="简约洞石餐桌，易于搭配极简空间，同时保留天然石材的独特性。">
-              <button class="product-open" type="button">
-                <img src="assets/images/simple-table.jpg" alt="Simple travertine dining table">
-                <span class="product-body">
-                  <span class="product-type">Tables</span>
-                  <strong>Simple travertine dining table</strong>
-                  <span>Minimal design, made to measure.</span>
-                </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="bathroom" data-title="Natural marble bathtub" data-title-zh="天然大理石浴缸" data-description="Natural marble bathtub with timeless veining, durable stone build, and a spa-like bathing experience for luxury bathrooms." data-description-zh="天然大理石浴缸，纹理经典、结构耐用，为高端浴室带来水疗般体验。">
-              <button class="product-open" type="button">
-                <img src="assets/images/marble-bathtub.jpg" alt="Natural marble bathtub">
-                <span class="product-body">
-                  <span class="product-type">Bathroom</span>
-                  <strong>Natural marble bathtub</strong>
-                  <span>Luxury stone bathing centerpiece.</span>
-                </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="tables" data-title="Red travertine dining table" data-title-zh="红洞石餐桌" data-description="Red travertine dining table with warm reddish-brown tones and natural veins for a distinctive interior signature." data-description-zh="红洞石餐桌，温暖红棕色调与天然纹理，为空间带来鲜明记忆点。">
-              <button class="product-open" type="button">
-                <img src="assets/images/red-travertine-table.jpg" alt="Red travertine dining table">
-                <span class="product-body">
-                  <span class="product-type">Tables</span>
-                  <strong>Red travertine dining table</strong>
-                  <span>Warm natural veins, custom proportions.</span>
-                </span>
-              </button>
-            </article>
-            <article class="product-card" data-category="sinks bathroom" data-title="Luxury stone pedestal vanity" data-title-zh="奢华石材立柱浴室柜" data-description="Custom bathroom stone pedestal vanity with selected marble variety, bespoke size, clean minimalist lines, and durable construction." data-description-zh="定制石材立柱浴室柜，可选大理石品种和尺寸，线条简洁，结构坚固。">
-              <button class="product-open" type="button">
-                <img src="assets/images/stone-vanity.jpg" alt="Luxury stone pedestal vanity">
-                <span class="product-body">
-                  <span class="product-type">Bathroom</span>
-                  <strong>Luxury stone pedestal vanity</strong>
-                  <span>Personalized service and craftsmanship.</span>
-                </span>
-              </button>
-            </article>
+                <h4>Custom Projects</h4>
+                <p>OEM/ODM services for unique designs</p>
+              </a>
+            </div>
+          </div>
+          
+          <!-- 产品推荐 -->
+          <div class="featured-products">
+            <h3>Featured Products</h3>
+            <div class="filter-bar" role="tablist" aria-label="Product filters">
+              <button class="filter-button active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+              <button class="filter-button" type="button" data-filter="sinks" role="tab" aria-selected="false">Sinks</button>
+              <button class="filter-button" type="button" data-filter="tables" role="tab" aria-selected="false">Tables</button>
+              <button class="filter-button" type="button" data-filter="bathroom" role="tab" aria-selected="false">Bathroom</button>
+            </div>
+            <div class="product-grid" data-product-grid>
+              <article class="product-card" data-category="sinks bathroom" data-title="Luxury green marble pedestal sink" data-title-zh="奢华绿色大理石立柱盆" data-description="Custom-made bathroom pedestal sink in natural green marble. Material, dimensions, drain position, and finish can be produced to match the project brief." data-description-zh="天然绿色大理石定制浴室立柱盆。可根据项目需求定制材料、尺寸、排水位置和表面工艺。">
+                <button class="product-open" type="button">
+                  <img src="assets/images/green-marble-sink.jpg" alt="Luxury green marble pedestal sink">
+                  <span class="product-body">
+                    <span class="product-type">Sinks</span>
+                    <strong>Luxury green marble pedestal sink</strong>
+                    <span>Custom size, material, and design.</span>
+                  </span>
+                </button>
+              </article>
+              <article class="product-card" data-category="sinks bathroom" data-title="Calacatta pedestal sink" data-title-zh="卡拉卡塔大理石立柱盆" data-description="A custom-made bathroom pedestal sink built from natural Calacatta marble with bespoke proportion, polishing, and packing options." data-description-zh="采用天然卡拉卡塔大理石制作的定制浴室立柱盆，可定制比例、抛光效果和包装方式。">
+                <button class="product-open" type="button">
+                  <img src="assets/images/calacatta-sink.jpg" alt="Calacatta marble pedestal sink">
+                  <span class="product-body">
+                    <span class="product-type">Sinks</span>
+                    <strong>Calacatta pedestal sink</strong>
+                    <span>Custom-made in 100% natural stone.</span>
+                  </span>
+                </button>
+              </article>
+              <article class="product-card" data-category="tables" data-title="Minimalist travertine dining table" data-title-zh="极简洞石餐桌" data-description="Yellow travertine dining table with sculptural leg detail, organic veining, and a clean minimalist silhouette for residential or commercial interiors." data-description-zh="黄色洞石餐桌，搭配雕塑感桌腿、天然纹理和简洁轮廓，适合住宅与商业空间。">
+                <button class="product-open" type="button">
+                  <img src="assets/images/minimalist-table.jpg" alt="Minimalist travertine dining table">
+                  <span class="product-body">
+                    <span class="product-type">Tables</span>
+                    <strong>Minimalist travertine dining table</strong>
+                    <span>Modern form with natural texture.</span>
+                  </span>
+                </button>
+              </article>
+              <article class="product-card" data-category="bathroom" data-title="Natural marble bathtub" data-title-zh="天然大理石浴缸" data-description="Natural marble bathtub with timeless veining, durable stone build, and a spa-like bathing experience for luxury bathrooms." data-description-zh="天然大理石浴缸，纹理经典、结构耐用，为高端浴室带来水疗般体验。">
+                <button class="product-open" type="button">
+                  <img src="assets/images/marble-bathtub.jpg" alt="Natural marble bathtub">
+                  <span class="product-body">
+                    <span class="product-type">Bathroom</span>
+                    <strong>Natural marble bathtub</strong>
+                    <span>Luxury stone bathing centerpiece.</span>
+                  </span>
+                </button>
+              </article>
+            </div>
           </div>
         </div>
       </section>
