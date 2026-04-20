@@ -614,11 +614,11 @@ h3 {
 .category-card {
   display: grid;
   gap: 12px;
-  padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
   text-align: center;
+  overflow: hidden;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -627,32 +627,25 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.category-icon {
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: var(--sage);
-  color: var(--green);
-}
-
-.category-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.category-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #f1f1ee;
 }
 
 .category-card h4 {
   margin: 0;
   font-size: 1.1rem;
   color: var(--green);
+  padding: 0 16px;
 }
 
 .category-card p {
-  margin: 0;
+  margin: 0 0 16px 0;
   color: var(--muted);
   font-size: 0.92rem;
+  padding: 0 16px;
 }
 
 /* 产品推荐样式 */
