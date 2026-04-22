@@ -38,33 +38,41 @@ const PRODUCTS = [
   },
   {
     slug: "calacatta-marble-pedestal-sink",
-    name: "Calacatta Marble Pedestal Sink",
+    name: "Fluted Rectangular White Marble Pedestal Sink",
     category: "Marble Sinks",
-    image: "assets/images/calacatta-sink.jpg",
-    badge: "Calacatta Bathroom Sink",
+    image: "assets/images/fluted-rectangular-white-marble-pedestal-sink.jpg",
+    gallery: [
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink.jpg",
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink01.jpg",
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink02.jpg",
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink03.jpg",
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink04.jpg",
+      "assets/images/fluted-rectangular-white-marble-pedestal-sink05.jpg"
+    ],
+    badge: "Fluted White Marble Sink",
     seo: {
-      title: "Calacatta Marble Pedestal Sink Supplier | Custom Stone Sink Factory",
-      description: "Custom Calacatta marble pedestal sinks for residential, hospitality, and OEM bathroom projects with factory-direct production from Yunfu, China.",
-      keywords: "Calacatta marble sink, marble pedestal sink supplier, custom stone sink factory"
+      title: "Fluted Rectangular White Marble Pedestal Sink | Custom Stone Sink Factory",
+      description: "Custom fluted rectangular white marble pedestal sink for luxury bathrooms, with bespoke size, ribbed surface detail, finish, drain position, and export packing.",
+      keywords: "fluted rectangular white marble pedestal sink, custom marble sink, white marble pedestal sink factory"
     },
-    desc: "A clean column-style Calacatta marble sink for luxury residential and hospitality bathroom projects.",
-    material: "Natural Calacatta Marble",
-    usage: "Hotel Bathroom, Villa Bathroom, Interior Project",
-    finish: "Polished or honed",
+    desc: "A fluted rectangular white marble pedestal sink designed for luxury bathrooms, villas, hotels, and high-end interior projects.",
+    material: "Natural White Marble",
+    usage: "Luxury Bathroom, Hotel, Villa, Interior Project",
+    finish: "Polished, honed, or custom sealed finish",
     moq: "1 piece for sample or project order",
-    leadTime: "20-45 days after confirmation",
-    intro: "The Calacatta marble pedestal sink works well when buyers need a light luxury bathroom piece with classic white stone and elegant veining. It can be produced as a one-off custom piece or standardized for repeat OEM orders.",
+    leadTime: "20-45 days after drawing and material confirmation",
+    intro: "This fluted rectangular white marble pedestal sink combines a clean rectangular form with vertical ribbed stone detail. Size, basin depth, fluting style, drain position, faucet hole, finish, and export packing can be customized before production.",
     options: [
-      "Custom height, width, and basin depth",
-      "Integrated or separated pedestal structure",
-      "Faucet hole and drain position adjustment",
-      "White marble alternatives available",
-      "Project labeling and export packing"
+      "Custom pedestal sink height, width, and basin depth",
+      "Fluted or ribbed surface detail customization",
+      "Polished, honed, or sealed white marble finish",
+      "Drain position, faucet hole, and installation detail confirmation",
+      "Reinforced export wooden crate packing"
     ],
     faqs: [
-      ["Do you support OEM bathroom sink orders?", "Yes. We can standardize size, drawings, packaging, and labels for repeat OEM or wholesale orders."],
-      ["Can the surface be honed instead of polished?", "Yes. Polished and honed finishes are both common for Calacatta marble bathroom products."],
-      ["What information should I send for a quote?", "Please send size, quantity, stone preference, finish, delivery country, and any reference photo or drawing."]
+      ["Can the fluted rectangular marble sink size be customized?", "Yes. We can customize the height, width, basin depth, drain position, and faucet hole according to your drawing or reference photo."],
+      ["Can the fluted surface detail be adjusted?", "Yes. The ribbed detail can be discussed before production, including spacing, depth, and overall visual direction."],
+      ["Is this white marble pedestal sink suitable for overseas delivery?", "Yes. We use protective inner packing and reinforced export wooden crates for international natural stone sink delivery."]
     ]
   },
   {
@@ -100,33 +108,40 @@ const PRODUCTS = [
   },
   {
     slug: "minimalist-travertine-dining-table",
-    name: "Minimalist Travertine Dining Table",
+    name: "Travertine Marble Dining Table Designed for Modern Interiors",
     category: "Travertine Tables",
-    image: "assets/images/minimalist-table.jpg",
-    badge: "Travertine Dining Table",
+    image: "assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg",
+    gallery: [
+      "assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg",
+      "assets/images/travertine-marble-dining-table-designed-for-modern-interiors01.jpg",
+      "assets/images/travertine-marble-dining-table-designed-for-modern-interiors02.jpg",
+      "assets/images/travertine-marble-dining-table-designed-for-modern-interiors03.jpg",
+      "assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg"
+    ],
+    badge: "Travertine Marble Dining Table",
     seo: {
-      title: "Minimalist Travertine Dining Table Supplier | Custom Stone Furniture",
-      description: "Custom minimalist travertine dining tables with matched slabs, sculptural base options, export packing, and OEM stone furniture production.",
-      keywords: "travertine dining table supplier, custom stone furniture, minimalist travertine table"
+      title: "Travertine Marble Dining Table for Modern Interiors | Custom Stone Furniture",
+      description: "Custom travertine marble dining table designed for modern interiors, with bespoke size, matched stone texture, sculptural base options, finish, and export packing.",
+      keywords: "travertine marble dining table, modern travertine dining table, custom stone furniture factory"
     },
-    desc: "A warm travertine dining table with a clean silhouette, natural texture, and custom size options.",
-    material: "Natural Travertine",
-    usage: "Dining Room, Hotel, Villa, Interior Project",
-    finish: "Filled or unfilled, honed or polished",
+    desc: "A travertine marble dining table designed for modern interiors, combining warm natural stone texture with a clean sculptural form.",
+    material: "Natural Travertine Marble",
+    usage: "Dining Room, Villa, Hotel, Showroom, Interior Project",
+    finish: "Filled or unfilled, honed, polished, or sealed finish",
     moq: "1 piece for custom order",
     leadTime: "25-50 days after drawing confirmation",
-    intro: "Travertine dining tables are popular with designers and brands because the material feels warm, architectural, and timeless. This model can be made in different lengths, slab thicknesses, and base structures.",
+    intro: "This travertine marble dining table is made for modern interiors that need a warm, architectural natural stone centerpiece. Table length, width, height, edge detail, base structure, surface finish, and export packing can be customized before production.",
     options: [
-      "Custom table length, width, and height",
-      "Filled or unfilled travertine surface",
-      "Matched top and base material direction",
-      "Reinforced structure for export delivery",
-      "Dining table, coffee table, or console formats"
+      "Custom dining table length, width, and height",
+      "Filled or unfilled travertine marble surface",
+      "Matched stone texture for tabletop and base",
+      "Custom edge detail and sculptural base structure",
+      "Reinforced export wooden crate packing for heavy stone furniture"
     ],
     faqs: [
-      ["Can the travertine holes be filled?", "Yes. Filled and unfilled travertine finishes are both available."],
-      ["Can you customize the base shape?", "Yes. We can produce sculptural, block, cylinder, or drawing-based base structures."],
-      ["How do you pack a heavy stone table?", "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy stone furniture."]
+      ["Can the travertine marble dining table size be customized?", "Yes. We can produce the table according to your room size, drawing, or reference photo."],
+      ["Can I choose filled or unfilled travertine?", "Yes. Filled and unfilled travertine finishes are both available, depending on the look and daily-use requirement."],
+      ["How do you pack a heavy stone dining table?", "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy natural stone furniture."]
     ]
   },
   {
@@ -224,33 +239,39 @@ const PRODUCTS = [
   },
   {
     slug: "red-travertine-dining-table",
-    name: "Red Travertine Dining Table",
+    name: "Red Travertine Marble Dining Table Designed for Living Room",
     category: "Travertine Tables",
-    image: "assets/images/red-travertine-table.jpg",
-    badge: "Red Travertine Furniture",
+    image: "assets/images/red-travertine-marble-dining-table-designed-for-living-room.jpg",
+    gallery: [
+      "assets/images/red-travertine-marble-dining-table-designed-for-living-room.jpg",
+      "assets/images/red-travertine-marble-dining-table-designed-for-living-room01.jpg",
+      "assets/images/red-travertine-marble-dining-table-designed-for-living-room02.jpg",
+      "assets/images/red-travertine-marble-dining-table-designed-for-living-room03.jpg"
+    ],
+    badge: "Red Travertine Marble Dining Table",
     seo: {
-      title: "Red Travertine Dining Table Supplier | Custom Natural Stone Furniture",
-      description: "Custom red travertine dining table with warm reddish-brown tones, natural veining, made-to-measure size, and export packing.",
-      keywords: "red travertine dining table, custom natural stone furniture, travertine table supplier"
+      title: "Red Travertine Marble Dining Table for Living Room | Custom Stone Furniture",
+      description: "Custom red travertine marble dining table designed for living rooms, with warm natural texture, bespoke size, sculptural base, finish, and export packing.",
+      keywords: "red travertine marble dining table, red travertine table for living room, custom stone furniture factory"
     },
-    desc: "A distinctive red travertine dining table for interiors that need a warm and memorable stone signature.",
-    material: "Natural Red Travertine",
-    usage: "Dining Room, Gallery, Villa, Commercial Space",
-    finish: "Filled or unfilled, honed or polished",
+    desc: "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
+    material: "Natural Red Travertine Marble",
+    usage: "Living Room, Dining Room, Villa, Hotel, Interior Project",
+    finish: "Filled or unfilled, honed, polished, or sealed finish",
     moq: "1 piece custom order",
     leadTime: "25-50 days after confirmation",
-    intro: "Red travertine gives stone furniture a stronger visual identity than common beige tones. It is suitable for designers, showrooms, and brands looking for a memorable material direction.",
+    intro: "This red travertine marble dining table is designed for living rooms and refined interiors that need a warmer, more expressive natural stone direction. Table size, stone texture, edge detail, base structure, surface finish, and export packing can be customized before production.",
     options: [
-      "Custom dining table dimensions",
-      "Filled or unfilled travertine surface",
-      "Matched veining direction where possible",
-      "Custom base and edge detail",
-      "Safe export packing for stone furniture"
+      "Custom dining table length, width, and height",
+      "Filled or unfilled red travertine marble surface",
+      "Matched natural texture for tabletop and base",
+      "Custom edge detail and sculptural base structure",
+      "Reinforced export wooden crate packing for heavy stone furniture"
     ],
     faqs: [
-      ["Is red travertine natural?", "Yes. Red travertine is a natural stone with warm reddish-brown tones and unique veins."],
-      ["Can the color vary between pieces?", "Yes. Natural stone color and veining vary, so material confirmation is important before production."],
-      ["Can you make matching side tables?", "Yes. Matching coffee tables, side tables, and consoles can be produced."]
+      ["Can the red travertine marble dining table size be customized?", "Yes. We can produce the table according to your living room size, drawing, or reference photo."],
+      ["Can I choose the red travertine texture before production?", "Yes. For custom orders, we can share stone photos or videos before cutting so you can confirm the material direction."],
+      ["How do you pack a heavy stone dining table?", "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy natural stone furniture."]
     ]
   },
   {

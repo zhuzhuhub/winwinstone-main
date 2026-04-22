@@ -88,15 +88,15 @@ const translations = {
       "After-sale service"
     ],
     products: [
-      ["Sinks", "Luxury green marble pedestal sink", "Custom size, material, and design."],
-      ["Sinks", "Calacatta pedestal sink", "Custom-made in 100% natural stone."],
+      ["Sinks", "Green luxury marble pedestal sink", "Custom size, finish, drain detail, and export packing."],
+      ["Sinks", "Fluted rectangular white marble pedestal sink", "Custom ribbed surface, size, finish, and drain detail."],
       ["Sinks", "Hand-crafted vessel sink", "Designed for residential and business orders."],
-      ["Tables", "Minimalist travertine dining table", "Modern form with natural texture."],
+      ["Tables", "Travertine marble dining table", "Designed for modern interiors."],
       ["Tables", "Graceful travertine dining table", "OEM/ODM orders and global delivery."],
       ["Tables", "Simple travertine dining table", "Minimal design, made to measure."],
       ["Bathroom", "Natural marble bathtub", "Luxury stone bathing centerpiece."],
-      ["Tables", "Red travertine dining table", "Warm natural veins, custom proportions."],
-      ["Bathroom", "Luxury stone pedestal vanity", "Personalized service and craftsmanship."]
+      ["Tables", "Red travertine marble dining table", "Designed for living room interiors."],
+      ["Sinks", "Calacatta Viola marble pedestal sink", "Dramatic natural marble sink for high-end bathrooms."]
     ],
     proof: [
       ["Factory-direct", "Custom-made directly from Yunfu, Guangdong."],
@@ -155,15 +155,15 @@ const translations = {
           [".cta-band .button", "Start Inquiry"]
         ],
         products: [
-          ["Sinks / Marble", "Luxury green marble pedestal sink", "Natural green marble, custom drain position, polished or honed finish."],
-          ["Sinks / Calacatta", "Calacatta pedestal sink", "Clean column profile for luxury residential and hospitality bathrooms."],
+          ["Sinks / Marble", "Green luxury marble pedestal sink", "Dramatic natural green marble sink for luxury bathroom interiors."],
+          ["Sinks / White Marble", "Fluted rectangular white marble pedestal sink", "Ribbed natural stone sink with custom size, finish, drain detail, and export packing."],
           ["Sinks / Vessel", "Hand-crafted vessel sink", "Compact production reference for designer collections and project sets."],
-          ["Tables / Travertine", "Minimalist travertine dining table", "Sculptural base options, matched slabs, reinforced packing for export."],
+          ["Tables / Travertine", "Travertine marble dining table for modern interiors", "Warm natural stone texture with custom size, base, finish, and export packing."],
           ["Tables / Dining", "Graceful travertine dining table", "Elegant leg geometry with repeatable production detailing."],
           ["Tables / Minimal", "Simple travertine dining table", "Simple silhouette, customized slab size, warm natural surface."],
           ["Bathroom / Bathtub", "Natural marble bathtub", "Statement stone bathtub with drawing confirmation and factory inspection."],
-          ["Tables / Red Travertine", "Red travertine dining table", "Distinctive reddish-brown veins for signature residential interiors."],
-          ["Bathroom / Vanity", "Luxury stone pedestal vanity", "Integrated stone form for boutique bathrooms and OEM ranges."]
+          ["Tables / Red Travertine", "Red travertine marble dining table for living room", "Warm natural red travertine texture with custom size, base, finish, and export packing."],
+          ["Bathroom / Sinks", "Calacatta Viola marble pedestal sink", "Dramatic natural marble sink for high-end bathroom interiors."]
         ]
       },
       blog: {
@@ -281,15 +281,15 @@ const translations = {
       "售后服务"
     ],
     products: [
-      ["台盆", "奢华绿色大理石立柱盆", "尺寸、材料与设计均可定制。"],
-      ["台盆", "卡拉卡塔大理石立柱盆", "采用 100% 天然石材定制。"],
+      ["台盆", "奢华绿色大理石立柱盆", "可定制尺寸、表面、排水细节和出口包装。"],
+      ["台盆", "竖纹长方形白色大理石立柱盆", "可定制竖纹表面、尺寸、表面处理和排水细节。"],
       ["台盆", "手工石材台上盆", "适用于住宅与商业订单。"],
-      ["餐桌", "极简洞石餐桌", "现代造型，自然肌理。"],
+      ["餐桌", "洞石大理石餐桌", "为现代室内空间设计。"],
       ["餐桌", "优雅洞石餐桌", "支持 OEM/ODM 订单与全球交付。"],
       ["餐桌", "简约洞石餐桌", "极简设计，按需定制。"],
       ["浴室", "天然大理石浴缸", "奢华浴室的石材核心单品。"],
-      ["餐桌", "红洞石餐桌", "温暖天然纹理，比例可定制。"],
-      ["浴室", "奢华石材立柱浴室柜", "个性化服务与精细工艺。"]
+      ["餐桌", "红洞石大理石餐桌", "为客厅空间设计。"],
+      ["台盆", "紫罗兰大理石立柱盆", "适合高端浴室的天然石材焦点产品。"]
     ],
     proof: [
       ["源头工厂", "从广东云浮直接定制生产。"],
@@ -348,15 +348,15 @@ const translations = {
           [".cta-band .button", "开始询盘"]
         ],
         products: [
-          ["台盆 / 大理石", "奢华绿色大理石立柱盆", "天然绿色大理石，可定制排水位置、抛光或哑光表面。"],
-          ["台盆 / 卡拉卡塔", "卡拉卡塔大理石立柱盆", "适用于高端住宅和酒店浴室的简洁立柱造型。"],
+          ["台盆 / 大理石", "奢华绿色大理石立柱盆", "适合高端浴室的绿色天然大理石立柱盆。"],
+          ["台盆 / 白色大理石", "竖纹长方形白色大理石立柱盆", "带竖纹细节的天然石材台盆，支持尺寸、表面和排水定制。"],
           ["台盆 / 台上盆", "手工石材台上盆", "适合设计师系列和项目成套产品的小型生产参考。"],
-          ["餐桌 / 洞石", "极简洞石餐桌", "可定制雕塑感底座、配板和出口加固包装。"],
+          ["餐桌 / 洞石", "现代室内洞石大理石餐桌", "温润天然石材纹理，支持尺寸、底座、表面和出口包装定制。"],
           ["餐桌 / 餐厅", "优雅洞石餐桌", "优雅桌脚结构，适合标准化重复生产。"],
           ["餐桌 / 极简", "简约洞石餐桌", "简洁轮廓、按需尺寸和温润天然表面。"],
           ["浴室 / 浴缸", "天然大理石浴缸", "标志性石材浴缸，支持图纸确认和工厂验货。"],
-          ["餐桌 / 红洞石", "红洞石餐桌", "红棕色天然纹理，适合打造鲜明空间记忆点。"],
-          ["浴室 / 浴室柜", "奢华石材立柱浴室柜", "一体化石材造型，适用于精品浴室和 OEM 系列。"]
+          ["餐桌 / 红洞石", "客厅红洞石大理石餐桌", "温暖红洞石纹理，支持尺寸、底座、表面和出口包装定制。"],
+          ["浴室 / 台盆", "紫罗兰大理石立柱盆", "适合高端浴室的戏剧性天然大理石台盆。"]
         ]
       },
       blog: {
