@@ -62,4 +62,4 @@ joeljhou@macos site % vercel --prod
 🔗  Aliased: https://winwinstonecustom.vercel.app [11s]
 ```
 
-后续只需要进入对应目录并运行 `vercel --prod` 即可更新部署。
+后续只需要进入对应目录并运行 `vercel --prod` 即可更新部

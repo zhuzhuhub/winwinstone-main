@@ -447,7 +447,7 @@ filterButtons.forEach((button) => {
 });
 
 productCards.forEach((card) => {
-  const opener = card.querySelector(".product-open");
+  const opener = card.querySelector("button.product-open");
   const image = card.querySelector("img");
 
   if (!opener || !image || !dialog || !dialogImage || !dialogTitle || !dialogDescription) return;
