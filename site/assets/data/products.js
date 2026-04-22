@@ -394,5 +394,43 @@ const PRODUCTS = [
       ["Can the size and drain position be customized?", "Yes. We can customize the cylinder height, diameter, basin depth, drain position, and faucet hole before production."],
       ["Is this suitable for hotel or villa projects?", "Yes. This freestanding marble sink is suitable for hotels, villas, boutique bathrooms, and OEM bathroom product lines."]
     ]
+  },
+  {
+    slug: "modern-calacatta-white-marble-fireplace-surround",
+    name: "Modern Calacatta White Marble Fireplace Surround",
+    category: "Fireplace Surrounds",
+    image: "assets/images/modern-calacatta-white-marble-fireplace-surround.jpg",
+    gallery: [
+      "assets/images/modern-calacatta-white-marble-fireplace-surround.jpg",
+      "assets/images/modern-calacatta-white-marble-fireplace-surround01.jpg",
+      "assets/images/modern-calacatta-white-marble-fireplace-surround02.jpg",
+      "assets/images/modern-calacatta-white-marble-fireplace-surround03.jpg",
+      "assets/images/modern-pink-marble-fireplace-surround.jpg"
+    ],
+    badge: "Custom Marble Fireplace",
+    seo: {
+      title: "Modern Calacatta White Marble Fireplace Surround | Custom Stone Fireplace",
+      description: "Custom modern Calacatta white marble fireplace surround for villas, living rooms, hotels, and interior projects, with bespoke size, profile, finish, and export packing.",
+      keywords: "modern Calacatta white marble fireplace surround, custom marble fireplace, stone fireplace surround factory"
+    },
+    desc: "A modern Calacatta white marble fireplace surround for living rooms, villas, hotels, and high-end interior projects.",
+    material: "Natural Calacatta White Marble, pink marble, or custom natural stone",
+    usage: "Living Room, Villa, Hotel, Interior Project, Custom Fireplace",
+    finish: "Polished, honed, or custom sealed finish",
+    moq: "1 set for custom projects",
+    leadTime: "25-50 days after drawing and material confirmation",
+    intro: "This modern marble fireplace surround is designed for interiors that need a refined natural stone focal point. Overall size, stone material, profile detail, side panels, mantel proportion, surface finish, and export packing can be customized before production.",
+    options: [
+      "Custom fireplace surround width, height, and depth",
+      "Calacatta white marble, pink marble, or selected natural stone",
+      "Custom mantel, side panel, and profile detail",
+      "Polished, honed, or sealed surface finish",
+      "Reinforced export wooden crate packing for stone fireplace pieces"
+    ],
+    faqs: [
+      ["Can the marble fireplace surround size be customized?", "Yes. We can produce the surround according to your wall opening, drawing, reference photo, or project measurement."],
+      ["Can I choose another marble material?", "Yes. Calacatta white marble, pink marble, travertine, limestone, and other natural stones can be discussed."],
+      ["How do you pack fireplace surround pieces for export?", "We separate and protect the stone pieces with foam, corner protection, and reinforced wooden crates for international shipping."]
+    ]
   }
 ];
