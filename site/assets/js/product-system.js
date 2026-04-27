@@ -7,6 +7,14 @@ function setText(id, value) {
   if (element && value) element.textContent = value;
 }
 
+function setTextForAll(field, value) {
+  if (!value) return;
+
+  document.querySelectorAll(`[data-product-field="${field}"]`).forEach((element) => {
+    element.textContent = value;
+  });
+}
+
 function setAttribute(id, attribute, value) {
   const element = document.getElementById(id);
   if (element && value) element.setAttribute(attribute, value);
@@ -37,8 +45,75 @@ function setWhatsAppLink(id, productName) {
   element.href = `https://wa.me/13927192948?text=${message}`;
 }
 
+function renderUsageGrid(id, usage) {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  const usageItems = (usage || "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  element.innerHTML = usageItems
+    .map((item) => `<article>${item}</article>`)
+    .join("");
+}
+
+function renderProductSchema(currentProduct, galleryImages) {
+  const schema = document.getElementById("product-schema");
+  if (!schema) return;
+
+  schema.textContent = JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: currentProduct.name,
+      description: currentProduct.seo.description,
+      category: currentProduct.category,
+      sku: currentProduct.slug,
+      image: galleryImages.map((src) => new URL(src, window.location.href).href),
+      url: window.location.href,
+      brand: {
+        "@type": "Brand",
+        name: "Win-Win Stone"
+      },
+      manufacturer: {
+        "@type": "Organization",
+        name: "Win-Win Stone",
+        url: new URL("index.html", window.location.href).href,
+        email: "mailto:stone2lisa@outlook.com"
+      },
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Material",
+          value: currentProduct.material
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Finish",
+          value: currentProduct.finish
+        },
+        {
+          "@type": "PropertyValue",
+          name: "MOQ",
+          value: currentProduct.moq
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Lead Time",
+          value: currentProduct.leadTime
+        }
+      ]
+    },
+    null,
+    2
+  );
+}
+
 function renderProduct(currentProduct) {
   const galleryImages = currentProduct.gallery?.length ? currentProduct.gallery : [currentProduct.image];
+  const productReference = (currentProduct.badge || currentProduct.category || "custom stone product").toLowerCase();
 
   document.title = currentProduct.seo.title;
   setText("seo-title", currentProduct.seo.title);
@@ -57,6 +132,14 @@ function renderProduct(currentProduct) {
   setText("product-finish", currentProduct.finish);
   setText("product-moq", currentProduct.moq);
   setText("product-lead-time", currentProduct.leadTime);
+  setTextForAll("material", currentProduct.material);
+  setTextForAll("finish", currentProduct.finish);
+  setTextForAll("moq", currentProduct.moq);
+  setTextForAll("leadTime", currentProduct.leadTime);
+  renderUsageGrid("product-usage-grid-hero", currentProduct.usage);
+  renderUsageGrid("product-usage-grid", currentProduct.usage);
+  setText("product-action-note", `Send your target size, quantity, finish, and reference photo or drawing for this ${productReference} quote review.`);
+  setText("product-cta-copy", `We will review your ${productReference} requirement, confirm the production direction, and reply with the next step for quotation.`);
 
   const image = document.getElementById("product-image");
   if (image) {
@@ -103,7 +186,9 @@ function renderProduct(currentProduct) {
   setMailLink("product-email", `Quote request: ${currentProduct.name}`, currentProduct.name);
   setMailLink("product-cta-email", `Quote request: ${currentProduct.name}`, currentProduct.name);
   setWhatsAppLink("product-whatsapp", currentProduct.name);
+  setWhatsAppLink("product-cta-whatsapp", currentProduct.name);
   setWhatsAppLink("floating-whatsapp", currentProduct.name);
+  renderProductSchema(currentProduct, galleryImages);
 }
 
 function renderProductNotFound() {
@@ -113,6 +198,21 @@ function renderProductNotFound() {
   const intro = document.getElementById("product-intro");
   if (intro) {
     intro.innerHTML = `You can browse all current products from <a href="products.html">the product catalog</a>.`;
+  }
+
+  const options = document.getElementById("product-options");
+  if (options) {
+    options.innerHTML = "<li>Browse the current product catalog or contact us with the closest reference product for support.</li>";
+  }
+
+  const faq = document.getElementById("product-faq");
+  if (faq) {
+    faq.innerHTML = `
+      <article>
+        <h3>How can I find the right product?</h3>
+        <p>Return to the product catalog and choose the closest sink, table, vanity, bathtub, or fireplace piece, then send us your reference and requirements.</p>
+      </article>
+    `;
   }
 }
 

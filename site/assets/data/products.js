@@ -1,7 +1,7 @@
 const PRODUCTS = [
   {
     slug: "green-marble-pedestal-sink",
-    name: "Green Luxury Marble Pedestal Sink",
+    name: "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects",
     category: "Marble Sinks",
     image: "assets/images/green-luxury-marble-pedestal-sink.jpg",
     gallery: [
@@ -10,30 +10,30 @@ const PRODUCTS = [
       "assets/images/green-luxury-marble-pedestal-sink02.jpg",
       "assets/images/green-luxury-marble-pedestal-sink03.jpg"
     ],
-    badge: "Green Luxury Marble Sink",
+    badge: "Custom Marble Pedestal Sink",
     seo: {
-      title: "Green Luxury Marble Pedestal Sink | Custom Marble Sink Factory",
-      description: "Custom green luxury marble pedestal sink made from natural stone for high-end bathrooms, with bespoke size, shape, finish, drain detail, and export packing.",
-      keywords: "green luxury marble pedestal sink, custom green marble sink, marble pedestal sink factory China"
+      title: "Green Marble Pedestal Sink Manufacturer | Custom Luxury Stone Sink",
+      description: "Custom green marble pedestal sink made for luxury bathrooms, hotels, villas, and designer projects. Factory-direct production with custom size, finish, drain detail, and export packing.",
+      keywords: "green marble pedestal sink manufacturer, custom luxury stone sink, custom green marble sink, marble pedestal sink factory China"
     },
-    desc: "A green luxury marble pedestal sink handcrafted from natural stone for high-end bathrooms, boutique hotels, villas, and custom interior projects.",
-    material: "Natural Green Luxury Marble",
-    usage: "Luxury Bathroom, Hotel, Villa, Project Custom",
-    finish: "Polished, honed, or custom sealed finish",
-    moq: "1 piece for custom projects",
+    desc: "A sculptural green marble pedestal sink developed for luxury bathrooms, boutique hotels, villas, and designer-led interiors. Built from natural stone with custom sizing, finish options, and export-ready packing.",
+    material: "Natural green marble or similar selected stone",
+    usage: "Luxury bathrooms, villas, hotels, designer projects",
+    finish: "Polished, honed, brushed, or sealed finish",
+    moq: "1 piece for sample or custom project",
     leadTime: "20-45 days after drawing and material confirmation",
-    intro: "This green luxury marble pedestal sink is designed for bathrooms that need a dramatic natural stone focal point. Size, basin shape, surface finish, drain position, faucet hole, and packing method can be customized before production.",
+    intro: "This green marble pedestal sink is designed for buyers who need a strong natural stone statement piece with repeatable production control. It works well for custom bathrooms, hospitality spaces, and premium interior collections where material character matters as much as dimensions and finishing. Before production starts, we can confirm sink size, basin depth, drain position, faucet detail, finish direction, and packing method according to your drawing, reference image, or project requirement.",
     options: [
-      "Custom pedestal sink height, width, and basin shape",
-      "Green marble block or slab selection before production",
-      "Polished, honed, brushed, or sealed surface finish",
-      "Drain position, faucet hole, and installation detail confirmation",
-      "Reinforced export wooden crate packing with foam protection"
+      "Custom pedestal sink height, width, basin depth, and overall proportion",
+      "Stone selection based on color tone, veining direction, and project preference",
+      "Drain position, faucet hole, cutout detail, and installation coordination",
+      "Polished, honed, brushed, or other requested finish direction",
+      "Protective export packing with foam support and reinforced wooden crates"
     ],
     faqs: [
-      ["Can the green luxury marble pedestal sink size be customized?", "Yes. We can produce the sink according to your bathroom dimensions, drawing, or reference photo."],
-      ["Can I confirm the marble veining before production?", "Yes. For custom project orders, we can share material photos or videos before cutting so you can confirm the stone direction."],
-      ["Is this suitable for overseas delivery?", "Yes. We use protective inner packing and reinforced export wooden crates for natural stone sinks."]
+      ["Can the sink size be customized?", "Yes. We can produce the pedestal sink according to your bathroom layout, drawing, or target dimensions."],
+      ["Can I confirm the marble pattern before production?", "Yes. For custom orders, we can share slab or block photos and videos before cutting so you can confirm the material direction."],
+      ["Is this suitable for export orders?", "Yes. We prepare natural stone sinks with protective inner packing and reinforced export crates for international shipment."]
     ]
   },
   {
@@ -108,7 +108,7 @@ const PRODUCTS = [
   },
   {
     slug: "minimalist-travertine-dining-table",
-    name: "Travertine Marble Dining Table Designed for Modern Interiors",
+    name: "Travertine Dining Table for Modern Interiors and OEM Furniture Orders",
     category: "Travertine Tables",
     image: "assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg",
     gallery: [
@@ -118,30 +118,30 @@ const PRODUCTS = [
       "assets/images/travertine-marble-dining-table-designed-for-modern-interiors03.jpg",
       "assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg"
     ],
-    badge: "Travertine Marble Dining Table",
+    badge: "Custom Travertine Dining Table",
     seo: {
-      title: "Travertine Marble Dining Table for Modern Interiors | Custom Stone Furniture",
-      description: "Custom travertine marble dining table designed for modern interiors, with bespoke size, matched stone texture, sculptural base options, finish, and export packing.",
-      keywords: "travertine marble dining table, modern travertine dining table, custom stone furniture factory"
+      title: "Custom Travertine Dining Table Manufacturer | OEM Stone Furniture",
+      description: "Custom travertine dining table for modern interiors, furniture brands, villas, and hospitality projects. Factory-direct production with custom size, base structure, finish, and export packing.",
+      keywords: "custom travertine dining table manufacturer, OEM stone furniture, travertine dining table, custom stone furniture factory"
     },
-    desc: "A travertine marble dining table designed for modern interiors, combining warm natural stone texture with a clean sculptural form.",
-    material: "Natural Travertine Marble",
-    usage: "Dining Room, Villa, Hotel, Showroom, Interior Project",
+    desc: "A custom travertine dining table designed for modern interiors, furniture collections, villas, and boutique hospitality spaces. Produced with flexible sizing, base options, finish control, and export-ready packing.",
+    material: "Natural travertine or selected similar stone",
+    usage: "Dining rooms, villas, furniture brands, hotels, showrooms",
     finish: "Filled or unfilled, honed, polished, or sealed finish",
-    moq: "1 piece for custom order",
+    moq: "1 piece for sample or custom order",
     leadTime: "25-50 days after drawing confirmation",
-    intro: "This travertine marble dining table is made for modern interiors that need a warm, architectural natural stone centerpiece. Table length, width, height, edge detail, base structure, surface finish, and export packing can be customized before production.",
+    intro: "This travertine dining table is developed for buyers who want warm natural stone texture combined with a clean, architectural furniture form. It can be adapted for one-off interior pieces, sample development, or repeatable OEM/ODM furniture orders. Before production, we can confirm table length, width, height, edge detail, tabletop thickness, base structure, travertine direction, and packing method to match your market or project requirement.",
     options: [
-      "Custom dining table length, width, and height",
-      "Filled or unfilled travertine marble surface",
-      "Matched stone texture for tabletop and base",
-      "Custom edge detail and sculptural base structure",
-      "Reinforced export wooden crate packing for heavy stone furniture"
+      "Custom tabletop length, width, thickness, and finished height",
+      "Filled or unfilled travertine depending on visual and maintenance direction",
+      "Straight, eased, rounded, bevelled, or other requested edge profile",
+      "Pedestal, block, sculptural, or drawing-based base structure",
+      "Separated export packing for tabletop and base to support safer delivery"
     ],
     faqs: [
-      ["Can the travertine marble dining table size be customized?", "Yes. We can produce the table according to your room size, drawing, or reference photo."],
-      ["Can I choose filled or unfilled travertine?", "Yes. Filled and unfilled travertine finishes are both available, depending on the look and daily-use requirement."],
-      ["How do you pack a heavy stone dining table?", "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy natural stone furniture."]
+      ["Can the table size be customized?", "Yes. We can produce the table according to your room layout, product standard, or drawing."],
+      ["Can I choose filled or unfilled travertine?", "Yes. Both options are available depending on the look, touch, and daily-use requirement you want."],
+      ["How do you pack heavy stone tables for export?", "We use reinforced wooden crates, foam protection, and separated packing for the tabletop and base when needed."]
     ]
   },
   {
@@ -211,30 +211,30 @@ const PRODUCTS = [
     name: "Natural Marble Bathtub",
     category: "Stone Bathtubs",
     image: "assets/images/marble-bathtub.jpg",
-    badge: "Luxury Stone Bathtub",
+    badge: "Custom Stone Bathtub",
     seo: {
-      title: "Natural Marble Bathtub Manufacturer | Custom Stone Bathtub Factory",
-      description: "Luxury natural marble bathtub made to order with custom size, stone selection, finish, inspection, and secure export packing.",
-      keywords: "natural marble bathtub manufacturer, custom stone bathtub, luxury marble bathtub factory"
+      title: "Natural Marble Bathtub Manufacturer | Custom Luxury Stone Bathtub",
+      description: "Custom natural marble bathtub for villas, hotels, and luxury bathroom projects. Factory-direct production with custom dimensions, stone selection, finish control, inspection, and export packing.",
+      keywords: "natural marble bathtub manufacturer, custom luxury stone bathtub, custom stone bathtub, luxury marble bathtub factory"
     },
-    desc: "A luxury natural marble bathtub made for villa bathrooms, boutique hotels, and high-end interior projects.",
-    material: "Natural Marble",
-    usage: "Villa, Hotel, Spa, Luxury Bathroom",
-    finish: "Polished or honed",
+    desc: "A custom natural marble bathtub developed for villa bathrooms, boutique hotels, spas, and high-end interior projects. Produced with flexible dimensions, stone selection, finish options, and export-safe packing.",
+    material: "Natural marble or selected project stone",
+    usage: "Villas, hotels, spas, luxury bathrooms",
+    finish: "Polished, honed, or sealed finish",
     moq: "1 piece custom order",
     leadTime: "30-60 days after drawing and material confirmation",
-    intro: "A natural marble bathtub is a high-value custom stone product where material choice, structure, polishing, and packing all matter. We support drawing confirmation, production updates, and factory inspection before shipment.",
+    intro: "This marble bathtub is designed for buyers who need a high-value natural stone centerpiece with strong production control from material selection to shipment. Because stone bathtubs involve weight, structure, polishing quality, drain detail, and transport planning, each order needs careful confirmation before fabrication begins. We can review your target size, tub depth, edge profile, drain and overflow detail, finish direction, and packing requirements according to your project drawing or reference image.",
     options: [
-      "Custom bathtub length, width, and depth",
-      "Integrated or freestanding shape",
-      "Drain and overflow position confirmation",
-      "Selected marble material and finish",
-      "Heavy-duty export wooden crate packing"
+      "Custom bathtub length, width, depth, and wall thickness",
+      "Freestanding or project-specific shape based on drawing",
+      "Drain and overflow position confirmation before production",
+      "Material selection based on tone, veining, and application direction",
+      "Heavy-duty export packing with reinforced structure for stone bathtub shipment"
     ],
     faqs: [
-      ["Can a marble bathtub be customized by drawing?", "Yes. Drawings or reference photos are recommended for custom bathtub production."],
-      ["Is the bathtub very heavy?", "Yes. Natural stone bathtubs are heavy, so structure, packing, and delivery planning are important."],
-      ["Can you provide inspection before shipping?", "Yes. We can provide photos, videos, and factory inspection support before packing."]
+      ["Can the marble bathtub be customized by drawing?", "Yes. Drawings, reference photos, and target dimensions can all be used to confirm production details."],
+      ["Is the bathtub very heavy?", "Yes. Natural stone bathtubs are heavy products, so structure review, packing method, and delivery planning are important."],
+      ["Can you provide inspection before shipment?", "Yes. We can share photos, videos, and factory inspection support before final packing."]
     ]
   },
   {
