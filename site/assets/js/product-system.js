@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const slug = params.get("slug") || PRODUCTS[0]?.slug;
-const product = PRODUCTS.find((item) => item.slug === slug);
+const product = PRODUCTS.find((item) => item.slug === slug || item.aliasSlugs?.includes(slug));
 
 function setText(id, value) {
   const element = document.getElementById(id);

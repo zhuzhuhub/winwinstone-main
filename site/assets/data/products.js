@@ -76,14 +76,15 @@ const PRODUCTS = [
     ]
   },
   {
-    slug: "handcrafted-marble-vessel-sink",
-    name: "Handcrafted Marble Vessel Sink",
+    slug: "custom-marble-vessel-sink",
+    aliasSlugs: ["handcrafted-marble-vessel-sink"],
+    name: "Custom Marble Vessel Sink",
     category: "Marble Sinks",
     image: "assets/images/vessel-sink.jpg",
-    badge: "Stone Vessel Sink",
+    badge: "Custom Marble Vessel Sink",
     seo: {
-      title: "Handcrafted Marble Vessel Sink Manufacturer | Custom Stone Basin",
-      description: "Custom handcrafted marble vessel sinks made from natural stone with flexible size, material, surface finish, and export packing options.",
+      title: "Custom Marble Vessel Sink Manufacturer | OEM Stone Basin Supplier",
+      description: "Custom marble vessel sink for bathroom brands, designer collections, and project orders. Factory-direct production with flexible shape, size, material, finish, and export packing.",
       keywords: "marble vessel sink manufacturer, custom stone basin, handcrafted marble sink"
     },
     desc: "A compact natural stone vessel sink designed for designer collections, bathrooms, and custom project sets.",
@@ -176,14 +177,15 @@ const PRODUCTS = [
     ]
   },
   {
-    slug: "simple-travertine-dining-table",
-    name: "Simple Travertine Dining Table",
+    slug: "minimal-travertine-dining-table",
+    aliasSlugs: ["simple-travertine-dining-table"],
+    name: "Minimal Travertine Dining Table",
     category: "Travertine Tables",
     image: "assets/images/simple-table.jpg",
     badge: "Made-to-Measure Table",
     seo: {
-      title: "Simple Travertine Dining Table Supplier | Made-to-Measure Stone Table",
-      description: "Made-to-measure simple travertine dining table for modern interiors, with custom slab size, surface finish, base structure, and export packing.",
+      title: "Minimal Travertine Dining Table Supplier | Custom Stone Dining Table",
+      description: "Minimal travertine dining table for modern interiors, villas, showrooms, and furniture collections. Factory-direct production with custom size, edge detail, base structure, finish, and export packing.",
       keywords: "simple travertine dining table, made to measure stone table, travertine table supplier"
     },
     desc: "A simple travertine table designed for modern interiors while preserving the natural personality of stone.",
@@ -239,7 +241,7 @@ const PRODUCTS = [
   },
   {
     slug: "red-travertine-dining-table",
-    name: "Red Travertine Marble Dining Table Designed for Living Room",
+    name: "Red Travertine Dining Table",
     category: "Travertine Tables",
     image: "assets/images/red-travertine-marble-dining-table-designed-for-living-room.jpg",
     gallery: [
@@ -248,10 +250,10 @@ const PRODUCTS = [
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room02.jpg",
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room03.jpg"
     ],
-    badge: "Red Travertine Marble Dining Table",
+    badge: "Red Travertine Dining Table",
     seo: {
-      title: "Red Travertine Marble Dining Table for Living Room | Custom Stone Furniture",
-      description: "Custom red travertine marble dining table designed for living rooms, with warm natural texture, bespoke size, sculptural base, finish, and export packing.",
+      title: "Red Travertine Dining Table Manufacturer | Custom Stone Furniture",
+      description: "Custom red travertine dining table for dining rooms, villas, showrooms, and designer interiors. Factory-direct production with custom size, edge detail, base structure, finish, and export packing.",
       keywords: "red travertine marble dining table, red travertine table for living room, custom stone furniture factory"
     },
     desc: "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
@@ -275,8 +277,9 @@ const PRODUCTS = [
     ]
   },
   {
-    slug: "marble-sink-design",
-    name: "Calacatta White Marble Pedestal Sink Design",
+    slug: "calacatta-white-marble-pedestal-sink",
+    aliasSlugs: ["marble-sink-design"],
+    name: "Calacatta White Marble Pedestal Sink",
     category: "Marble Sinks",
     image: "assets/images/calacatta-white-marble-pedestal-sink-design.jpg",
     gallery: [
@@ -289,10 +292,10 @@ const PRODUCTS = [
       "assets/images/calacatta-white-marble-pedestal-sink-design06.jpg",
       "assets/images/calacatta-white-marble-pedestal-sink-design07.jpg"
     ],
-    badge: "Calacatta Marble Sink Design",
+    badge: "Calacatta White Marble Sink",
     seo: {
-      title: "Calacatta White Marble Pedestal Sink Design | Custom Marble Sink Factory",
-      description: "Custom 100% natural Calacatta white marble pedestal sink design for luxury bathrooms, with customizable shape, surface finish, size, and export packing.",
+      title: "Calacatta White Marble Pedestal Sink Manufacturer | Custom Stone Sink",
+      description: "Custom Calacatta white marble pedestal sink for luxury bathrooms, villas, hotels, and designer projects. Factory-direct production with custom size, shape, finish, drain detail, and export packing.",
       keywords: "Calacatta white marble pedestal sink, custom marble sink design, luxury bathroom stone sink"
     },
     desc: "A custom 100% natural Calacatta white marble pedestal sink design for luxury bathrooms and high-end interior projects.",
@@ -316,7 +319,8 @@ const PRODUCTS = [
     ]
   },
   {
-    slug: "luxury-stone-pedestal-vanity",
+    slug: "calacatta-viola-marble-pedestal-sink",
+    aliasSlugs: ["luxury-stone-pedestal-vanity"],
     name: "Calacatta Viola Marble Pedestal Sink",
     category: "Marble Sinks",
     image: "assets/images/calacatta-viola-marble-pedestal-sink.jpg",
@@ -329,8 +333,8 @@ const PRODUCTS = [
     ],
     badge: "Calacatta Viola Marble Sink",
     seo: {
-      title: "Calacatta Viola Marble Pedestal Sink | Custom Marble Sink Factory",
-      description: "Custom Calacatta Viola marble pedestal sink made from natural stone for luxury bathrooms, with bespoke size, shape, finish, drain detail, and export packing.",
+      title: "Calacatta Viola Marble Pedestal Sink Manufacturer | Custom Stone Sink",
+      description: "Custom Calacatta Viola marble pedestal sink for luxury bathrooms, villas, hotels, and designer projects. Factory-direct production with custom size, shape, finish, drain detail, and export packing.",
       keywords: "Calacatta Viola marble pedestal sink, custom marble sink factory, luxury bathroom stone sink"
     },
     desc: "A sculptural Calacatta Viola marble pedestal sink for luxury bathrooms, boutique hotels, villas, and high-end interior projects.",
