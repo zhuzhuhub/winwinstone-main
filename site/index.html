@@ -403,12 +403,17 @@
             </label>
             <label>
               Company / Studio / Project
-              <input name="subject" placeholder="Sink, table, vanity, bathtub, custom project...">
+              <input name="company" autocomplete="organization" placeholder="Sink, table, vanity, bathtub, custom project...">
             </label>
             <label>
               Message
               <textarea name="message" rows="5" placeholder="Size, stone type, quantity, finish, delivery country, reference link or drawing..."></textarea>
             </label>
+            <p class="quote-form-status" data-quote-form-status aria-live="polite"></p>
+            <input type="hidden" name="access_key" value="805cd111-c974-43d5-9bf3-40733ff657cd">
+            <input type="hidden" name="from_name" value="Win-Win Stone Website">
+            <input type="hidden" name="subject" value="Website inquiry from Win-Win Stone">
+            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off">
             <button class="button primary wide" type="submit">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
               Send Inquiry

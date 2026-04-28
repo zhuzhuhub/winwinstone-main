@@ -10,6 +10,8 @@ const dialogDescription = document.querySelector("[data-dialog-description]");
 const dialogClose = document.querySelector("[data-dialog-close]");
 const dialogQuote = document.querySelector("[data-dialog-quote]");
 const quoteForm = document.querySelector("[data-quote-form]");
+const quoteSubmitButton = quoteForm?.querySelector("button[type='submit']");
+const quoteFormStatus = document.querySelector("[data-quote-form-status]");
 const languageToggle = document.querySelector("[data-language-toggle]");
 const languageLabel = document.querySelector("[data-language-label]");
 
@@ -119,8 +121,14 @@ const translations = {
       ["Inspection Before Packing", "Products are checked before final wrapping and export preparation."],
       ["Export-Safe Crating for Overseas Delivery", "Packing is prepared for international handling, protection, and shipment safety."]
     ],
+    formStatus: {
+      submit: "Send Inquiry",
+      sending: "Sending...",
+      success: "Thank you. Your inquiry has been sent. We will reply within 24 hours.",
+      error: "Something went wrong. Please try again or contact us by email / WhatsApp."
+    },
     placeholders: {
-      subject: "Sink, table, vanity, bathtub, custom project...",
+      company: "Sink, table, vanity, bathtub, custom project...",
       message: "Size, stone type, quantity, finish, delivery country, reference link or drawing..."
     },
     mail: {
@@ -378,8 +386,14 @@ const translations = {
       ["包装前检验", "产品在最终包裹和出口准备前会完成检查。"],
       ["出口安全木箱包装", "包装会考虑国际运输、防护和整体发货安全。"]
     ],
+    formStatus: {
+      submit: "发送询盘",
+      sending: "正在发送...",
+      success: "感谢您的咨询，信息已发送成功。我们通常会在 24 小时内回复。",
+      error: "发送失败，请重试，或直接通过邮箱 / WhatsApp 联系我们。"
+    },
     placeholders: {
-      subject: "台盆、餐桌、浴室柜、浴缸、定制项目...",
+      company: "台盆、餐桌、浴室柜、浴缸、定制项目...",
       message: "尺寸、石材类型、数量、表面工艺、交付国家、参考链接或图纸..."
     },
     mail: {
@@ -575,28 +589,6 @@ dialog?.addEventListener("click", (event) => {
 
 dialogQuote?.addEventListener("click", closeDialog);
 
-quoteForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const copy = translations[currentLanguage];
-  const form = new FormData(quoteForm);
-  const name = form.get("name") || "";
-  const email = form.get("email") || "";
-  const subject = form.get("subject") || copy.mail.defaultSubject;
-  const message = form.get("message") || "";
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Project: ${subject}`,
-    "",
-    message
-  ].join("\n");
-
-  const mailto = new URL("mailto:stone2lisa@outlook.com");
-  mailto.searchParams.set("subject", `${copy.mail.quotePrefix}: ${subject}`);
-  mailto.searchParams.set("body", body);
-  window.location.href = mailto.toString();
-});
-
 function setElementText(element, value) {
   if (element.matches("label")) {
     const field = element.querySelector("input, textarea");
@@ -630,6 +622,72 @@ function setText(selector, value) {
 function setTextAll(selector, value) {
   document.querySelectorAll(selector).forEach((element) => setElementText(element, value));
 }
+
+function setQuoteSubmitLabel(value) {
+  if (!quoteSubmitButton) return;
+  setElementText(quoteSubmitButton, value);
+}
+
+function setQuoteFormStatus(state) {
+  if (!quoteFormStatus) return;
+
+  quoteFormStatus.dataset.state = state || "";
+  quoteFormStatus.classList.remove("is-success", "is-error");
+
+  if (!state) {
+    quoteFormStatus.textContent = "";
+    return;
+  }
+
+  const message = translations[currentLanguage].formStatus?.[state] || "";
+  quoteFormStatus.textContent = message;
+
+  if (state === "success" || state === "error") {
+    quoteFormStatus.classList.add(`is-${state}`);
+  }
+}
+
+quoteForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const copy = translations[currentLanguage];
+  const form = new FormData(quoteForm);
+  const name = String(form.get("name") || "").trim();
+  const email = String(form.get("email") || "").trim();
+  const company = String(form.get("company") || "").trim();
+
+  form.set("subject", company ? `${copy.mail.quotePrefix}: ${company}` : copy.mail.defaultSubject);
+  form.set("from_name", name ? `Win-Win Stone Website - ${name}` : "Win-Win Stone Website");
+  form.set("replyto", email);
+
+  quoteSubmitButton?.setAttribute("disabled", "disabled");
+  setQuoteSubmitLabel(copy.formStatus.sending);
+  setQuoteFormStatus("");
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        Accept: "application/json"
+      },
+      body: form
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Submission failed.");
+    }
+
+    quoteForm.reset();
+    setQuoteFormStatus("success");
+  } catch (error) {
+    setQuoteFormStatus("error");
+  } finally {
+    quoteSubmitButton?.removeAttribute("disabled");
+    setQuoteSubmitLabel(translations[currentLanguage].formStatus.submit);
+  }
+});
 
 function applyLanguage(language) {
   if (!languageToggle || !languageLabel) return;
@@ -709,12 +767,20 @@ function applyLanguage(language) {
     card.querySelector(".article-date").textContent = date;
   });
 
-  if (quoteForm?.elements.subject) {
-    quoteForm.elements.subject.placeholder = copy.placeholders.subject;
+  if (quoteForm?.elements.company) {
+    quoteForm.elements.company.placeholder = copy.placeholders.company;
   }
 
   if (quoteForm?.elements.message) {
     quoteForm.elements.message.placeholder = copy.placeholders.message;
+  }
+
+  if (quoteSubmitButton && !quoteSubmitButton.hasAttribute("disabled")) {
+    setQuoteSubmitLabel(copy.formStatus.submit);
+  }
+
+  if (quoteFormStatus?.dataset.state) {
+    setQuoteFormStatus(quoteFormStatus.dataset.state);
   }
 }
 

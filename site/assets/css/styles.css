@@ -1032,6 +1032,27 @@ h3 {
   font-size: 0.92rem;
 }
 
+.quote-form-status {
+  min-height: 1.5em;
+  margin: -2px 0 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.quote-form-status.is-success {
+  color: #1d5c41;
+}
+
+.quote-form-status.is-error {
+  color: #9d3f1f;
+}
+
+.quote-form .button[disabled] {
+  cursor: wait;
+  opacity: 0.78;
+}
+
 .site-footer {
   padding: 34px 0;
   color: rgba(255, 255, 255, 0.76);
