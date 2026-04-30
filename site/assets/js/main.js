@@ -68,8 +68,8 @@ const translations = {
       ["#products-title", "Stone product directions that can be adapted for your market, project, or home."],
       [".products .section-heading > p:last-child", "Use these featured references as a starting point for custom dimensions, material selection, finish options, and packing requirements."],
       [".filter-button[data-filter='all']", "All"],
-      [".filter-button[data-filter='sinks']", "Sinks"],
-      [".filter-button[data-filter='tables']", "Tables"],
+      [".filter-button[data-filter='marble-tables']", "Marble Tables"],
+      [".filter-button[data-filter='marble-sinks-basins']", "Marble Sinks & Basins"],
       [".filter-button[data-filter='bathroom']", "Bathroom"],
       [".video-band .eyebrow", "Production Proof"],
       ["#factory-title", "How custom stone orders move from reference to delivery."],
@@ -187,8 +187,8 @@ const translations = {
           ["#catalog-title", "Category-led references for custom inquiries."],
           [".product-catalog .section-heading > p:last-child", "Use the filters to narrow by sink, table, bathroom, or project direction, then send the closest reference for dimensions, material options, and quotation."],
           [".filter-button[data-filter='all']", "All"],
-          [".filter-button[data-filter='sinks']", "Sinks"],
-          [".filter-button[data-filter='tables']", "Tables"],
+          [".filter-button[data-filter='marble-tables']", "Marble Tables"],
+          [".filter-button[data-filter='marble-sinks-basins']", "Marble Sinks & Basins"],
           [".filter-button[data-filter='bathroom']", "Bathroom"],
           [".filter-button[data-filter='project']", "Project"],
           [".material-section .eyebrow", "Before Inquiry"],
@@ -334,8 +334,8 @@ const translations = {
       [".category-card:nth-child(4) h4", "定制项目"],
       [".category-card:nth-child(4) p", "支持图纸开发、市场系列和项目专属产品的 OEM/ODM 生产。"],
       [".filter-button[data-filter='all']", "全部"],
-      [".filter-button[data-filter='sinks']", "台盆"],
-      [".filter-button[data-filter='tables']", "餐桌"],
+      [".filter-button[data-filter='marble-tables']", "大理石桌类"],
+      [".filter-button[data-filter='marble-sinks-basins']", "大理石台盆"],
       [".filter-button[data-filter='bathroom']", "浴室"],
       [".customization .eyebrow", "定制选项"],
       ["#customization-title", "生产开始前可以确认和调整的内容。"],
@@ -457,8 +457,8 @@ const translations = {
           ["#catalog-title", "按品类整理的定制产品参考。"],
           [".product-catalog .section-heading > p:last-child", "按台盆、餐桌、浴室或工程方向筛选，再把最接近的参考款发给我们确认尺寸、材料选项和报价。"],
           [".filter-button[data-filter='all']", "全部"],
-          [".filter-button[data-filter='sinks']", "台盆"],
-          [".filter-button[data-filter='tables']", "餐桌"],
+          [".filter-button[data-filter='marble-tables']", "大理石桌类"],
+          [".filter-button[data-filter='marble-sinks-basins']", "大理石台盆"],
           [".filter-button[data-filter='bathroom']", "浴室"],
           [".filter-button[data-filter='project']", "工程"],
           [".material-section .eyebrow", "询盘前确认"],
@@ -892,16 +892,49 @@ function getCatalogProductCopy(product, language) {
 
 function getCatalogCardClasses(product) {
   const classes = ["product-card"];
+  const categories = getProductCatalogCategories(product);
 
   if (product.featured) {
     classes.push("product-card-featured");
   }
 
-  if ((product.filters || []).includes("tables")) {
+  if (categories.includes("marble-tables")) {
     classes.push("product-card-wide");
   }
 
   return classes.join(" ");
+}
+
+function getProductCatalogCategories(product) {
+  const text = `${product.category || ""} ${product.usage || ""} ${(product.filters || []).join(" ")}`.toLowerCase();
+  const categories = new Set();
+
+  if (/table|console|dining|furniture/.test(text)) {
+    categories.add("marble-tables");
+  }
+
+  if (/sink|basin|pedestal|vessel/.test(text)) {
+    categories.add("marble-sinks-basins");
+    categories.add("bathroom");
+  }
+
+  if (/bathroom|bathtub|tub|vanity/.test(text)) {
+    categories.add("bathroom");
+  }
+
+  if (/project|hotel|villa|showroom|designer|interior|hospitality|retail|collection/.test(text)) {
+    categories.add("project");
+  }
+
+  if (!categories.size && (product.filters || []).includes("bathroom")) {
+    categories.add("bathroom");
+  }
+
+  if (!categories.size && (product.filters || []).includes("project")) {
+    categories.add("project");
+  }
+
+  return Array.from(categories);
 }
 
 function getProductCards() {
@@ -928,7 +961,7 @@ async function renderProductCatalog(language = currentLanguage) {
   productGrid.innerHTML = publishedProducts
     .map((product) => {
       const copy = getCatalogProductCopy(product, language);
-      const categories = (product.filters || []).join(" ");
+      const categories = getProductCatalogCategories(product).join(" ");
       const image = product.image || product.gallery?.[0] || "";
 
       return `
