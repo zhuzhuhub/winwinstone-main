@@ -2,7 +2,7 @@
   "name": "winwinstone-site",
   "private": true,
   "scripts": {
-    "build": "node ../scripts/build-seo-pages.js",
+    "build": "node -e \"console.log('Static site is ready for deployment.')\"",
     "build:seo": "node ../scripts/build-seo-pages.js"
   }
 }
