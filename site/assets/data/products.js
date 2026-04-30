@@ -8,7 +8,7 @@ const PRODUCTS = [
     "featuredOrder": 1,
     "sortOrder": 10,
     "name": "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects",
-    "nameZh": "",
+    "nameZh": "绿色大理石立柱盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -20,28 +20,28 @@ const PRODUCTS = [
       "assets/images/green-luxury-marble-pedestal-sink03.jpg"
     ],
     "badge": "Custom Marble Pedestal Sink",
-    "badgeZh": "",
+    "badgeZh": "定制大理石立柱盆",
     "summary": "Custom size, finish, and export packing for luxury bathroom projects.",
-    "summaryZh": "天然绿色奢石定制玄关展示台，支持尺寸、表面工艺、石材色调和出口包装调整。",
+    "summaryZh": "适用于高端浴室项目，支持尺寸、表面工艺和出口包装定制。",
     "desc": "A sculptural green marble pedestal sink developed for luxury bathrooms, boutique hotels, villas, and designer-led interiors. Built from natural stone with custom sizing, finish options, and export-ready packing.",
-    "descZh": "",
+    "descZh": "这是一款适用于高端浴室、精品酒店、别墅和设计师项目的绿色大理石立柱盆，强调天然石材质感与雕塑感造型。",
     "seo": {
       "title": "Green Marble Pedestal Sink Manufacturer | Custom Luxury Stone Sink",
       "description": "Custom green marble pedestal sink made for luxury bathrooms, hotels, villas, and designer projects. Factory-direct production with custom size, finish, drain detail, and export packing.",
       "keywords": "green marble pedestal sink manufacturer, custom luxury stone sink, custom green marble sink, marble pedestal sink factory China"
     },
     "material": "Natural green marble or similar selected stone",
-    "materialZh": "",
+    "materialZh": "天然绿色大理石或同类精选石材",
     "usage": "Luxury bathrooms, villas, hotels, designer projects",
-    "usageZh": "",
+    "usageZh": "高端浴室、别墅、酒店、设计师项目",
     "finish": "Polished, honed, brushed, or sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光、拉丝或防护处理",
     "moq": "1 piece for sample or custom project",
-    "moqZh": "",
+    "moqZh": "样品或定制项目支持 1 件起订",
     "leadTime": "20-45 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "图纸和材料确认后 20-45 天",
     "intro": "This green marble pedestal sink is designed for buyers who need a strong natural stone statement piece with repeatable production control. It works well for custom bathrooms, hospitality spaces, and premium interior collections where material character matters as much as dimensions and finishing. Before production starts, we can confirm sink size, basin depth, drain position, faucet detail, finish direction, and packing method according to your drawing, reference image, or project requirement.",
-    "introZh": "",
+    "introZh": "这款绿色大理石立柱盆适合需要强烈天然石材视觉效果和稳定量产能力的买家。它常用于定制浴室、精品酒店和高端室内系列。生产前可根据图纸、参考图或项目要求确认尺寸、盆深、排水位置、龙头孔位、表面工艺及出口包装方式。",
     "options": [
       "Custom pedestal sink height, width, basin depth, and overall proportion",
       "Stone selection based on color tone, veining direction, and project preference",
@@ -49,19 +49,31 @@ const PRODUCTS = [
       "Polished, honed, brushed, or other requested finish direction",
       "Protective export packing with foam support and reinforced wooden crates"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制立柱盆高度、宽度、盆深和整体比例",
+      "可按色调、纹理方向和项目偏好挑选石材",
+      "可确认排水位置、龙头孔位、开孔细节和安装配合方式",
+      "支持抛光、哑光、拉丝等表面方向定制",
+      "支持泡沫防护和加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the sink size be customized?",
-        "answer": "Yes. We can produce the pedestal sink according to your bathroom layout, drawing, or target dimensions."
+        "questionZh": "这款台盆可以定制尺寸吗？",
+        "answer": "Yes. We can produce the pedestal sink according to your bathroom layout, drawing, or target dimensions.",
+        "answerZh": "可以。我们可以根据浴室布局、图纸或目标尺寸定制生产。"
       },
       {
         "question": "Can I confirm the marble pattern before production?",
-        "answer": "Yes. For custom orders, we can share slab or block photos and videos before cutting so you can confirm the material direction."
+        "questionZh": "生产前可以确认大理石纹理吗？",
+        "answer": "Yes. For custom orders, we can share slab or block photos and videos before cutting so you can confirm the material direction.",
+        "answerZh": "可以。定制订单在开料前可提供板材或荒料照片、视频，方便你确认颜色和纹理方向。"
       },
       {
         "question": "Is this suitable for export orders?",
-        "answer": "Yes. We prepare natural stone sinks with protective inner packing and reinforced export crates for international shipment."
+        "questionZh": "这款产品适合出口订单吗？",
+        "answer": "Yes. We prepare natural stone sinks with protective inner packing and reinforced export crates for international shipment.",
+        "answerZh": "适合。我们会为天然石材台盆提供内层防护和加固出口木箱包装，支持国际运输。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -95,7 +107,7 @@ const PRODUCTS = [
     "badge": "Custom Green Marble Console Table",
     "badgeZh": "定制绿色奢石玄关台",
     "summary": "Custom size, finish, stone tone, and export packing for luxury green marble entrance hall tables.",
-    "summaryZh": "",
+    "summaryZh": "适合高端玄关和展示空间，支持尺寸、表面工艺、石材色调和出口包装定制。",
     "desc": "A sculptural green marble entrance hall table designed for villas, designer interiors, showrooms, and high-end hospitality spaces.",
     "descZh": "这是一款适用于别墅、设计师空间、展厅和高端商业项目的绿色奢石玄关展示台。",
     "seo": {
@@ -132,15 +144,21 @@ const PRODUCTS = [
     "faqs": [
       {
         "question": "Can the entrance hall table size be customized?",
-        "answer": "Yes. We can customize the length, width, height, tabletop thickness, and base proportion according to your drawing, reference image, or interior layout."
+        "questionZh": "这款玄关台可以定制尺寸吗？",
+        "answer": "Yes. We can customize the length, width, height, tabletop thickness, and base proportion according to your drawing, reference image, or interior layout.",
+        "answerZh": "可以。我们可根据图纸、参考图或空间布局定制长度、宽度、高度、台面厚度和底座比例。"
       },
       {
         "question": "Can I confirm the green marble slab before production?",
-        "answer": "Yes. We can share slab or block photos and videos before cutting so you can confirm the color tone and veining direction."
+        "questionZh": "生产前可以确认绿色石材板面吗？",
+        "answer": "Yes. We can share slab or block photos and videos before cutting so you can confirm the color tone and veining direction.",
+        "answerZh": "可以。开料前可提供板材或荒料照片、视频，方便你确认色调和纹理方向。"
       },
       {
         "question": "Is this stone console table suitable for export orders?",
-        "answer": "Yes. We prepare protective inner packing and reinforced export wooden crates for international delivery of heavy stone furniture."
+        "questionZh": "这款石材玄关台适合出口吗？",
+        "answer": "Yes. We prepare protective inner packing and reinforced export wooden crates for international delivery of heavy stone furniture.",
+        "answerZh": "适合。针对重型石材家具，我们会提供内层防护和加固出口木箱包装，支持国际运输。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -155,7 +173,7 @@ const PRODUCTS = [
     "featuredOrder": 2,
     "sortOrder": 20,
     "name": "Fluted Rectangular White Marble Pedestal Sink",
-    "nameZh": "",
+    "nameZh": "白色大理石竖纹立柱盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -169,28 +187,28 @@ const PRODUCTS = [
       "assets/images/fluted-rectangular-white-marble-pedestal-sink05.jpg"
     ],
     "badge": "Fluted White Marble Sink",
-    "badgeZh": "",
+    "badgeZh": "白色竖纹大理石台盆",
     "summary": "Adaptable dimensions and ribbed details for residential or hospitality use.",
-    "summaryZh": "",
+    "summaryZh": "适合住宅和酒店项目，支持尺寸和竖纹细节定制。",
     "desc": "A fluted rectangular white marble pedestal sink designed for luxury bathrooms, villas, hotels, and high-end interior projects.",
-    "descZh": "",
+    "descZh": "这是一款适用于高端浴室、别墅、酒店和室内项目的白色大理石竖纹立柱盆，造型简洁并带有立体石材纹理。",
     "seo": {
       "title": "Fluted Rectangular White Marble Pedestal Sink | Custom Stone Sink Factory",
       "description": "Custom fluted rectangular white marble pedestal sink for luxury bathrooms, with bespoke size, ribbed surface detail, finish, drain position, and export packing.",
       "keywords": "fluted rectangular white marble pedestal sink, custom marble sink, white marble pedestal sink factory"
     },
     "material": "Natural White Marble",
-    "materialZh": "",
+    "materialZh": "天然白色大理石",
     "usage": "Luxury Bathroom, Hotel, Villa, Interior Project",
-    "usageZh": "",
+    "usageZh": "高端浴室、酒店、别墅、室内项目",
     "finish": "Polished, honed, or custom sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或其他防护表面",
     "moq": "1 piece for sample or project order",
-    "moqZh": "",
+    "moqZh": "样品或项目订单支持 1 件起订",
     "leadTime": "20-45 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "图纸和材料确认后 20-45 天",
     "intro": "This fluted rectangular white marble pedestal sink combines a clean rectangular form with vertical ribbed stone detail. Size, basin depth, fluting style, drain position, faucet hole, finish, and export packing can be customized before production.",
-    "introZh": "",
+    "introZh": "这款白色大理石竖纹立柱盆结合了简洁的矩形轮廓和立体竖纹石材细节。生产前可确认尺寸、盆深、竖纹样式、排水位置、龙头孔位、表面工艺和出口包装方式。",
     "options": [
       "Custom pedestal sink height, width, and basin depth",
       "Fluted or ribbed surface detail customization",
@@ -198,19 +216,31 @@ const PRODUCTS = [
       "Drain position, faucet hole, and installation detail confirmation",
       "Reinforced export wooden crate packing"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制立柱盆高度、宽度和盆体深度",
+      "可定制竖纹或凹槽表面细节",
+      "支持抛光、哑光或防护白色大理石表面",
+      "可确认排水位置、龙头孔位和安装细节",
+      "支持加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the fluted rectangular marble sink size be customized?",
-        "answer": "Yes. We can customize the height, width, basin depth, drain position, and faucet hole according to your drawing or reference photo."
+        "questionZh": "这款竖纹矩形台盆可以定制尺寸吗？",
+        "answer": "Yes. We can customize the height, width, basin depth, drain position, and faucet hole according to your drawing or reference photo.",
+        "answerZh": "可以。我们可根据图纸或参考图定制高度、宽度、盆深、排水位置和龙头孔位。"
       },
       {
         "question": "Can the fluted surface detail be adjusted?",
-        "answer": "Yes. The ribbed detail can be discussed before production, including spacing, depth, and overall visual direction."
+        "questionZh": "竖纹表面细节可以调整吗？",
+        "answer": "Yes. The ribbed detail can be discussed before production, including spacing, depth, and overall visual direction.",
+        "answerZh": "可以。生产前可讨论竖纹间距、深度和整体视觉方向。"
       },
       {
         "question": "Is this white marble pedestal sink suitable for overseas delivery?",
-        "answer": "Yes. We use protective inner packing and reinforced export wooden crates for international natural stone sink delivery."
+        "questionZh": "这款白色大理石立柱盆适合海外运输吗？",
+        "answer": "Yes. We use protective inner packing and reinforced export wooden crates for international natural stone sink delivery.",
+        "answerZh": "适合。我们会使用内层防护和加固出口木箱包装，支持天然石材台盆海外运输。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -227,7 +257,7 @@ const PRODUCTS = [
     "featuredOrder": 3,
     "sortOrder": 30,
     "name": "Custom Marble Vessel Sink",
-    "nameZh": "",
+    "nameZh": "定制大理石台上盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -236,28 +266,28 @@ const PRODUCTS = [
       "assets/images/vessel-sink.jpg"
     ],
     "badge": "Custom Marble Vessel Sink",
-    "badgeZh": "",
+    "badgeZh": "定制大理石台上盆",
     "summary": "A flexible starting point for private residences and boutique bathroom collections.",
-    "summaryZh": "",
+    "summaryZh": "适合作为私人住宅和精品浴室系列的灵活开发款。",
     "desc": "A compact natural stone vessel sink designed for designer collections, bathrooms, and custom project sets.",
-    "descZh": "",
+    "descZh": "这是一款适用于设计师系列、浴室空间和定制项目组合的小型天然石材台上盆。",
     "seo": {
       "title": "Custom Marble Vessel Sink Manufacturer | OEM Stone Basin Supplier",
       "description": "Custom marble vessel sink for bathroom brands, designer collections, and project orders. Factory-direct production with flexible shape, size, material, finish, and export packing.",
       "keywords": "marble vessel sink manufacturer, custom stone basin, handcrafted marble sink"
     },
     "material": "Marble, travertine, onyx, or limestone",
-    "materialZh": "",
+    "materialZh": "大理石、洞石、缟玛瑙或石灰石",
     "usage": "Bathroom Vanity, Designer Collection, Retail Product Line",
-    "usageZh": "",
+    "usageZh": "浴室台面、设计师系列、零售产品线",
     "finish": "Polished, honed, or textured",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或肌理表面",
     "moq": "Flexible sample and batch order",
-    "moqZh": "",
+    "moqZh": "支持灵活打样和批量订单",
     "leadTime": "15-35 days after confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认后 15-35 天",
     "intro": "This vessel sink format is ideal for buyers who want flexible product development. Shape, diameter, thickness, stone material, and finish can be adjusted around your target market.",
-    "introZh": "",
+    "introZh": "这款台上盆适合希望灵活开发产品的买家。可围绕目标市场调整造型、直径、厚度、石材类型和表面工艺，用于品牌系列开发或项目配套。",
     "options": [
       "Round, oval, square, or custom basin shape",
       "Different marble and travertine materials",
@@ -265,19 +295,31 @@ const PRODUCTS = [
       "Logo, label, and packing support for brands",
       "Sample order before batch production"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "支持圆形、椭圆、方形或其他定制盆型",
+      "支持不同大理石和洞石材料选择",
+      "可定制壁厚和排水孔尺寸",
+      "支持品牌 Logo、标签和包装方案",
+      "可先做样品再进入批量生产"
+    ],
     "faqs": [
       {
         "question": "Can I order a sample first?",
-        "answer": "Yes. Sample orders are possible before larger production."
+        "questionZh": "可以先做样品吗？",
+        "answer": "Yes. Sample orders are possible before larger production.",
+        "answerZh": "可以。正式批量生产前可先安排样品。"
       },
       {
         "question": "Can you make different shapes?",
-        "answer": "Yes. Round, oval, rectangular, and custom shapes can be made according to drawings."
+        "questionZh": "可以做不同造型吗？",
+        "answer": "Yes. Round, oval, rectangular, and custom shapes can be made according to drawings.",
+        "answerZh": "可以。可根据图纸制作圆形、椭圆、矩形及其他定制造型。"
       },
       {
         "question": "Is this suitable for retail brands?",
-        "answer": "Yes. We can help with repeatable dimensions, packing, labels, and product-line standardization."
+        "questionZh": "这款产品适合零售品牌吗？",
+        "answer": "Yes. We can help with repeatable dimensions, packing, labels, and product-line standardization.",
+        "answerZh": "适合。我们可以配合统一尺寸、包装、标签和产品线标准化。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -292,7 +334,7 @@ const PRODUCTS = [
     "featuredOrder": 4,
     "sortOrder": 40,
     "name": "Travertine Dining Table for Modern Interiors and OEM Furniture Orders",
-    "nameZh": "",
+    "nameZh": "现代空间用洞石餐桌",
     "category": "Travertine Tables",
     "categoryZh": "洞石餐桌",
     "filters": [],
@@ -305,28 +347,28 @@ const PRODUCTS = [
       "assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg"
     ],
     "badge": "Custom Travertine Dining Table",
-    "badgeZh": "",
+    "badgeZh": "定制洞石餐桌",
     "summary": "A strong starting point for custom dining collections and interior projects.",
-    "summaryZh": "",
+    "summaryZh": "适合作为定制餐桌系列和室内项目的起点款。",
     "desc": "A custom travertine dining table designed for modern interiors, furniture collections, villas, and boutique hospitality spaces. Produced with flexible sizing, base options, finish control, and export-ready packing.",
-    "descZh": "",
+    "descZh": "这是一款适用于现代室内、家具系列、别墅和精品酒店空间的定制洞石餐桌，支持尺寸、底座、表面和出口包装调整。",
     "seo": {
       "title": "Custom Travertine Dining Table Manufacturer | OEM Stone Furniture",
       "description": "Custom travertine dining table for modern interiors, furniture brands, villas, and hospitality projects. Factory-direct production with custom size, base structure, finish, and export packing.",
       "keywords": "custom travertine dining table manufacturer, OEM stone furniture, travertine dining table, custom stone furniture factory"
     },
     "material": "Natural travertine or selected similar stone",
-    "materialZh": "",
+    "materialZh": "天然洞石或同类精选石材",
     "usage": "Dining rooms, villas, furniture brands, hotels, showrooms",
-    "usageZh": "",
+    "usageZh": "餐厅空间、别墅、家具品牌、酒店、展厅",
     "finish": "Filled or unfilled, honed, polished, or sealed finish",
-    "finishZh": "",
+    "finishZh": "补胶或不补胶、哑光、抛光或防护表面",
     "moq": "1 piece for sample or custom order",
-    "moqZh": "",
+    "moqZh": "样品或定制订单支持 1 件起订",
     "leadTime": "25-50 days after drawing confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "图纸确认后 25-50 天",
     "intro": "This travertine dining table is developed for buyers who want warm natural stone texture combined with a clean, architectural furniture form. It can be adapted for one-off interior pieces, sample development, or repeatable OEM/ODM furniture orders. Before production, we can confirm table length, width, height, edge detail, tabletop thickness, base structure, travertine direction, and packing method to match your market or project requirement.",
-    "introZh": "",
+    "introZh": "这款洞石餐桌适合希望把温润天然石材质感与简洁建筑感家具造型结合的买家。可用于单件室内项目、样品开发或可重复的 OEM/ODM 家具订单。生产前可确认长度、宽度、高度、边型、台面厚度、底座结构、洞石方向和包装方式。",
     "options": [
       "Custom tabletop length, width, thickness, and finished height",
       "Filled or unfilled travertine depending on visual and maintenance direction",
@@ -334,19 +376,31 @@ const PRODUCTS = [
       "Pedestal, block, sculptural, or drawing-based base structure",
       "Separated export packing for tabletop and base to support safer delivery"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制台面长度、宽度、厚度和成品高度",
+      "可根据视觉和维护要求选择补胶或不补胶洞石",
+      "支持直边、圆角、倒角等多种边型",
+      "支持柱式、块体、雕塑式或按图纸定制底座",
+      "支持台面与底座分体出口包装，提升运输安全性"
+    ],
     "faqs": [
       {
         "question": "Can the table size be customized?",
-        "answer": "Yes. We can produce the table according to your room layout, product standard, or drawing."
+        "questionZh": "这款餐桌可以定制尺寸吗？",
+        "answer": "Yes. We can produce the table according to your room layout, product standard, or drawing.",
+        "answerZh": "可以。我们可根据空间尺寸、产品标准或图纸定制生产。"
       },
       {
         "question": "Can I choose filled or unfilled travertine?",
-        "answer": "Yes. Both options are available depending on the look, touch, and daily-use requirement you want."
+        "questionZh": "可以选择补胶或不补胶洞石吗？",
+        "answer": "Yes. Both options are available depending on the look, touch, and daily-use requirement you want.",
+        "answerZh": "可以。可根据视觉效果、触感和日常使用要求选择两种方式。"
       },
       {
         "question": "How do you pack heavy stone tables for export?",
-        "answer": "We use reinforced wooden crates, foam protection, and separated packing for the tabletop and base when needed."
+        "questionZh": "重型石材餐桌如何做出口包装？",
+        "answer": "We use reinforced wooden crates, foam protection, and separated packing for the tabletop and base when needed.",
+        "answerZh": "我们会使用加固木箱、泡沫防护，并在需要时将台面和底座分开包装。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
