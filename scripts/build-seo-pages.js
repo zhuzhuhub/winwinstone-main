@@ -348,7 +348,7 @@ function renderProductPage(product) {
       </section>
     </main>
     <script>
-      (function () {
+      window.addEventListener("DOMContentLoaded", function () {
         const pageContent = ${serializeForInlineScript(localizedPageContent)};
         const image = document.getElementById("product-image");
         const gallery = document.getElementById("product-gallery");
@@ -485,7 +485,7 @@ function renderProductPage(product) {
           const nextLanguage = localStorage.getItem("siteLanguage") === "zh" ? "en" : "zh";
           applyLanguage(nextLanguage);
         });
-      })();
+      });
     </script>
   `;
 
