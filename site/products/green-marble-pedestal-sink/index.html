@@ -37,20 +37,20 @@
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img src="../../assets/images/green-luxury-marble-pedestal-sink.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
-            <div class="product-gallery">
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/green-luxury-marble-pedestal-sink.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/green-luxury-marble-pedestal-sink-01.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/green-luxury-marble-pedestal-sink02.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/green-luxury-marble-pedestal-sink03.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
-            </figure></div>
+            <img id="product-image" src="../../assets/images/green-luxury-marble-pedestal-sink.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
+            <div id="product-gallery" class="product-gallery">
+            <button class="product-gallery-thumb is-active" type="button" data-gallery-image="../../assets/images/green-luxury-marble-pedestal-sink.jpg" aria-label="View Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects image 1">
+              <img src="../../assets/images/green-luxury-marble-pedestal-sink.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects view 1">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/green-luxury-marble-pedestal-sink-01.jpg" aria-label="View Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects image 2">
+              <img src="../../assets/images/green-luxury-marble-pedestal-sink-01.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects view 2">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/green-luxury-marble-pedestal-sink02.jpg" aria-label="View Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects image 3">
+              <img src="../../assets/images/green-luxury-marble-pedestal-sink02.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects view 3">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/green-luxury-marble-pedestal-sink03.jpg" aria-label="View Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects image 4">
+              <img src="../../assets/images/green-luxury-marble-pedestal-sink03.jpg" alt="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects view 4">
+            </button></div>
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
@@ -152,6 +152,24 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const image = document.getElementById("product-image");
+        const gallery = document.getElementById("product-gallery");
+        if (!image || !gallery) return;
+
+        gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
+          button.addEventListener("click", () => {
+            image.src = button.dataset.galleryImage;
+            image.alt = button.querySelector("img")?.alt || "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects";
+
+            gallery.querySelectorAll("[data-gallery-image]").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+          });
+        });
+      })();
+    </script>
   
     <footer class="site-footer">
       <div class="container footer-grid">

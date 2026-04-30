@@ -37,23 +37,23 @@
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            <div class="product-gallery">
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors01.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors02.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors03.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
-            </figure></div>
+            <img id="product-image" src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders">
+            <div id="product-gallery" class="product-gallery">
+            <button class="product-gallery-thumb is-active" type="button" data-gallery-image="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg" aria-label="View Travertine Dining Table for Modern Interiors and OEM Furniture Orders image 1">
+              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders view 1">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors01.jpg" aria-label="View Travertine Dining Table for Modern Interiors and OEM Furniture Orders image 2">
+              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors01.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders view 2">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors02.jpg" aria-label="View Travertine Dining Table for Modern Interiors and OEM Furniture Orders image 3">
+              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors02.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders view 3">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors03.jpg" aria-label="View Travertine Dining Table for Modern Interiors and OEM Furniture Orders image 4">
+              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors03.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders view 4">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg" aria-label="View Travertine Dining Table for Modern Interiors and OEM Furniture Orders image 5">
+              <img src="../../assets/images/travertine-marble-dining-table-designed-for-modern-interiors04.jpg" alt="Travertine Dining Table for Modern Interiors and OEM Furniture Orders view 5">
+            </button></div>
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
@@ -159,6 +159,24 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const image = document.getElementById("product-image");
+        const gallery = document.getElementById("product-gallery");
+        if (!image || !gallery) return;
+
+        gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
+          button.addEventListener("click", () => {
+            image.src = button.dataset.galleryImage;
+            image.alt = button.querySelector("img")?.alt || "Travertine Dining Table for Modern Interiors and OEM Furniture Orders";
+
+            gallery.querySelectorAll("[data-gallery-image]").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+          });
+        });
+      })();
+    </script>
   
     <footer class="site-footer">
       <div class="container footer-grid">

@@ -37,23 +37,23 @@
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img src="../../assets/images/calacatta-viola-marble-pedestal-sink.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            <div class="product-gallery">
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink01.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink02.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink03.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink04.jpg" alt="Calacatta Viola Marble Pedestal Sink">
-            </figure></div>
+            <img id="product-image" src="../../assets/images/calacatta-viola-marble-pedestal-sink.jpg" alt="Calacatta Viola Marble Pedestal Sink">
+            <div id="product-gallery" class="product-gallery">
+            <button class="product-gallery-thumb is-active" type="button" data-gallery-image="../../assets/images/calacatta-viola-marble-pedestal-sink.jpg" aria-label="View Calacatta Viola Marble Pedestal Sink image 1">
+              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink.jpg" alt="Calacatta Viola Marble Pedestal Sink view 1">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/calacatta-viola-marble-pedestal-sink01.jpg" aria-label="View Calacatta Viola Marble Pedestal Sink image 2">
+              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink01.jpg" alt="Calacatta Viola Marble Pedestal Sink view 2">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/calacatta-viola-marble-pedestal-sink02.jpg" aria-label="View Calacatta Viola Marble Pedestal Sink image 3">
+              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink02.jpg" alt="Calacatta Viola Marble Pedestal Sink view 3">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/calacatta-viola-marble-pedestal-sink03.jpg" aria-label="View Calacatta Viola Marble Pedestal Sink image 4">
+              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink03.jpg" alt="Calacatta Viola Marble Pedestal Sink view 4">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/calacatta-viola-marble-pedestal-sink04.jpg" aria-label="View Calacatta Viola Marble Pedestal Sink image 5">
+              <img src="../../assets/images/calacatta-viola-marble-pedestal-sink04.jpg" alt="Calacatta Viola Marble Pedestal Sink view 5">
+            </button></div>
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
@@ -155,6 +155,24 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const image = document.getElementById("product-image");
+        const gallery = document.getElementById("product-gallery");
+        if (!image || !gallery) return;
+
+        gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
+          button.addEventListener("click", () => {
+            image.src = button.dataset.galleryImage;
+            image.alt = button.querySelector("img")?.alt || "Calacatta Viola Marble Pedestal Sink";
+
+            gallery.querySelectorAll("[data-gallery-image]").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+          });
+        });
+      })();
+    </script>
   
     <footer class="site-footer">
       <div class="container footer-grid">

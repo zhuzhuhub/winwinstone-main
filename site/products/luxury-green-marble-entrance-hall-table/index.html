@@ -37,23 +37,23 @@
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img src="../../assets/images/luxury-green-marble-entrance-hall-table.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            <div class="product-gallery">
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/luxury-green-marble-entrance-hall-table.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/luxury-green-marble-entrance-hall-table01.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/luxury-green-marble-entrance-hall-table02.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/luxury-green-marble-entrance-hall-table03.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            </figure>
-            <figure class="product-gallery-card">
-              <img src="../../assets/images/luxury-green-marble-entrance-hall-table04.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
-            </figure></div>
+            <img id="product-image" src="../../assets/images/luxury-green-marble-entrance-hall-table.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors">
+            <div id="product-gallery" class="product-gallery">
+            <button class="product-gallery-thumb is-active" type="button" data-gallery-image="../../assets/images/luxury-green-marble-entrance-hall-table.jpg" aria-label="View Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors image 1">
+              <img src="../../assets/images/luxury-green-marble-entrance-hall-table.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors view 1">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/luxury-green-marble-entrance-hall-table01.jpg" aria-label="View Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors image 2">
+              <img src="../../assets/images/luxury-green-marble-entrance-hall-table01.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors view 2">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/luxury-green-marble-entrance-hall-table02.jpg" aria-label="View Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors image 3">
+              <img src="../../assets/images/luxury-green-marble-entrance-hall-table02.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors view 3">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/luxury-green-marble-entrance-hall-table03.jpg" aria-label="View Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors image 4">
+              <img src="../../assets/images/luxury-green-marble-entrance-hall-table03.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors view 4">
+            </button>
+            <button class="product-gallery-thumb" type="button" data-gallery-image="../../assets/images/luxury-green-marble-entrance-hall-table04.jpg" aria-label="View Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors image 5">
+              <img src="../../assets/images/luxury-green-marble-entrance-hall-table04.jpg" alt="Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors view 5">
+            </button></div>
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
@@ -159,6 +159,24 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const image = document.getElementById("product-image");
+        const gallery = document.getElementById("product-gallery");
+        if (!image || !gallery) return;
+
+        gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
+          button.addEventListener("click", () => {
+            image.src = button.dataset.galleryImage;
+            image.alt = button.querySelector("img")?.alt || "Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors";
+
+            gallery.querySelectorAll("[data-gallery-image]").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+          });
+        });
+      })();
+    </script>
   
     <footer class="site-footer">
       <div class="container footer-grid">

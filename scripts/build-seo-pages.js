@@ -108,10 +108,10 @@ function renderProductPage(product) {
   const galleryItems = (product.gallery || []).length ? product.gallery : [product.image].filter(Boolean);
   const galleryHtml = galleryItems
     .map(
-      (image) => `
-            <figure class="product-gallery-card">
-              <img src="../../${escapeHtml(image)}" alt="${escapeHtml(product.name)}">
-            </figure>`
+      (image, index) => `
+            <button class="product-gallery-thumb${index === 0 ? " is-active" : ""}" type="button" data-gallery-image="../../${escapeHtml(image)}" aria-label="View ${escapeHtml(product.name)} image ${index + 1}">
+              <img src="../../${escapeHtml(image)}" alt="${escapeHtml(product.name)} view ${index + 1}">
+            </button>`
     )
     .join("");
   const optionHtml = (product.options || []).map((option) => `<li>${escapeHtml(option)}</li>`).join("");
@@ -139,8 +139,8 @@ function renderProductPage(product) {
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img src="../../${escapeHtml(product.image || galleryItems[0] || "")}" alt="${escapeHtml(product.name)}">
-            <div class="product-gallery">${galleryHtml}</div>
+            <img id="product-image" src="../../${escapeHtml(product.image || galleryItems[0] || "")}" alt="${escapeHtml(product.name)}">
+            <div id="product-gallery" class="product-gallery">${galleryHtml}</div>
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
@@ -214,6 +214,24 @@ function renderProductPage(product) {
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const image = document.getElementById("product-image");
+        const gallery = document.getElementById("product-gallery");
+        if (!image || !gallery) return;
+
+        gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
+          button.addEventListener("click", () => {
+            image.src = button.dataset.galleryImage;
+            image.alt = button.querySelector("img")?.alt || ${JSON.stringify(product.name)};
+
+            gallery.querySelectorAll("[data-gallery-image]").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+          });
+        });
+      })();
+    </script>
   `;
 
   const schema = {
