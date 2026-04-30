@@ -415,7 +415,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 50,
     "name": "Graceful Travertine Dining Table",
-    "nameZh": "",
+    "nameZh": "雅致洞石餐桌",
     "category": "Travertine Tables",
     "categoryZh": "洞石餐桌",
     "filters": [],
@@ -424,28 +424,28 @@ const PRODUCTS = [
       "assets/images/graceful-table.jpg"
     ],
     "badge": "Custom Stone Table",
-    "badgeZh": "",
+    "badgeZh": "定制洞石餐桌",
     "summary": "An elegant travertine dining table with refined leg geometry for residential and commercial interiors.",
-    "summaryZh": "",
+    "summaryZh": "一款适合住宅和商业空间的雅致洞石餐桌，支持尺寸、边型、结构和表面工艺定制。",
     "desc": "An elegant travertine dining table with refined leg geometry for residential and commercial interiors.",
-    "descZh": "",
+    "descZh": "这是一款拥有优雅桌腿比例和自然石材质感的洞石餐桌，适用于住宅餐厅、餐饮空间和设计项目。",
     "seo": {
       "title": "Graceful Travertine Dining Table Factory | OEM Stone Furniture",
       "description": "Factory-direct graceful travertine dining table with custom size, elegant leg geometry, natural stone texture, and OEM/ODM support.",
       "keywords": "travertine dining table factory, OEM stone furniture, custom travertine table"
     },
     "material": "Natural Travertine",
-    "materialZh": "",
+    "materialZh": "天然洞石",
     "usage": "Home, Restaurant, Hotel, Designer Project",
-    "usageZh": "",
+    "usageZh": "住宅、餐厅、酒店、设计项目",
     "finish": "Honed, polished, filled, or unfilled",
-    "finishZh": "",
+    "finishZh": "哑光、抛光、填孔或开放孔表面",
     "moq": "1 piece or batch order",
-    "moqZh": "",
+    "moqZh": "支持 1 张样品或批量订单",
     "leadTime": "25-50 days after confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认后 25-50 天",
     "intro": "This travertine dining table is built for buyers who want a quieter, more refined stone furniture direction. It can be adapted for single projects or repeatable OEM collections.",
-    "introZh": "",
+    "introZh": "这款洞石餐桌适合需要更安静、更精致石材家具方向的买家，可用于单个项目，也适合延伸成稳定量产的 OEM 系列。",
     "options": [
       "Custom tabletop size and thickness",
       "Leg geometry based on reference or drawing",
@@ -453,19 +453,31 @@ const PRODUCTS = [
       "Protective sealing for daily use",
       "Export crate packing for table top and base"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制桌面尺寸和厚度",
+      "桌腿几何造型可按参考图或图纸调整",
+      "可选米黄色、暖黄色或其他洞石材质",
+      "支持日常使用所需的防护密封处理",
+      "桌面与底座可分开做出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can I send a reference design?",
-        "answer": "Yes. You can send photos, sketches, or CAD drawings and we will review the production method."
+        "questionZh": "可以发送参考设计图吗？",
+        "answer": "Yes. You can send photos, sketches, or CAD drawings and we will review the production method.",
+        "answerZh": "可以。你可以发送照片、手稿或 CAD 图纸，我们会评估可行的生产方式。"
       },
       {
         "question": "Can the table be shipped in separate parts?",
-        "answer": "Yes. Heavy stone tables are often packed with top and base separated for safer shipping."
+        "questionZh": "餐桌可以分体运输吗？",
+        "answer": "Yes. Heavy stone tables are often packed with top and base separated for safer shipping.",
+        "answerZh": "可以。重型石材餐桌通常会将桌面和底座分开包装，以提高运输安全性。"
       },
       {
         "question": "Do you make coffee tables too?",
-        "answer": "Yes. Dining tables, coffee tables, side tables, consoles, and plinths can be customized."
+        "questionZh": "也可以做茶几吗？",
+        "answer": "Yes. Dining tables, coffee tables, side tables, consoles, and plinths can be customized.",
+        "answerZh": "可以。餐桌、茶几、边几、玄关台和展示台都可以按需定制。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -482,7 +494,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 60,
     "name": "Minimal Travertine Dining Table",
-    "nameZh": "",
+    "nameZh": "极简洞石餐桌",
     "category": "Travertine Tables",
     "categoryZh": "洞石餐桌",
     "filters": [],
@@ -491,28 +503,28 @@ const PRODUCTS = [
       "assets/images/simple-table.jpg"
     ],
     "badge": "Made-to-Measure Table",
-    "badgeZh": "",
+    "badgeZh": "定制洞石餐桌",
     "summary": "A simple travertine table designed for modern interiors while preserving the natural personality of stone.",
-    "summaryZh": "",
+    "summaryZh": "为现代空间打造的简约洞石餐桌，兼顾天然石材个性与干净利落的家具比例。",
     "desc": "A simple travertine table designed for modern interiors while preserving the natural personality of stone.",
-    "descZh": "",
+    "descZh": "这是一款适合现代住宅、别墅和商业空间的极简洞石餐桌，保留天然石材肌理，同时呈现克制的视觉风格。",
     "seo": {
       "title": "Minimal Travertine Dining Table Supplier | Custom Stone Dining Table",
       "description": "Minimal travertine dining table for modern interiors, villas, showrooms, and furniture collections. Factory-direct production with custom size, edge detail, base structure, finish, and export packing.",
       "keywords": "simple travertine dining table, made to measure stone table, travertine table supplier"
     },
     "material": "Natural Travertine",
-    "materialZh": "",
+    "materialZh": "天然洞石",
     "usage": "Dining Room, Villa, Apartment, Commercial Interior",
-    "usageZh": "",
+    "usageZh": "餐厅、别墅、公寓、商业空间",
     "finish": "Honed, polished, filled, or unfilled",
-    "finishZh": "",
+    "finishZh": "哑光、抛光、填孔或开放孔表面",
     "moq": "1 piece custom order",
-    "moqZh": "",
+    "moqZh": "定制订单 1 张起订",
     "leadTime": "25-45 days after confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认后 25-45 天",
     "intro": "The simple travertine dining table is a practical product direction for buyers who want a clean form, stable production, and easy interior matching.",
-    "introZh": "",
+    "introZh": "这款简约洞石餐桌适合需要干净造型、稳定生产和容易融入空间的买家，是面向现代室内风格的实用产品方向。",
     "options": [
       "Custom table size",
       "Straight or softened edge detail",
@@ -520,19 +532,31 @@ const PRODUCTS = [
       "Different base structures",
       "Packaging for international delivery"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制餐桌尺寸",
+      "可选直边或柔化边细节",
+      "可选填孔或开放孔洞石肌理",
+      "可定制不同底座结构",
+      "支持国际运输包装"
+    ],
     "faqs": [
       {
         "question": "Is travertine suitable for dining tables?",
-        "answer": "Yes, with the right finish, sealing, and daily care, travertine works well for dining tables."
+        "questionZh": "洞石适合做餐桌吗？",
+        "answer": "Yes, with the right finish, sealing, and daily care, travertine works well for dining tables.",
+        "answerZh": "适合。只要采用合适的表面处理、密封和日常维护，洞石可以很好地用于餐桌。"
       },
       {
         "question": "Can the edge detail be changed?",
-        "answer": "Yes. Straight, eased, rounded, bevel, and custom edge details can be discussed."
+        "questionZh": "边型细节可以调整吗？",
+        "answer": "Yes. Straight, eased, rounded, bevel, and custom edge details can be discussed.",
+        "answerZh": "可以。直边、柔化边、圆角、倒角和其他定制边型都可以提前沟通。"
       },
       {
         "question": "Do you provide care advice?",
-        "answer": "Yes. We can share maintenance suggestions for natural stone surfaces."
+        "questionZh": "会提供养护建议吗？",
+        "answer": "Yes. We can share maintenance suggestions for natural stone surfaces.",
+        "answerZh": "会。我们可以提供天然石材表面的日常维护建议。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -547,7 +571,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 70,
     "name": "Natural Marble Bathtub",
-    "nameZh": "",
+    "nameZh": "天然大理石浴缸",
     "category": "Stone Bathtubs",
     "categoryZh": "石材浴缸",
     "filters": [],
@@ -556,28 +580,28 @@ const PRODUCTS = [
       "assets/images/marble-bathtub.jpg"
     ],
     "badge": "Custom Stone Bathtub",
-    "badgeZh": "",
+    "badgeZh": "定制石材浴缸",
     "summary": "A custom natural marble bathtub developed for villa bathrooms, boutique hotels, spas, and high-end interior projects. Produced with flexible dimensions, stone selection, finish options, and export-safe packing.",
-    "summaryZh": "",
+    "summaryZh": "适用于别墅浴室、精品酒店、水疗空间和高端项目，支持尺寸、选材、表面与出口包装定制。",
     "desc": "A custom natural marble bathtub developed for villa bathrooms, boutique hotels, spas, and high-end interior projects. Produced with flexible dimensions, stone selection, finish options, and export-safe packing.",
-    "descZh": "",
+    "descZh": "这是一款为别墅浴室、精品酒店、水疗空间和高端室内项目开发的天然大理石浴缸，支持灵活尺寸和石材方案。",
     "seo": {
       "title": "Natural Marble Bathtub Manufacturer | Custom Luxury Stone Bathtub",
       "description": "Custom natural marble bathtub for villas, hotels, and luxury bathroom projects. Factory-direct production with custom dimensions, stone selection, finish control, inspection, and export packing.",
       "keywords": "natural marble bathtub manufacturer, custom luxury stone bathtub, custom stone bathtub, luxury marble bathtub factory"
     },
     "material": "Natural marble or selected project stone",
-    "materialZh": "",
+    "materialZh": "天然大理石或项目指定石材",
     "usage": "Villas, hotels, spas, luxury bathrooms",
-    "usageZh": "",
+    "usageZh": "别墅、酒店、水疗空间、高端浴室",
     "finish": "Polished, honed, or sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或防护表面处理",
     "moq": "1 piece custom order",
-    "moqZh": "",
+    "moqZh": "定制订单 1 件起订",
     "leadTime": "30-60 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认图纸和材料后 30-60 天",
     "intro": "This marble bathtub is designed for buyers who need a high-value natural stone centerpiece with strong production control from material selection to shipment. Because stone bathtubs involve weight, structure, polishing quality, drain detail, and transport planning, each order needs careful confirmation before fabrication begins. We can review your target size, tub depth, edge profile, drain and overflow detail, finish direction, and packing requirements according to your project drawing or reference image.",
-    "introZh": "",
+    "introZh": "这款大理石浴缸适合需要高价值天然石材视觉焦点并重视生产控制的买家。由于石材浴缸涉及重量、结构、抛光质量、排水细节和运输规划，开料前需要充分确认尺寸、缸深、边型、排水与溢水细节、表面方向和包装要求。",
     "options": [
       "Custom bathtub length, width, depth, and wall thickness",
       "Freestanding or project-specific shape based on drawing",
@@ -585,19 +609,31 @@ const PRODUCTS = [
       "Material selection based on tone, veining, and application direction",
       "Heavy-duty export packing with reinforced structure for stone bathtub shipment"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制浴缸长度、宽度、深度和壁厚",
+      "可按图纸制作独立式或项目专用造型",
+      "生产前确认排水孔和溢水孔位置",
+      "可按色调、纹理和应用方向选材",
+      "支持重型石材浴缸的加固出口包装"
+    ],
     "faqs": [
       {
         "question": "Can the marble bathtub be customized by drawing?",
-        "answer": "Yes. Drawings, reference photos, and target dimensions can all be used to confirm production details."
+        "questionZh": "这款大理石浴缸可以按图纸定制吗？",
+        "answer": "Yes. Drawings, reference photos, and target dimensions can all be used to confirm production details.",
+        "answerZh": "可以。图纸、参考图片和目标尺寸都可以用于确认生产细节。"
       },
       {
         "question": "Is the bathtub very heavy?",
-        "answer": "Yes. Natural stone bathtubs are heavy products, so structure review, packing method, and delivery planning are important."
+        "questionZh": "石材浴缸会很重吗？",
+        "answer": "Yes. Natural stone bathtubs are heavy products, so structure review, packing method, and delivery planning are important.",
+        "answerZh": "会。天然石材浴缸属于重型产品，因此结构审核、包装方式和运输规划都很重要。"
       },
       {
         "question": "Can you provide inspection before shipment?",
-        "answer": "Yes. We can share photos, videos, and factory inspection support before final packing."
+        "questionZh": "出货前可以提供验货吗？",
+        "answer": "Yes. We can share photos, videos, and factory inspection support before final packing.",
+        "answerZh": "可以。最终包装前我们可以提供照片、视频和工厂验货支持。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -612,7 +648,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 80,
     "name": "Red Travertine Dining Table",
-    "nameZh": "",
+    "nameZh": "红色洞石餐桌",
     "category": "Travertine Tables",
     "categoryZh": "洞石餐桌",
     "filters": [],
@@ -624,28 +660,28 @@ const PRODUCTS = [
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room03.jpg"
     ],
     "badge": "Red Travertine Dining Table",
-    "badgeZh": "",
+    "badgeZh": "红色洞石餐桌",
     "summary": "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
-    "summaryZh": "",
+    "summaryZh": "一款为客厅与餐厅空间设计的红色洞石餐桌，适合需要温暖石材质感和视觉焦点家具的空间。",
     "desc": "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
-    "descZh": "",
+    "descZh": "这是一款适用于客厅、餐厅和高端室内项目的红色洞石餐桌，兼具温暖的天然纹理与鲜明的家具存在感。",
     "seo": {
       "title": "Red Travertine Dining Table Manufacturer | Custom Stone Furniture",
       "description": "Custom red travertine dining table for dining rooms, villas, showrooms, and designer interiors. Factory-direct production with custom size, edge detail, base structure, finish, and export packing.",
       "keywords": "red travertine marble dining table, red travertine table for living room, custom stone furniture factory"
     },
     "material": "Natural Red Travertine Marble",
-    "materialZh": "",
+    "materialZh": "天然红色洞石",
     "usage": "Living Room, Dining Room, Villa, Hotel, Interior Project",
-    "usageZh": "",
+    "usageZh": "客厅、餐厅、别墅、酒店、室内项目",
     "finish": "Filled or unfilled, honed, polished, or sealed finish",
-    "finishZh": "",
+    "finishZh": "填孔或开放孔，哑光、抛光或防护表面",
     "moq": "1 piece custom order",
-    "moqZh": "",
+    "moqZh": "定制订单 1 张起订",
     "leadTime": "25-50 days after confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认后 25-50 天",
     "intro": "This red travertine marble dining table is designed for living rooms and refined interiors that need a warmer, more expressive natural stone direction. Table size, stone texture, edge detail, base structure, surface finish, and export packing can be customized before production.",
-    "introZh": "",
+    "introZh": "这款红色洞石餐桌适合需要更温暖、更有表现力天然石材方向的空间。生产前可根据项目确认尺寸、石材纹理、边型、底座结构、表面工艺和出口包装方式。",
     "options": [
       "Custom dining table length, width, and height",
       "Filled or unfilled red travertine marble surface",
@@ -653,19 +689,31 @@ const PRODUCTS = [
       "Custom edge detail and sculptural base structure",
       "Reinforced export wooden crate packing for heavy stone furniture"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制餐桌长度、宽度和高度",
+      "可选填孔或开放孔红洞石表面",
+      "桌面和底座可匹配天然纹理方向",
+      "支持定制边型和雕塑感底座结构",
+      "重型石材家具支持加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the red travertine marble dining table size be customized?",
-        "answer": "Yes. We can produce the table according to your living room size, drawing, or reference photo."
+        "questionZh": "红色洞石餐桌的尺寸可以定制吗？",
+        "answer": "Yes. We can produce the table according to your living room size, drawing, or reference photo.",
+        "answerZh": "可以。我们可以根据你的客厅尺寸、图纸或参考图片定制生产。"
       },
       {
         "question": "Can I choose the red travertine texture before production?",
-        "answer": "Yes. For custom orders, we can share stone photos or videos before cutting so you can confirm the material direction."
+        "questionZh": "生产前可以选择红洞石纹理吗？",
+        "answer": "Yes. For custom orders, we can share stone photos or videos before cutting so you can confirm the material direction.",
+        "answerZh": "可以。定制订单在开料前可提供石材照片或视频，方便你确认材料方向。"
       },
       {
         "question": "How do you pack a heavy stone dining table?",
-        "answer": "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy natural stone furniture."
+        "questionZh": "重型石材餐桌如何包装？",
+        "answer": "We use reinforced wooden crates, inner foam, corner protection, and export packing methods for heavy natural stone furniture.",
+        "answerZh": "我们会使用加固木箱、内层泡沫、护角和出口级包装方式来保护重型天然石材家具。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -682,7 +730,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 90,
     "name": "Calacatta White Marble Pedestal Sink",
-    "nameZh": "",
+    "nameZh": "卡拉卡塔白大理石立柱盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -698,28 +746,28 @@ const PRODUCTS = [
       "assets/images/calacatta-white-marble-pedestal-sink-design07.jpg"
     ],
     "badge": "Calacatta White Marble Sink",
-    "badgeZh": "",
+    "badgeZh": "卡拉卡塔白大理石台盆",
     "summary": "A custom 100% natural Calacatta white marble pedestal sink design for luxury bathrooms and high-end interior projects.",
-    "summaryZh": "",
+    "summaryZh": "一款适用于高端浴室和高端室内项目的 100% 天然卡拉卡塔白大理石立柱盆设计。",
     "desc": "A custom 100% natural Calacatta white marble pedestal sink design for luxury bathrooms and high-end interior projects.",
-    "descZh": "",
+    "descZh": "这是一款为高端浴室和高端室内项目打造的卡拉卡塔白大理石立柱盆，强调天然石材纹理和雕塑感造型。",
     "seo": {
       "title": "Calacatta White Marble Pedestal Sink Manufacturer | Custom Stone Sink",
       "description": "Custom Calacatta white marble pedestal sink for luxury bathrooms, villas, hotels, and designer projects. Factory-direct production with custom size, shape, finish, drain detail, and export packing.",
       "keywords": "Calacatta white marble pedestal sink, custom marble sink design, luxury bathroom stone sink"
     },
     "material": "Natural Calacatta White Marble",
-    "materialZh": "",
+    "materialZh": "天然卡拉卡塔白大理石",
     "usage": "Luxury Bathroom, Hotel, Villa, Project Custom",
-    "usageZh": "",
+    "usageZh": "高端浴室、酒店、别墅、项目定制",
     "finish": "Polished, honed, or custom surface finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或其他定制表面处理",
     "moq": "1 piece for custom projects",
-    "moqZh": "",
+    "moqZh": "定制项目 1 件起订",
     "leadTime": "20-45 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认图纸和材料后 20-45 天",
     "intro": "This Calacatta white marble pedestal sink design is made for luxury bathrooms that need a sculptural natural stone focal point. Shape, size, finish, drain position, and packing can be customized according to project requirements.",
-    "introZh": "",
+    "introZh": "这款卡拉卡塔白大理石立柱盆适合需要天然石材视觉焦点的高端浴室空间。产品的形状、尺寸、表面工艺、排水位置和包装方式都可以根据项目需求定制。",
     "options": [
       "Custom pedestal sink shape and proportion",
       "Custom size based on bathroom layout or drawing",
@@ -727,19 +775,31 @@ const PRODUCTS = [
       "Drain position and faucet hole confirmation",
       "Export wooden crate packing for international delivery"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制立柱盆造型和整体比例",
+      "可按浴室布局或图纸定制尺寸",
+      "支持抛光、哑光或防护表面处理",
+      "可确认排水位置和龙头开孔细节",
+      "支持国际运输出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can this marble sink design be customized?",
-        "answer": "Yes. The shape, size, finish, drain position, and faucet hole can be customized before production."
+        "questionZh": "这款大理石台盆设计可以定制吗？",
+        "answer": "Yes. The shape, size, finish, drain position, and faucet hole can be customized before production.",
+        "answerZh": "可以。产品的造型、尺寸、表面工艺、排水位置和龙头开孔都可以在生产前确认定制。"
       },
       {
         "question": "Is it made from natural marble?",
-        "answer": "Yes. This product is made from 100% natural Calacatta white marble."
+        "questionZh": "它是天然大理石制作的吗？",
+        "answer": "Yes. This product is made from 100% natural Calacatta white marble.",
+        "answerZh": "是的。这款产品采用 100% 天然卡拉卡塔白大理石制作。"
       },
       {
         "question": "What should I send for a quote?",
-        "answer": "Please send the size, quantity, finish, delivery country, and any reference photo or drawing."
+        "questionZh": "询价时需要提供什么信息？",
+        "answer": "Please send the size, quantity, finish, delivery country, and any reference photo or drawing.",
+        "answerZh": "请提供尺寸、数量、表面要求、收货国家以及参考图片或图纸。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -756,7 +816,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 100,
     "name": "Calacatta Viola Marble Pedestal Sink",
-    "nameZh": "",
+    "nameZh": "卡拉卡塔紫大理石立柱盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -769,28 +829,28 @@ const PRODUCTS = [
       "assets/images/calacatta-viola-marble-pedestal-sink04.jpg"
     ],
     "badge": "Calacatta Viola Marble Sink",
-    "badgeZh": "",
+    "badgeZh": "卡拉卡塔紫大理石台盆",
     "summary": "A sculptural Calacatta Viola marble pedestal sink for luxury bathrooms, boutique hotels, villas, and high-end interior projects.",
-    "summaryZh": "",
+    "summaryZh": "一款适用于高端浴室、精品酒店、别墅和高端室内项目的卡拉卡塔紫大理石立柱盆。",
     "desc": "A sculptural Calacatta Viola marble pedestal sink for luxury bathrooms, boutique hotels, villas, and high-end interior projects.",
-    "descZh": "",
+    "descZh": "这是一款利用强烈天然纹理打造视觉焦点的卡拉卡塔紫大理石立柱盆，适用于高端浴室和精品空间。",
     "seo": {
       "title": "Calacatta Viola Marble Pedestal Sink Manufacturer | Custom Stone Sink",
       "description": "Custom Calacatta Viola marble pedestal sink for luxury bathrooms, villas, hotels, and designer projects. Factory-direct production with custom size, shape, finish, drain detail, and export packing.",
       "keywords": "Calacatta Viola marble pedestal sink, custom marble sink factory, luxury bathroom stone sink"
     },
     "material": "Natural Calacatta Viola Marble",
-    "materialZh": "",
+    "materialZh": "天然卡拉卡塔紫大理石",
     "usage": "Luxury Bathroom, Hotel, Villa, Project Custom",
-    "usageZh": "",
+    "usageZh": "高端浴室、酒店、别墅、项目定制",
     "finish": "Polished, honed, or custom sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或其他防护表面处理",
     "moq": "1 piece for custom projects",
-    "moqZh": "",
+    "moqZh": "定制项目 1 件起订",
     "leadTime": "20-45 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认图纸和材料后 20-45 天",
     "intro": "This Calacatta Viola marble pedestal sink uses dramatic natural veining to create a strong bathroom centerpiece. The size, sink shape, surface finish, drain position, faucet hole, and packing method can be customized before production.",
-    "introZh": "",
+    "introZh": "这款卡拉卡塔紫大理石立柱盆通过戏剧性的天然纹理形成鲜明的浴室视觉焦点。尺寸、盆体造型、表面工艺、排水位置、龙头开孔和包装方式都可以在生产前确认定制。",
     "options": [
       "Custom pedestal sink height, width, and basin shape",
       "Calacatta Viola marble block or slab selection",
@@ -798,19 +858,31 @@ const PRODUCTS = [
       "Drain position, faucet hole, and installation detail confirmation",
       "Reinforced export wooden crate packing"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制立柱盆高度、宽度和盆体形状",
+      "可选择卡拉卡塔紫大理石板材或荒料",
+      "支持抛光、哑光或防护表面处理",
+      "可确认排水位置、龙头开孔和安装细节",
+      "支持加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the Calacatta Viola pedestal sink size be customized?",
-        "answer": "Yes. We can produce the sink according to your bathroom dimensions, drawing, or reference photo."
+        "questionZh": "卡拉卡塔紫立柱盆的尺寸可以定制吗？",
+        "answer": "Yes. We can produce the sink according to your bathroom dimensions, drawing, or reference photo.",
+        "answerZh": "可以。我们可以根据你的浴室尺寸、图纸或参考图片定制生产。"
       },
       {
         "question": "Can I confirm the marble veining before production?",
-        "answer": "Yes. For custom project orders, we can share material photos or videos before cutting so you can confirm the stone direction."
+        "questionZh": "生产前可以确认大理石纹理吗？",
+        "answer": "Yes. For custom project orders, we can share material photos or videos before cutting so you can confirm the stone direction.",
+        "answerZh": "可以。定制项目在开料前可提供材料照片或视频，方便确认石材方向和纹理效果。"
       },
       {
         "question": "Is this suitable for overseas delivery?",
-        "answer": "Yes. We use protective inner packing and reinforced export wooden crates for natural stone sinks."
+        "questionZh": "这款产品适合海外运输吗？",
+        "answer": "Yes. We use protective inner packing and reinforced export wooden crates for natural stone sinks.",
+        "answerZh": "适合。我们会为天然石材台盆提供内层防护和加固出口木箱包装。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -825,7 +897,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 110,
     "name": "Freestanding Cylindrical Marble Pedestal Sink",
-    "nameZh": "",
+    "nameZh": "独立式圆柱大理石立柱盆",
     "category": "Marble Sinks",
     "categoryZh": "石材台盆",
     "filters": [],
@@ -842,28 +914,28 @@ const PRODUCTS = [
       "assets/images/freestanding-cylindrical-pedestal-sink-grey-marble.jpg"
     ],
     "badge": "Freestanding Marble Sink",
-    "badgeZh": "",
+    "badgeZh": "独立式大理石台盆",
     "summary": "A freestanding cylindrical marble pedestal sink for luxury bathrooms, hotels, villas, and custom stone bathroom collections.",
-    "summaryZh": "",
+    "summaryZh": "一款适用于高端浴室、酒店、别墅和定制石材浴室系列的独立式圆柱大理石立柱盆。",
     "desc": "A freestanding cylindrical marble pedestal sink for luxury bathrooms, hotels, villas, and custom stone bathroom collections.",
-    "descZh": "",
+    "descZh": "这是一款适用于高端浴室、酒店和别墅项目的独立式圆柱大理石立柱盆，拥有干净的雕塑造型和鲜明的天然石材质感。",
     "seo": {
       "title": "Freestanding Cylindrical Marble Pedestal Sink | Custom Stone Sink Factory",
       "description": "Custom freestanding cylindrical marble pedestal sink in black, green, grey, or selected natural stone, with bespoke size, drain detail, finish, and export packing.",
       "keywords": "freestanding cylindrical pedestal sink, marble pedestal sink, custom stone sink factory"
     },
     "material": "Black marble, green marble, grey marble, or custom natural stone",
-    "materialZh": "",
+    "materialZh": "黑色大理石、绿色大理石、灰色大理石或其他天然石材",
     "usage": "Luxury Bathroom, Hotel, Villa, Interior Project, OEM Collection",
-    "usageZh": "",
+    "usageZh": "高端浴室、酒店、别墅、室内项目、OEM 系列",
     "finish": "Polished, honed, or custom sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或其他防护表面处理",
     "moq": "1 piece for custom projects",
-    "moqZh": "",
+    "moqZh": "定制项目 1 件起订",
     "leadTime": "20-45 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认图纸和材料后 20-45 天",
     "intro": "This freestanding cylindrical pedestal sink is designed for buyers who need a clean sculptural sink form with strong natural stone character. The material, cylinder size, basin depth, drain position, faucet hole, surface finish, and packing method can be customized before production.",
-    "introZh": "",
+    "introZh": "这款独立式圆柱立柱盆适合需要干净雕塑感造型和明显天然石材质感的买家。材料、圆柱尺寸、盆深、排水位置、龙头开孔、表面工艺和包装方式都可以在生产前定制确认。",
     "options": [
       "Custom cylinder height, diameter, and basin depth",
       "Black, green, grey, or other natural marble options",
@@ -871,19 +943,31 @@ const PRODUCTS = [
       "Drain position, faucet hole, and installation detail confirmation",
       "Reinforced export wooden crate packing for international delivery"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制圆柱高度、直径和盆深",
+      "可选黑色、绿色、灰色或其他天然大理石",
+      "支持抛光、哑光或防护表面处理",
+      "可确认排水位置、龙头开孔和安装细节",
+      "支持国际运输加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the cylindrical pedestal sink be made in another marble?",
-        "answer": "Yes. Black, green, grey, white, travertine, and other natural stone materials can be discussed according to your project direction."
+        "questionZh": "这款圆柱立柱盆可以换成其他大理石吗？",
+        "answer": "Yes. Black, green, grey, white, travertine, and other natural stone materials can be discussed according to your project direction.",
+        "answerZh": "可以。可根据项目方向选择黑色、绿色、灰色、白色、洞石或其他天然石材。"
       },
       {
         "question": "Can the size and drain position be customized?",
-        "answer": "Yes. We can customize the cylinder height, diameter, basin depth, drain position, and faucet hole before production."
+        "questionZh": "尺寸和排水位置可以定制吗？",
+        "answer": "Yes. We can customize the cylinder height, diameter, basin depth, drain position, and faucet hole before production.",
+        "answerZh": "可以。圆柱高度、直径、盆深、排水位置和龙头开孔都可以在生产前定制确认。"
       },
       {
         "question": "Is this suitable for hotel or villa projects?",
-        "answer": "Yes. This freestanding marble sink is suitable for hotels, villas, boutique bathrooms, and OEM bathroom product lines."
+        "questionZh": "这款产品适合酒店或别墅项目吗？",
+        "answer": "Yes. This freestanding marble sink is suitable for hotels, villas, boutique bathrooms, and OEM bathroom product lines.",
+        "answerZh": "适合。这款独立式大理石台盆适用于酒店、别墅、精品浴室和 OEM 浴室产品线。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
@@ -898,7 +982,7 @@ const PRODUCTS = [
     "featuredOrder": null,
     "sortOrder": 120,
     "name": "Modern Calacatta White Marble Fireplace Surround",
-    "nameZh": "",
+    "nameZh": "现代卡拉卡塔白大理石壁炉框",
     "category": "Fireplace Surrounds",
     "categoryZh": "壁炉饰面",
     "filters": [],
@@ -911,28 +995,28 @@ const PRODUCTS = [
       "assets/images/modern-pink-marble-fireplace-surround.jpg"
     ],
     "badge": "Custom Marble Fireplace",
-    "badgeZh": "",
+    "badgeZh": "定制大理石壁炉",
     "summary": "A modern Calacatta white marble fireplace surround for living rooms, villas, hotels, and high-end interior projects.",
-    "summaryZh": "",
+    "summaryZh": "一款适用于客厅、别墅、酒店和高端室内项目的现代卡拉卡塔白大理石壁炉框。",
     "desc": "A modern Calacatta white marble fireplace surround for living rooms, villas, hotels, and high-end interior projects.",
-    "descZh": "",
+    "descZh": "这是一款适用于客厅、别墅、酒店和高端室内项目的现代卡拉卡塔白大理石壁炉框，适合作为空间中的天然石材视觉焦点。",
     "seo": {
       "title": "Modern Calacatta White Marble Fireplace Surround | Custom Stone Fireplace",
       "description": "Custom modern Calacatta white marble fireplace surround for villas, living rooms, hotels, and interior projects, with bespoke size, profile, finish, and export packing.",
       "keywords": "modern Calacatta white marble fireplace surround, custom marble fireplace, stone fireplace surround factory"
     },
     "material": "Natural Calacatta White Marble, pink marble, or custom natural stone",
-    "materialZh": "",
+    "materialZh": "天然卡拉卡塔白大理石、粉色大理石或其他天然石材",
     "usage": "Living Room, Villa, Hotel, Interior Project, Custom Fireplace",
-    "usageZh": "",
+    "usageZh": "客厅、别墅、酒店、室内项目、定制壁炉",
     "finish": "Polished, honed, or custom sealed finish",
-    "finishZh": "",
+    "finishZh": "抛光、哑光或其他防护表面处理",
     "moq": "1 set for custom projects",
-    "moqZh": "",
+    "moqZh": "定制项目 1 套起订",
     "leadTime": "25-50 days after drawing and material confirmation",
-    "leadTimeZh": "",
+    "leadTimeZh": "确认图纸和材料后 25-50 天",
     "intro": "This modern marble fireplace surround is designed for interiors that need a refined natural stone focal point. Overall size, stone material, profile detail, side panels, mantel proportion, surface finish, and export packing can be customized before production.",
-    "introZh": "",
+    "introZh": "这款现代大理石壁炉框适合需要精致天然石材焦点的室内空间。整体尺寸、石材种类、线条造型、侧板、台帽比例、表面工艺和出口包装都可以在生产前确认定制。",
     "options": [
       "Custom fireplace surround width, height, and depth",
       "Calacatta white marble, pink marble, or selected natural stone",
@@ -940,19 +1024,31 @@ const PRODUCTS = [
       "Polished, honed, or sealed surface finish",
       "Reinforced export wooden crate packing for stone fireplace pieces"
     ],
-    "optionsZh": [],
+    "optionsZh": [
+      "可定制壁炉框宽度、高度和深度",
+      "可选卡拉卡塔白、粉色大理石或其他天然石材",
+      "可定制台帽、侧板和线条细节",
+      "支持抛光、哑光或防护表面处理",
+      "支持石材壁炉部件加固出口木箱包装"
+    ],
     "faqs": [
       {
         "question": "Can the marble fireplace surround size be customized?",
-        "answer": "Yes. We can produce the surround according to your wall opening, drawing, reference photo, or project measurement."
+        "questionZh": "大理石壁炉框的尺寸可以定制吗？",
+        "answer": "Yes. We can produce the surround according to your wall opening, drawing, reference photo, or project measurement.",
+        "answerZh": "可以。我们可以根据墙体开口、图纸、参考图片或现场尺寸定制生产。"
       },
       {
         "question": "Can I choose another marble material?",
-        "answer": "Yes. Calacatta white marble, pink marble, travertine, limestone, and other natural stones can be discussed."
+        "questionZh": "可以选择其他大理石材料吗？",
+        "answer": "Yes. Calacatta white marble, pink marble, travertine, limestone, and other natural stones can be discussed.",
+        "answerZh": "可以。卡拉卡塔白、粉色大理石、洞石、石灰石和其他天然石材都可以沟通选择。"
       },
       {
         "question": "How do you pack fireplace surround pieces for export?",
-        "answer": "We separate and protect the stone pieces with foam, corner protection, and reinforced wooden crates for international shipping."
+        "questionZh": "壁炉框出口时如何包装？",
+        "answer": "We separate and protect the stone pieces with foam, corner protection, and reinforced wooden crates for international shipping.",
+        "answerZh": "我们会将石材部件分开保护，配合泡沫、护角和加固木箱进行国际运输包装。"
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
