@@ -18,6 +18,31 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+function hasChineseText(value) {
+  return /[\u3400-\u9fff]/.test(String(value || ""));
+}
+
+function getLocalizedText(zhValue, enValue) {
+  return hasChineseText(zhValue) ? String(zhValue) : String(enValue || "");
+}
+
+function getLocalizedList(zhList, enList) {
+  return Array.isArray(zhList) && zhList.length ? zhList : enList;
+}
+
+function splitLocalizedUsage(value, fallbackItems) {
+  const usageItems = String(value || "")
+    .split(/[,\uFF0C]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  return usageItems.length ? usageItems : fallbackItems;
+}
+
+function serializeForInlineScript(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
 function stripTags(value) {
   return String(value || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -42,7 +67,7 @@ function splitUsage(value) {
     .filter(Boolean);
 }
 
-function renderLayout({ title, description, keywords = "", canonicalPath, ogType, ogImage, body, schema }) {
+function renderLayout({ title, description, keywords = "", canonicalPath, ogType, ogImage, body, schema, headerControls = "" }) {
   const canonicalUrl = `${siteUrl}${canonicalPath}`;
   return `<!doctype html>
 <html lang="en">
@@ -76,6 +101,7 @@ function renderLayout({ title, description, keywords = "", canonicalPath, ogType
           <a href="../../index.html#service">OEM/ODM</a>
           <a href="../../index.html#contact">Contact</a>
         </div>
+        ${headerControls}
       </nav>
     </header>
     ${body}
@@ -115,16 +141,6 @@ function renderProductPage(product) {
             </button>`
     )
     .join("");
-  const optionHtml = (product.options || []).map((option) => `<li>${escapeHtml(option)}</li>`).join("");
-  const faqHtml = (product.faqs || [])
-    .map(
-      (faq) => `
-            <article>
-              <h3>${escapeHtml(faq.question)}</h3>
-              <p>${escapeHtml(faq.answer)}</p>
-            </article>`
-    )
-    .join("");
   const usageHtml = usageItems
     .map(
       (item, index) => `
@@ -134,6 +150,114 @@ function renderProductPage(product) {
             </article>`
     )
     .join("");
+  const localizedPageContent = {
+    en: {
+      browserTitle: title,
+      navProducts: "Products",
+      navBlog: "Blog",
+      navOem: "OEM/ODM",
+      navContact: "Contact",
+      languageLabel: "中文",
+      backToProducts: "Back to products",
+      badge: product.badge || product.category || "Custom Natural Stone",
+      title: product.name,
+      lede: product.desc || product.summary || "",
+      whatsappLabel: "Send Drawing on WhatsApp",
+      emailLabel: "Request Quote by Email",
+      actionNote: "Send your target size, quantity, finish, and reference photo or drawing for factory review.",
+      quickFactsLabel: "Quick product facts",
+      labels: {
+        material: "Material",
+        finish: "Finish",
+        moq: "MOQ",
+        leadTime: "Lead Time",
+        usage: "Usage"
+      },
+      values: {
+        material: product.material || "Natural stone",
+        finish: product.finish || "Polished or honed",
+        moq: product.moq || "1 piece",
+        leadTime: product.leadTime || "20-45 days",
+        usage: product.usage || ""
+      },
+      sections: {
+        overviewEyebrow: "Product Overview",
+        overviewTitle: "Built around your drawing, material, and market requirement.",
+        overviewText: product.intro || product.summary || "",
+        applicationsEyebrow: "Applications",
+        applicationsTitle: "Where buyers typically use this product.",
+        applicationsText:
+          "Use these directions to match the product to your collection, project type, or target market before requesting a quote.",
+        customEyebrow: "Custom Options",
+        customTitle: "Tell us what you need to change before production starts.",
+        customText:
+          "Most buyers confirm size, finish, structure, and packing first. Use this section to identify the details you want quoted or adjusted.",
+        faqEyebrow: "Buyer Questions",
+        faqTitle: "Common questions before ordering custom stone products.",
+        faqText:
+          "These are the questions buyers usually ask before moving from reference stage to quote confirmation and production review."
+      },
+      usageItems,
+      optionItems: product.options || [],
+      faqItems: (product.faqs || []).map((faq) => ({
+        question: faq.question,
+        answer: faq.answer
+      })),
+      footerText:
+        "Factory-backed natural stone manufacturing with OEM/ODM support, custom production, and export-ready delivery."
+    },
+    zh: {
+      browserTitle: `${getLocalizedText(product.nameZh, product.name)} | Win-Win Stone`,
+      navProducts: "产品",
+      navBlog: "博客",
+      navOem: "定制服务",
+      navContact: "联系",
+      languageLabel: "EN",
+      backToProducts: "返回产品目录",
+      badge: getLocalizedText(product.badgeZh, product.badge || product.category || "定制天然石材"),
+      title: getLocalizedText(product.nameZh, product.name),
+      lede: getLocalizedText(product.descZh, product.desc || product.summary || ""),
+      whatsappLabel: "WhatsApp 发图询价",
+      emailLabel: "邮件获取报价",
+      actionNote: "发送目标尺寸、数量、表面工艺和参考图纸，我们会先做工厂评估。",
+      quickFactsLabel: "产品要点",
+      labels: {
+        material: "材料",
+        finish: "表面",
+        moq: "起订量",
+        leadTime: "交期",
+        usage: "用途"
+      },
+      values: {
+        material: getLocalizedText(product.materialZh, product.material || "天然石材"),
+        finish: getLocalizedText(product.finishZh, product.finish || "抛光或哑光"),
+        moq: getLocalizedText(product.moqZh, product.moq || "1 件起订"),
+        leadTime: getLocalizedText(product.leadTimeZh, product.leadTime || "20-45 天"),
+        usage: getLocalizedText(product.usageZh, product.usage || "")
+      },
+      sections: {
+        overviewEyebrow: "产品概览",
+        overviewTitle: "围绕图纸、材料和市场需求定制生产。",
+        overviewText: getLocalizedText(product.introZh, product.intro || product.summary || ""),
+        applicationsEyebrow: "适用场景",
+        applicationsTitle: "买家通常会把这款产品用在哪里。",
+        applicationsText: "先用这些应用方向判断它是否适合你的系列、项目类型或目标市场，再决定是否询价。",
+        customEyebrow: "可定制项",
+        customTitle: "生产前可确认和调整的内容。",
+        customText: "多数买家会先确认尺寸、表面、结构和包装，再推进报价和打样。",
+        faqEyebrow: "常见问题",
+        faqTitle: "下单前买家最常问的几个问题。",
+        faqText: "这些问题通常会在参考款确认之后、报价和生产前被先行确认。"
+      },
+      usageItems: splitLocalizedUsage(product.usageZh, usageItems),
+      optionItems: getLocalizedList(product.optionsZh, product.options || []),
+      faqItems: (product.faqs || []).map((faq) => ({
+        question: getLocalizedText(faq.questionZh, faq.question),
+        answer: getLocalizedText(faq.answerZh, faq.answer)
+      })),
+      footerText: "依托工厂的天然石材生产能力，支持 OEM/ODM、定制加工和出口交付。"
+    }
+  };
 
   const body = `
     <main id="main">
@@ -145,21 +269,21 @@ function renderProductPage(product) {
           </div>
           <div class="product-detail-copy">
             <a class="text-link product-back-link" href="../../products.html">
-              <span>Back to products</span>
+              <span id="product-back-link-text">Back to products</span>
             </a>
-            <p class="eyebrow">${escapeHtml(product.badge || product.category || "Custom Natural Stone")}</p>
+            <p class="eyebrow" id="product-badge">${escapeHtml(product.badge || product.category || "Custom Natural Stone")}</p>
             <h1 id="product-title">${escapeHtml(product.name)}</h1>
-            <p class="product-detail-lede">${escapeHtml(product.desc || product.summary || "")}</p>
+            <p class="product-detail-lede" id="product-lede">${escapeHtml(product.desc || product.summary || "")}</p>
             <div class="product-detail-actions">
-              <a class="button primary" href="https://wa.me/13927192948" target="_blank" rel="noopener">Send Drawing on WhatsApp</a>
-              <a class="button ghost" href="mailto:stone2lisa@outlook.com">Request Quote by Email</a>
+              <a class="button primary" id="product-whatsapp" href="https://wa.me/13927192948" target="_blank" rel="noopener">Send Drawing on WhatsApp</a>
+              <a class="button ghost" id="product-email" href="mailto:stone2lisa@outlook.com">Request Quote by Email</a>
             </div>
-            <p class="product-action-note">Send your target size, quantity, finish, and reference photo or drawing for factory review.</p>
-            <div class="product-quick-grid" aria-label="Quick product facts">
-              <article><span>Material</span><strong>${escapeHtml(product.material || "Natural stone")}</strong></article>
-              <article><span>Finish</span><strong>${escapeHtml(product.finish || "Polished or honed")}</strong></article>
-              <article><span>MOQ</span><strong>${escapeHtml(product.moq || "1 piece")}</strong></article>
-              <article><span>Lead Time</span><strong>${escapeHtml(product.leadTime || "20-45 days")}</strong></article>
+            <p class="product-action-note" id="product-action-note">Send your target size, quantity, finish, and reference photo or drawing for factory review.</p>
+            <div class="product-quick-grid" id="product-quick-grid" aria-label="Quick product facts">
+              <article><span id="label-material">Material</span><strong id="value-material">${escapeHtml(product.material || "Natural stone")}</strong></article>
+              <article><span id="label-finish">Finish</span><strong id="value-finish">${escapeHtml(product.finish || "Polished or honed")}</strong></article>
+              <article><span id="label-moq">MOQ</span><strong id="value-moq">${escapeHtml(product.moq || "1 piece")}</strong></article>
+              <article><span id="label-leadTime">Lead Time</span><strong id="value-leadTime">${escapeHtml(product.leadTime || "20-45 days")}</strong></article>
             </div>
           </div>
         </div>
@@ -168,16 +292,16 @@ function renderProductPage(product) {
       <section class="product-detail-section section-pad">
         <div class="container product-detail-columns">
           <div>
-            <p class="eyebrow">Product Overview</p>
-            <h2>Built around your drawing, material, and market requirement.</h2>
-            <p>${escapeHtml(product.intro || product.summary || "")}</p>
+            <p class="eyebrow" id="overview-eyebrow">Product Overview</p>
+            <h2 id="overview-title">Built around your drawing, material, and market requirement.</h2>
+            <p id="overview-text">${escapeHtml(product.intro || product.summary || "")}</p>
           </div>
-          <div class="product-spec-panel" aria-label="Product specifications">
-            <div><span>Material</span><strong>${escapeHtml(product.material || "")}</strong></div>
-            <div><span>Usage</span><strong>${escapeHtml(product.usage || "")}</strong></div>
-            <div><span>Finish</span><strong>${escapeHtml(product.finish || "")}</strong></div>
-            <div><span>MOQ</span><strong>${escapeHtml(product.moq || "")}</strong></div>
-            <div><span>Lead Time</span><strong>${escapeHtml(product.leadTime || "")}</strong></div>
+          <div class="product-spec-panel" id="product-spec-panel" aria-label="Product specifications">
+            <div><span id="spec-label-material">Material</span><strong id="spec-value-material">${escapeHtml(product.material || "")}</strong></div>
+            <div><span id="spec-label-usage">Usage</span><strong id="spec-value-usage">${escapeHtml(product.usage || "")}</strong></div>
+            <div><span id="spec-label-finish">Finish</span><strong id="spec-value-finish">${escapeHtml(product.finish || "")}</strong></div>
+            <div><span id="spec-label-moq">MOQ</span><strong id="spec-value-moq">${escapeHtml(product.moq || "")}</strong></div>
+            <div><span id="spec-label-leadTime">Lead Time</span><strong id="spec-value-leadTime">${escapeHtml(product.leadTime || "")}</strong></div>
           </div>
         </div>
       </section>
@@ -185,41 +309,163 @@ function renderProductPage(product) {
       <section class="product-detail-section section-pad">
         <div class="container product-detail-columns">
           <div>
-            <p class="eyebrow">Applications</p>
-            <h2>Where buyers typically use this product.</h2>
-            <p>Use these directions to match the product to your collection, project type, or target market before requesting a quote.</p>
+            <p class="eyebrow" id="applications-eyebrow">Applications</p>
+            <h2 id="applications-title">Where buyers typically use this product.</h2>
+            <p id="applications-text">Use these directions to match the product to your collection, project type, or target market before requesting a quote.</p>
           </div>
-          <div class="product-usage-grid" aria-label="Product use cases">${usageHtml}</div>
+          <div class="product-usage-grid" id="product-usage-grid" aria-label="Product use cases">${usageHtml}</div>
         </div>
       </section>
 
       <section class="product-detail-section product-custom-section section-pad">
         <div class="container product-detail-columns">
           <div>
-            <p class="eyebrow">Custom Options</p>
-            <h2>Tell us what you need to change before production starts.</h2>
-            <p>Most buyers confirm size, finish, structure, and packing first. Use this section to identify the details you want quoted or adjusted.</p>
+            <p class="eyebrow" id="custom-eyebrow">Custom Options</p>
+            <h2 id="custom-title">Tell us what you need to change before production starts.</h2>
+            <p id="custom-text">Most buyers confirm size, finish, structure, and packing first. Use this section to identify the details you want quoted or adjusted.</p>
           </div>
-          <ul class="product-option-list">${optionHtml}</ul>
+          <ul class="product-option-list" id="product-option-list">${(product.options || []).map((option) => `<li>${escapeHtml(option)}</li>`).join("")}</ul>
         </div>
       </section>
 
       <section class="product-detail-section section-pad">
         <div class="container product-detail-columns">
           <div>
-            <p class="eyebrow">Buyer Questions</p>
-            <h2>Common questions before ordering custom stone products.</h2>
-            <p>These are the questions buyers usually ask before moving from reference stage to quote confirmation and production review.</p>
+            <p class="eyebrow" id="faq-eyebrow">Buyer Questions</p>
+            <h2 id="faq-title">Common questions before ordering custom stone products.</h2>
+            <p id="faq-text">These are the questions buyers usually ask before moving from reference stage to quote confirmation and production review.</p>
           </div>
-          <div class="product-faq-list">${faqHtml}</div>
+          <div class="product-faq-list" id="product-faq-list">${(product.faqs || [])
+            .map(
+              (faq) => `
+            <article>
+              <h3>${escapeHtml(faq.question)}</h3>
+              <p>${escapeHtml(faq.answer)}</p>
+            </article>`
+            )
+            .join("")}</div>
         </div>
       </section>
     </main>
     <script>
       (function () {
+        const pageContent = ${serializeForInlineScript(localizedPageContent)};
         const image = document.getElementById("product-image");
         const gallery = document.getElementById("product-gallery");
+        const languageToggle = document.querySelector("[data-language-toggle]");
+        const languageLabel = document.querySelector("[data-language-label]");
         if (!image || !gallery) return;
+
+        function setText(id, value) {
+          const element = document.getElementById(id);
+          if (element && value !== undefined) {
+            element.textContent = value;
+          }
+        }
+
+        function setHtml(id, value) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.innerHTML = value;
+          }
+        }
+
+        function renderUsage(items) {
+          return items
+            .map((item, index) => \`
+              <article>
+                <span>\${String(index + 1).padStart(2, "0")}</span>
+                <strong>\${item}</strong>
+              </article>\`)
+            .join("");
+        }
+
+        function renderOptions(items) {
+          return items.map((item) => \`<li>\${item}</li>\`).join("");
+        }
+
+        function renderFaqs(items) {
+          return items
+            .map((item) => \`
+              <article>
+                <h3>\${item.question}</h3>
+                <p>\${item.answer}</p>
+              </article>\`)
+            .join("");
+        }
+
+        function applyLanguage(language) {
+          const copy = pageContent[language] || pageContent.en;
+          const alternateLanguage = language === "zh" ? "en" : "zh";
+
+          document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+          document.title = copy.browserTitle || pageContent.en.browserTitle;
+          if (languageLabel) {
+            languageLabel.textContent = pageContent[alternateLanguage]?.languageLabel || "中文";
+          }
+
+          setText("product-back-link-text", copy.backToProducts);
+          setText("product-badge", copy.badge);
+          setText("product-title", copy.title);
+          setText("product-lede", copy.lede);
+          setText("product-whatsapp", copy.whatsappLabel);
+          setText("product-email", copy.emailLabel);
+          setText("product-action-note", copy.actionNote);
+
+          setText("label-material", copy.labels.material);
+          setText("label-finish", copy.labels.finish);
+          setText("label-moq", copy.labels.moq);
+          setText("label-leadTime", copy.labels.leadTime);
+          setText("value-material", copy.values.material);
+          setText("value-finish", copy.values.finish);
+          setText("value-moq", copy.values.moq);
+          setText("value-leadTime", copy.values.leadTime);
+
+          setText("overview-eyebrow", copy.sections.overviewEyebrow);
+          setText("overview-title", copy.sections.overviewTitle);
+          setText("overview-text", copy.sections.overviewText);
+          setText("spec-label-material", copy.labels.material);
+          setText("spec-label-usage", copy.labels.usage);
+          setText("spec-label-finish", copy.labels.finish);
+          setText("spec-label-moq", copy.labels.moq);
+          setText("spec-label-leadTime", copy.labels.leadTime);
+          setText("spec-value-material", copy.values.material);
+          setText("spec-value-usage", copy.values.usage);
+          setText("spec-value-finish", copy.values.finish);
+          setText("spec-value-moq", copy.values.moq);
+          setText("spec-value-leadTime", copy.values.leadTime);
+
+          setText("applications-eyebrow", copy.sections.applicationsEyebrow);
+          setText("applications-title", copy.sections.applicationsTitle);
+          setText("applications-text", copy.sections.applicationsText);
+          setHtml("product-usage-grid", renderUsage(copy.usageItems || []));
+
+          setText("custom-eyebrow", copy.sections.customEyebrow);
+          setText("custom-title", copy.sections.customTitle);
+          setText("custom-text", copy.sections.customText);
+          setHtml("product-option-list", renderOptions(copy.optionItems || []));
+
+          setText("faq-eyebrow", copy.sections.faqEyebrow);
+          setText("faq-title", copy.sections.faqTitle);
+          setText("faq-text", copy.sections.faqText);
+          setHtml("product-faq-list", renderFaqs(copy.faqItems || []));
+
+          document.querySelectorAll(".nav-links a")[0].textContent = copy.navProducts;
+          document.querySelectorAll(".nav-links a")[1].textContent = copy.navBlog;
+          document.querySelectorAll(".nav-links a")[2].textContent = copy.navOem;
+          document.querySelectorAll(".nav-links a")[3].textContent = copy.navContact;
+          document.querySelectorAll(".footer-links a")[0].textContent = copy.navProducts;
+          document.querySelectorAll(".footer-links a")[1].textContent = copy.navBlog;
+          document.querySelectorAll(".footer-links a")[2].textContent = copy.navOem;
+          document.querySelectorAll(".footer-links a")[3].textContent = copy.navContact;
+
+          const footerCopy = document.querySelector(".site-footer p");
+          if (footerCopy) {
+            footerCopy.textContent = copy.footerText;
+          }
+
+          localStorage.setItem("siteLanguage", language);
+        }
 
         gallery.querySelectorAll("[data-gallery-image]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -230,6 +476,14 @@ function renderProductPage(product) {
               item.classList.toggle("is-active", item === button);
             });
           });
+        });
+
+        const initialLanguage = localStorage.getItem("siteLanguage") === "zh" ? "zh" : "en";
+        applyLanguage(initialLanguage);
+
+        languageToggle?.addEventListener("click", () => {
+          const nextLanguage = localStorage.getItem("siteLanguage") === "zh" ? "en" : "zh";
+          applyLanguage(nextLanguage);
         });
       })();
     </script>
@@ -260,7 +514,8 @@ function renderProductPage(product) {
     ogType: "product",
     ogImage: `${siteUrl}/${(product.image || "").replace(/^\/+/, "")}`,
     body,
-    schema
+    schema,
+    headerControls: `<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span data-language-label>中文</span></button>`
   });
 }
 
