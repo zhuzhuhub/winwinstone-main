@@ -99,7 +99,7 @@ function renderPostDetail(post, products, posts, language) {
       ? relatedProducts
           .map((product) => {
             const productTitle = language === "zh" ? product.nameZh || product.name : product.name;
-            return `<p><a href="product.html?slug=${product.slug}">${productTitle}</a></p>`;
+            return `<p><a href="products/${product.slug}/">${productTitle}</a></p>`;
           })
           .join("")
       : `<p>${language === "zh" ? "暂无关联产品" : "No related products yet."}</p>`
@@ -112,7 +112,7 @@ function renderPostDetail(post, products, posts, language) {
       ? relatedPosts
           .map((entry) => {
             const entryTitle = language === "zh" ? entry.titleZh || entry.title : entry.title;
-            return `<p><a href="post.html?slug=${entry.slug}">${entryTitle}</a></p>`;
+            return `<p><a href="blog/${entry.slug}/">${entryTitle}</a></p>`;
           })
           .join("")
       : `<p>${language === "zh" ? "暂无关联文章" : "No related articles yet."}</p>`

@@ -20,6 +20,14 @@ const articleGrid = document.querySelector("[data-article-grid]");
 const CONTENT_API_BASE = window.CONTENT_API_BASE || "http://127.0.0.1:8787";
 let activeProductFilter = "all";
 
+function getProductPageUrl(slug) {
+  return `products/${encodeURIComponent(slug)}/`;
+}
+
+function getPostPageUrl(slug) {
+  return `blog/${encodeURIComponent(slug)}/`;
+}
+
 const translations = {
   en: {
     metaTitle: "Custom Natural Stone Manufacturer | OEM/ODM Marble Sinks, Tables & Vanities",
@@ -825,7 +833,7 @@ async function renderBlogPage(language = currentLanguage) {
           <span>${featuredPost.author || "Win-Win Stone"}</span>
           <span>${formatPostDate(featuredPost.updatedAt || featuredPost.publishedAt, language)}</span>
         </div>
-        <a class="text-link" href="post.html?slug=${featuredPost.slug}">
+        <a class="text-link" href="${getPostPageUrl(featuredPost.slug)}">
           <span>${language === "zh" ? "阅读文章" : "Read article"}</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
         </a>
@@ -841,7 +849,7 @@ async function renderBlogPage(language = currentLanguage) {
 
         return `
           <article class="article-card" data-blog-category="${filter}">
-            <a href="post.html?slug=${post.slug}">
+            <a href="${getPostPageUrl(post.slug)}">
               <img src="${post.coverImage}" alt="${copy.coverAlt || copy.title}">
               <span class="article-body">
                 <span class="product-type">${copy.category || ""}</span>
@@ -932,7 +940,7 @@ async function renderProductCatalog(language = currentLanguage) {
           data-description="${escapeHtml(product.desc || product.summary || "")}"
           data-description-zh="${escapeHtml(product.descZh || product.summaryZh || "")}"
         >
-          <a class="product-open" href="product.html?slug=${encodeURIComponent(product.slug)}">
+          <a class="product-open" href="${getProductPageUrl(product.slug)}">
             <img src="${escapeHtml(image)}" alt="${escapeHtml(copy.title)}">
             <span class="product-body">
               <span class="product-type">${escapeHtml(copy.type)}</span>
@@ -970,7 +978,7 @@ async function renderFeaturedProducts(language = currentLanguage) {
 
       return `
         <article class="latest-product-card">
-          <a href="product.html?slug=${product.slug}">
+          <a href="${getProductPageUrl(product.slug)}">
             <img src="${product.image}" alt="${copy.title}">
             <span class="latest-product-body">
               <strong>${copy.title}</strong>

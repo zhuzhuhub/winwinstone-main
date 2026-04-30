@@ -226,7 +226,7 @@ function renderProductList(products) {
 
   list.innerHTML = products.map((item) => `
     <article class="product-card" data-category="${item.category.toLowerCase().replaceAll(" ", "-")}">
-      <a class="product-open" href="product.html?slug=${item.slug}">
+      <a class="product-open" href="products/${item.slug}/">
         <img src="${item.image}" alt="${item.name}">
         <span class="product-body">
           <span class="product-type">${item.category}</span>
