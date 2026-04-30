@@ -6,6 +6,7 @@ const siteDir = path.join(rootDir, "site");
 const dataDir = path.join(rootDir, "content-api", "data");
 const productsFile = path.join(dataDir, "products.json");
 const postsFile = path.join(dataDir, "posts.json");
+const siteDataDir = path.join(siteDir, "assets", "data");
 const siteUrl = (process.env.SITE_URL || "https://winwinstonecustom.com").replace(/\/+$/, "");
 
 function escapeHtml(value) {
@@ -362,6 +363,12 @@ async function writeGeneratedPage(relativeDir, html) {
   await fs.writeFile(path.join(outputDir, "index.html"), html, "utf8");
 }
 
+async function writeFallbackDataFile(filename, variableName, payload) {
+  await fs.mkdir(siteDataDir, { recursive: true });
+  const fileContent = `const ${variableName} = ${JSON.stringify(payload, null, 2)};\nwindow.${variableName} = ${variableName};\n`;
+  await fs.writeFile(path.join(siteDataDir, filename), fileContent, "utf8");
+}
+
 async function buildSitemap(products, posts) {
   const urls = [
     { path: "/", priority: "1.0" },
@@ -406,9 +413,16 @@ async function main() {
     await writeGeneratedPage(path.join("blog", post.slug), renderPostPage(post));
   }
 
+  await Promise.all([
+    writeFallbackDataFile("products.js", "PRODUCTS", publishedProducts),
+    writeFallbackDataFile("posts.js", "POSTS", publishedPosts)
+  ]);
+
   await buildSitemap(publishedProducts, publishedPosts);
 
-  console.log(`Generated ${publishedProducts.length} product pages, ${publishedPosts.length} blog pages, and sitemap.xml`);
+  console.log(
+    `Generated ${publishedProducts.length} product pages, ${publishedPosts.length} blog pages, sitemap.xml, and fallback data files`
+  );
 }
 
 main().catch((error) => {
