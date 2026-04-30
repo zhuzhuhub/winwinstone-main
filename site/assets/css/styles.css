@@ -2277,8 +2277,10 @@ h3 {
 
 .product-usage-grid article {
   min-height: 88px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
   align-items: center;
+  column-gap: 14px;
   padding: 16px 18px;
   border: 1px solid rgba(19, 38, 29, 0.14);
   border-radius: 8px;
@@ -2286,6 +2288,19 @@ h3 {
   color: #23372b;
   font-weight: 700;
   line-height: 1.45;
+}
+
+.product-usage-grid article span {
+  color: #6d786f;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.product-usage-grid article strong {
+  display: block;
+  text-align: left;
+  word-break: break-word;
 }
 
 .product-detail-actions {

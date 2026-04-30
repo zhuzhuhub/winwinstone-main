@@ -32,7 +32,7 @@ function getLocalizedList(zhList, enList) {
 
 function splitLocalizedUsage(value, fallbackItems) {
   const usageItems = String(value || "")
-    .split(/[,\uFF0C]/)
+    .split(/[,\uFF0C\u3001]/)
     .map((item) => item.trim())
     .filter(Boolean);
 
