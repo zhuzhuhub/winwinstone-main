@@ -62,23 +62,7 @@
       </section>
 
       <section class="journal-feature section-pad" aria-labelledby="feature-title">
-        <div class="container feature-story">
-          <img src="assets/images/calacatta-sink.jpg" alt="Calacatta stone sink material detail">
-          <div>
-            <p class="eyebrow">Featured Guide</p>
-            <h2 id="feature-title">How to choose the right stone for a custom bathroom sink.</h2>
-            <p>Marble, travertine, quartzite, and onyx each behave differently in daily use. A strong article helps buyers understand surface finish, maintenance, thickness, drain details, and packing before they request a quote.</p>
-            <div class="story-meta">
-              <span>Stone Guide</span>
-              <span>6 min read</span>
-              <span>Updated Apr 2026</span>
-            </div>
-            <a class="text-link" href="#articles">
-              <span>Browse related posts</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-            </a>
-          </div>
-        </div>
+        <div class="container feature-story" data-featured-post></div>
       </section>
 
       <section class="article-section section-pad" id="articles" aria-labelledby="articles-title">
@@ -97,74 +81,7 @@
             <button class="filter-button" type="button" data-blog-filter="process" role="tab" aria-selected="false">Factory Process</button>
             <button class="filter-button" type="button" data-blog-filter="care" role="tab" aria-selected="false">Care</button>
           </div>
-          <div class="article-grid">
-            <article class="article-card" data-blog-category="guide ideas">
-              <a href="#articles">
-                <img src="assets/images/green-marble-sink.jpg" alt="Green marble pedestal sink">
-                <span class="article-body">
-                  <span class="product-type">Stone Guide</span>
-                  <strong>Green marble sinks: where bold color works best</strong>
-                  <span>Design notes on veining, lighting, faucet pairing, and finish options for statement bathrooms.</span>
-                  <span class="article-date">Apr 18, 2026</span>
-                </span>
-              </a>
-            </article>
-            <article class="article-card" data-blog-category="ideas process">
-              <a href="#articles">
-                <img src="assets/images/minimalist-table.jpg" alt="Minimalist travertine dining table">
-                <span class="article-body">
-                  <span class="product-type">Product Ideas</span>
-                  <strong>Travertine dining tables for quiet luxury interiors</strong>
-                  <span>How to brief table proportions, base structure, slab selection, and export packing.</span>
-                  <span class="article-date">Apr 15, 2026</span>
-                </span>
-              </a>
-            </article>
-            <article class="article-card" data-blog-category="process">
-              <a href="#articles">
-                <img src="assets/images/stone-vanity.jpg" alt="Stone vanity production reference">
-                <span class="article-body">
-                  <span class="product-type">Factory Process</span>
-                  <strong>What happens after drawing confirmation</strong>
-                  <span>A production timeline from material purchase and cutting to inspection, packing, and delivery.</span>
-                  <span class="article-date">Apr 12, 2026</span>
-                </span>
-              </a>
-            </article>
-            <article class="article-card" data-blog-category="guide care">
-              <a href="#articles">
-                <img src="assets/images/marble-bathtub.jpg" alt="Natural marble bathtub">
-                <span class="article-body">
-                  <span class="product-type">Care</span>
-                  <strong>Daily care for natural marble bathtubs</strong>
-                  <span>Cleaning products, sealing cadence, and habits that protect the stone surface.</span>
-                  <span class="article-date">Apr 9, 2026</span>
-                </span>
-              </a>
-            </article>
-            <article class="article-card" data-blog-category="ideas">
-              <a href="#articles">
-                <img src="assets/images/red-travertine-table.jpg" alt="Red travertine table detail">
-                <span class="article-body">
-                  <span class="product-type">Product Ideas</span>
-                  <strong>When to specify red travertine instead of beige stone</strong>
-                  <span>Color direction, room tone, and production notes for a stronger interior signature.</span>
-                  <span class="article-date">Apr 5, 2026</span>
-                </span>
-              </a>
-            </article>
-            <article class="article-card" data-blog-category="process guide">
-              <a href="#articles">
-                <img src="assets/images/graceful-table.jpg" alt="Travertine table leg detail">
-                <span class="article-body">
-                  <span class="product-type">Factory Process</span>
-                  <strong>How OEM/ODM stone furniture orders are standardized</strong>
-                  <span>Repeatable sizes, tolerances, drawings, labels, and packing details for product lines.</span>
-                  <span class="article-date">Apr 1, 2026</span>
-                </span>
-              </a>
-            </article>
-          </div>
+          <div class="article-grid" data-article-grid></div>
         </div>
       </section>
 
@@ -200,6 +117,7 @@
       </div>
     </footer>
 
+    <script src="assets/data/posts.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

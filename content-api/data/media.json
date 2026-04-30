@@ -1,0 +1,48 @@
+[
+  {
+    "id": "green-marble-sink-hero",
+    "status": "published",
+    "sortOrder": 10,
+    "name": "Green Marble Sink Hero",
+    "filePath": "assets/images/green-marble-sink.jpg",
+    "alt": "Green marble pedestal sink hero image",
+    "altZh": "绿色大理石立柱盆主图",
+    "category": "Product Images",
+    "tags": [
+      "sink",
+      "marble",
+      "hero"
+    ],
+    "relatedProducts": [
+      "green-marble-pedestal-sink"
+    ],
+    "relatedPosts": [],
+    "notes": "Main image used for the green marble pedestal sink product page and homepage feature.",
+    "createdAt": "2026-04-29T06:00:00.000Z",
+    "updatedAt": "2026-04-29T06:00:00.000Z"
+  },
+  {
+    "id": "calacatta-sink-blog-cover",
+    "status": "published",
+    "sortOrder": 20,
+    "name": "Calacatta Sink Blog Cover",
+    "filePath": "assets/images/calacatta-sink.jpg",
+    "alt": "Custom marble bathroom sink material reference",
+    "altZh": "定制浴室大理石台盆材质参考图",
+    "category": "Blog Covers",
+    "tags": [
+      "blog",
+      "sink",
+      "calacatta"
+    ],
+    "relatedProducts": [
+      "custom-marble-vessel-sink"
+    ],
+    "relatedPosts": [
+      "choose-stone-custom-bathroom-sink"
+    ],
+    "notes": "Cover image registered for the first stone guide article.",
+    "createdAt": "2026-04-29T06:05:00.000Z",
+    "updatedAt": "2026-04-29T06:05:00.000Z"
+  }
+]

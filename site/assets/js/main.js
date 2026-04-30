@@ -2,7 +2,7 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 const filterButtons = document.querySelectorAll("[data-filter]");
-const productCards = document.querySelectorAll(".product-card");
+const productGrid = document.querySelector("[data-product-grid]");
 const dialog = document.querySelector("[data-product-dialog]");
 const dialogImage = document.querySelector("[data-dialog-image]");
 const dialogTitle = document.querySelector("[data-dialog-title]");
@@ -14,6 +14,11 @@ const quoteSubmitButton = quoteForm?.querySelector("button[type='submit']");
 const quoteFormStatus = document.querySelector("[data-quote-form-status]");
 const languageToggle = document.querySelector("[data-language-toggle]");
 const languageLabel = document.querySelector("[data-language-label]");
+const featuredProductsContainer = document.querySelector("[data-featured-products]");
+const featuredPostContainer = document.querySelector("[data-featured-post]");
+const articleGrid = document.querySelector("[data-article-grid]");
+const CONTENT_API_BASE = window.CONTENT_API_BASE || "http://127.0.0.1:8787";
+let activeProductFilter = "all";
 
 const translations = {
   en: {
@@ -557,15 +562,11 @@ filterButtons.forEach((button) => {
       item.classList.toggle("active", active);
       item.setAttribute("aria-selected", String(active));
     });
-
-    productCards.forEach((card) => {
-      const categories = card.dataset.category.split(" ");
-      card.classList.toggle("is-hidden", filter !== "all" && !categories.includes(filter));
-    });
+    applyProductFilter(filter);
   });
 });
 
-productCards.forEach((card) => {
+getProductCards().forEach((card) => {
   const opener = card.querySelector("button.product-open");
   const image = card.querySelector("img");
 
@@ -699,6 +700,289 @@ quoteForm?.addEventListener("submit", async (event) => {
   }
 });
 
+async function loadPublishedProducts() {
+  try {
+    const response = await fetch(`${CONTENT_API_BASE}/products?status=published`);
+
+    if (!response.ok) {
+      throw new Error("Failed to load products.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    if (typeof PRODUCTS !== "undefined" && Array.isArray(PRODUCTS)) {
+      return PRODUCTS.map((product, index) => ({
+        ...product,
+        status: "published",
+        featured: [
+          "green-marble-pedestal-sink",
+          "calacatta-marble-pedestal-sink",
+          "custom-marble-vessel-sink",
+          "minimalist-travertine-dining-table",
+          "natural-marble-bathtub"
+        ].includes(product.slug),
+        featuredOrder:
+          ({
+            "green-marble-pedestal-sink": 1,
+            "calacatta-marble-pedestal-sink": 2,
+            "custom-marble-vessel-sink": 3,
+            "minimalist-travertine-dining-table": 4,
+            "natural-marble-bathtub": 5
+          })[product.slug] || null,
+        summary: product.summary || product.desc || "",
+        summaryZh: product.summaryZh || "",
+        sortOrder: (index + 1) * 10
+      }));
+    }
+
+    return [];
+  }
+}
+
+function getFeaturedProductCopy(product, language) {
+  const title =
+    language === "zh"
+      ? product.nameZh || product.titleZh || product.name
+      : product.name || product.title || "";
+  const summary =
+    language === "zh"
+      ? product.summaryZh || product.descZh || product.summary || product.desc || ""
+      : product.summary || product.desc || "";
+
+  return { title, summary };
+}
+
+function getPostCategoryFilter(post) {
+  const text = `${post.category || ""} ${(post.tags || []).join(" ")}`.toLowerCase();
+
+  if (text.includes("guide")) return "guide";
+  if (text.includes("idea")) return "ideas";
+  if (text.includes("process")) return "process";
+  if (text.includes("care")) return "care";
+  return "all";
+}
+
+async function loadPublishedPosts() {
+  try {
+    const response = await fetch(`${CONTENT_API_BASE}/posts?status=published`);
+
+    if (!response.ok) {
+      throw new Error("Failed to load posts.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    if (typeof POSTS !== "undefined" && Array.isArray(POSTS)) {
+      return POSTS;
+    }
+
+    return [];
+  }
+}
+
+function getPostCopy(post, language) {
+  return {
+    title: language === "zh" ? post.titleZh || post.title : post.title,
+    category: language === "zh" ? post.categoryZh || post.category : post.category,
+    excerpt: language === "zh" ? post.excerptZh || post.excerpt : post.excerpt,
+    coverAlt: language === "zh" ? post.coverAltZh || post.coverAlt : post.coverAlt
+  };
+}
+
+function formatPostDate(dateString, language) {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return "";
+
+  return new Intl.DateTimeFormat(language === "zh" ? "zh-CN" : "en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric"
+  }).format(date);
+}
+
+async function renderBlogPage(language = currentLanguage) {
+  if (!featuredPostContainer && !articleGrid) return;
+
+  const posts = (await loadPublishedPosts())
+    .filter((post) => post.status === "published")
+    .sort((left, right) => (left.sortOrder || 999) - (right.sortOrder || 999));
+
+  const featuredPost =
+    posts
+      .filter((post) => post.featured)
+      .sort((left, right) => (left.featuredOrder || 999) - (right.featuredOrder || 999))[0] || posts[0];
+
+  if (featuredPostContainer && featuredPost) {
+    const copy = getPostCopy(featuredPost, language);
+    featuredPostContainer.innerHTML = `
+      <img src="${featuredPost.coverImage}" alt="${copy.coverAlt || copy.title}">
+      <div>
+        <p class="eyebrow">${language === "zh" ? "精选指南" : "Featured Guide"}</p>
+        <h2 id="feature-title">${copy.title}</h2>
+        <p>${copy.excerpt || ""}</p>
+        <div class="story-meta">
+          <span>${copy.category || ""}</span>
+          <span>${featuredPost.author || "Win-Win Stone"}</span>
+          <span>${formatPostDate(featuredPost.updatedAt || featuredPost.publishedAt, language)}</span>
+        </div>
+        <a class="text-link" href="post.html?slug=${featuredPost.slug}">
+          <span>${language === "zh" ? "阅读文章" : "Read article"}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </div>
+    `;
+  }
+
+  if (articleGrid) {
+    articleGrid.innerHTML = posts
+      .map((post) => {
+        const copy = getPostCopy(post, language);
+        const filter = getPostCategoryFilter(post);
+
+        return `
+          <article class="article-card" data-blog-category="${filter}">
+            <a href="post.html?slug=${post.slug}">
+              <img src="${post.coverImage}" alt="${copy.coverAlt || copy.title}">
+              <span class="article-body">
+                <span class="product-type">${copy.category || ""}</span>
+                <strong>${copy.title}</strong>
+                <span>${copy.excerpt || ""}</span>
+                <span class="article-date">${formatPostDate(post.publishedAt, language)}</span>
+              </span>
+            </a>
+          </article>
+        `;
+      })
+      .join("");
+  }
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function getCatalogProductCopy(product, language) {
+  const title =
+    language === "zh"
+      ? product.nameZh || product.titleZh || product.name
+      : product.name || product.title || "";
+  const type =
+    language === "zh"
+      ? product.categoryZh || product.category || ""
+      : product.category || "";
+  const description =
+    language === "zh"
+      ? product.summaryZh || product.descZh || product.summary || product.desc || ""
+      : product.summary || product.desc || "";
+
+  return { title, type, description };
+}
+
+function getCatalogCardClasses(product) {
+  const classes = ["product-card"];
+
+  if (product.featured) {
+    classes.push("product-card-featured");
+  }
+
+  if ((product.filters || []).includes("tables")) {
+    classes.push("product-card-wide");
+  }
+
+  return classes.join(" ");
+}
+
+function getProductCards() {
+  return document.querySelectorAll(".product-card");
+}
+
+function applyProductFilter(filter = activeProductFilter) {
+  activeProductFilter = filter;
+
+  getProductCards().forEach((card) => {
+    const categories = (card.dataset.category || "").split(" ").filter(Boolean);
+    card.classList.toggle("is-hidden", filter !== "all" && !categories.includes(filter));
+  });
+}
+
+async function renderProductCatalog(language = currentLanguage) {
+  if (!productGrid) return;
+
+  const products = await loadPublishedProducts();
+  const publishedProducts = products
+    .filter((product) => product.status === "published")
+    .sort((left, right) => (left.sortOrder || 999) - (right.sortOrder || 999));
+
+  productGrid.innerHTML = publishedProducts
+    .map((product) => {
+      const copy = getCatalogProductCopy(product, language);
+      const categories = (product.filters || []).join(" ");
+      const image = product.image || product.gallery?.[0] || "";
+
+      return `
+        <article
+          class="${getCatalogCardClasses(product)}"
+          data-category="${escapeHtml(categories)}"
+          data-title="${escapeHtml(product.name || "")}"
+          data-title-zh="${escapeHtml(product.nameZh || "")}"
+          data-description="${escapeHtml(product.desc || product.summary || "")}"
+          data-description-zh="${escapeHtml(product.descZh || product.summaryZh || "")}"
+        >
+          <a class="product-open" href="product.html?slug=${encodeURIComponent(product.slug)}">
+            <img src="${escapeHtml(image)}" alt="${escapeHtml(copy.title)}">
+            <span class="product-body">
+              <span class="product-type">${escapeHtml(copy.type)}</span>
+              <strong>${escapeHtml(copy.title)}</strong>
+              <span>${escapeHtml(copy.description)}</span>
+            </span>
+          </a>
+        </article>
+      `;
+    })
+    .join("");
+
+  applyProductFilter(activeProductFilter);
+}
+
+async function renderFeaturedProducts(language = currentLanguage) {
+  if (!featuredProductsContainer) return;
+
+  const products = await loadPublishedProducts();
+  const featuredProducts = products
+    .filter((product) => product.status === "published" && product.featured)
+    .sort((left, right) => (left.featuredOrder || 999) - (right.featuredOrder || 999))
+    .slice(0, 5);
+
+  const finalProducts = featuredProducts.length
+    ? featuredProducts
+    : products.slice(0, 5).map((product, index) => ({
+        ...product,
+        featuredOrder: index + 1
+      }));
+
+  featuredProductsContainer.innerHTML = finalProducts
+    .map((product) => {
+      const copy = getFeaturedProductCopy(product, language);
+
+      return `
+        <article class="latest-product-card">
+          <a href="product.html?slug=${product.slug}">
+            <img src="${product.image}" alt="${copy.title}">
+            <span class="latest-product-body">
+              <strong>${copy.title}</strong>
+              <span>${copy.summary}</span>
+            </span>
+          </a>
+        </article>
+      `;
+    })
+    .join("");
+}
+
 function applyLanguage(language) {
   if (!languageToggle || !languageLabel) return;
 
@@ -748,16 +1032,18 @@ function applyLanguage(language) {
     });
   }
 
-  document.querySelectorAll(".product-card").forEach((card, index) => {
-    const products = pageCopy?.products || copy.products;
-    const product = products[index];
-    if (!product) return;
+  if (pageKey === "home") {
+    document.querySelectorAll(".product-card").forEach((card, index) => {
+      const products = pageCopy?.products || copy.products;
+      const product = products[index];
+      if (!product) return;
 
-    const [type, title, description] = product;
-    card.querySelector(".product-type").textContent = type;
-    card.querySelector("strong").textContent = title;
-    card.querySelector(".product-body span:last-child").textContent = description;
-  });
+      const [type, title, description] = product;
+      card.querySelector(".product-type").textContent = type;
+      card.querySelector("strong").textContent = title;
+      card.querySelector(".product-body span:last-child").textContent = description;
+    });
+  }
 
   if (pageKey === "home") {
     document.querySelectorAll(".proof-item").forEach((item, index) => {
@@ -767,15 +1053,17 @@ function applyLanguage(language) {
     });
   }
 
-  pageCopy?.articles?.forEach(([category, title, description, date], index) => {
-    const card = document.querySelectorAll(".article-card")[index];
-    if (!card) return;
+  if (pageKey !== "blog") {
+    pageCopy?.articles?.forEach(([category, title, description, date], index) => {
+      const card = document.querySelectorAll(".article-card")[index];
+      if (!card) return;
 
-    card.querySelector(".product-type").textContent = category;
-    card.querySelector("strong").textContent = title;
-    card.querySelector(".article-body span:not(.product-type):not(.article-date)").textContent = description;
-    card.querySelector(".article-date").textContent = date;
-  });
+      card.querySelector(".product-type").textContent = category;
+      card.querySelector("strong").textContent = title;
+      card.querySelector(".article-body span:not(.product-type):not(.article-date)").textContent = description;
+      card.querySelector(".article-date").textContent = date;
+    });
+  }
 
   if (quoteForm?.elements.company) {
     quoteForm.elements.company.placeholder = copy.placeholders.company;
@@ -794,13 +1082,37 @@ function applyLanguage(language) {
   }
 }
 
-languageToggle?.addEventListener("click", () => {
+languageToggle?.addEventListener("click", async () => {
   currentLanguage = currentLanguage === "en" ? "zh" : "en";
   localStorage.setItem("siteLanguage", currentLanguage);
   applyLanguage(currentLanguage);
+
+  if (pageKey === "home") {
+    await renderFeaturedProducts(currentLanguage);
+  }
+
+  if (pageKey === "products") {
+    await renderProductCatalog(currentLanguage);
+  }
+
+  if (pageKey === "blog") {
+    await renderBlogPage(currentLanguage);
+  }
 });
 
 applyLanguage(currentLanguage);
+
+if (pageKey === "home") {
+  renderFeaturedProducts(currentLanguage);
+}
+
+if (pageKey === "products") {
+  renderProductCatalog(currentLanguage);
+}
+
+if (pageKey === "blog") {
+  renderBlogPage(currentLanguage);
+}
 
 document.querySelectorAll("[data-blog-filter]").forEach((button) => {
   button.addEventListener("click", () => {

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>内容管理后台 | 稳胜石材</title>
-    <meta name="description" content="稳胜石材内容管理后台原型，用于发布产品、博客和素材内容。">
+    <meta name="description" content="稳胜石材内容管理后台原型，用于管理产品、博客和素材内容。">
     <meta name="theme-color" content="#13261d">
     <meta property="og:title" content="内容管理后台 | 稳胜石材">
     <meta property="og:description" content="用于产品、博客和素材内容发布的静态后台界面原型。">
@@ -53,7 +53,7 @@
         </nav>
         <div class="studio-status">
           <strong>原型界面</strong>
-          <span>当前仅本地预览</span>
+          <span>当前仅用于本地联调</span>
         </div>
       </aside>
 
@@ -61,9 +61,9 @@
         <div class="studio-topbar">
           <div>
             <p class="eyebrow">内容发布</p>
-            <h2>产品、博客和视觉素材。</h2>
+            <h2>产品、博客和视觉素材统一管理。</h2>
           </div>
-          <a class="button secondary" href="https://winwinstonecustom.vercel.app/">
+          <a class="button secondary" href="https://winwinstonecustom.com/">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
             查看官网
           </a>
@@ -72,18 +72,18 @@
         <div class="studio-metrics" aria-label="发布概览">
           <div>
             <span>产品</span>
-            <strong>9</strong>
-            <small>7 个已发布，2 个草稿</small>
+            <strong>动态接入</strong>
+            <small>后台已接入产品库与详情页</small>
           </div>
           <div>
             <span>博客</span>
-            <strong>6</strong>
-            <small>4 篇指南，2 篇流程说明</small>
+            <strong>动态接入</strong>
+            <small>后台已接入列表页与详情页</small>
           </div>
           <div>
             <span>素材</span>
-            <strong>10</strong>
-            <small>目录图片已就绪</small>
+            <strong>登记系统</strong>
+            <small>可记录路径、Alt 和关联内容</small>
           </div>
         </div>
 
@@ -91,59 +91,200 @@
           <div class="studio-panel-heading">
             <div>
               <p class="eyebrow">产品录入</p>
-              <h3 id="product-editor-title">发布石材产品参考。</h3>
+              <h3 id="product-editor-title">发布和编辑产品内容</h3>
             </div>
             <span class="content-state" data-preview-status>草稿</span>
           </div>
+          <div class="form-row" style="margin-bottom: 1.5rem;">
+            <label>
+              编辑已有产品
+              <select data-product-library>
+                <option value="">选择一个已发布或草稿产品</option>
+              </select>
+            </label>
+            <label style="justify-content: end;">
+              <span>&nbsp;</span>
+              <button class="button secondary" type="button" data-new-product>新建产品</button>
+            </label>
+          </div>
           <div class="editor-grid">
-            <form class="studio-form" data-preview-form data-fallback-title="未命名石材产品" data-fallback-summary="填写适合发布的产品摘要。">
+            <form class="studio-form" data-preview-form data-product-form data-fallback-title="未命名石材产品" data-fallback-summary="填写适合发布的产品摘要。">
               <label>
                 产品标题
-                <input name="title" value="绿色大理石立柱盆">
+                <input name="title" value="Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects">
+              </label>
+              <label>
+                中文标题（可选）
+                <input name="titleZh" value="绿色大理石立柱盆">
               </label>
               <div class="form-row">
                 <label>
                   分类
                   <select name="category">
-                    <option>台盆</option>
-                    <option>浴室</option>
-                    <option>餐桌</option>
-                    <option>工程定制</option>
+                    <option>Marble Sinks</option>
+                    <option>Stone Bathtubs</option>
+                    <option>Travertine Tables</option>
+                    <option>Stone Console Tables</option>
+                    <option>Fireplace Surrounds</option>
                   </select>
                 </label>
                 <label>
+                  中文分类（可选）
+                  <input name="categoryZh" value="台盆">
+                </label>
+                <label>
                   材料
-                  <select name="material">
-                    <option>绿色大理石</option>
-                    <option>卡拉卡塔大理石</option>
-                    <option>洞石</option>
-                    <option>石英岩</option>
-                    <option>缟玛瑙</option>
-                  </select>
+                  <input name="material" value="Natural green marble or similar selected stone">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  中文材料（可选）
+                  <input name="materialZh" value="绿色大理石或同类天然石材">
+                </label>
+                <label>
+                  列表筛选
+                  <input name="filters" value="sinks, bathroom, project">
                 </label>
               </div>
               <label>
                 图片路径
-                <input name="image" value="assets/images/green-marble-sink.jpg">
+                <input name="image" value="assets/images/green-luxury-marble-pedestal-sink.jpg">
               </label>
               <label>
                 URL 标识
                 <input name="slug" value="green-marble-pedestal-sink">
               </label>
+              <div class="form-row">
+                <label>
+                  发布状态
+                  <select name="status">
+                    <option value="draft">草稿</option>
+                    <option value="published" selected>已发布</option>
+                  </select>
+                </label>
+                <label>
+                  列表排序
+                  <input name="sortOrder" type="number" min="1" step="1" value="10">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  首页精选排序
+                  <input name="featuredOrder" type="number" min="1" step="1" value="1">
+                </label>
+                <label>
+                  <span>首页精选</span>
+                  <input name="featured" type="checkbox" checked>
+                </label>
+              </div>
               <label>
                 产品摘要
-                <textarea name="summary" rows="5">天然绿色大理石定制浴室立柱盆，可调整尺寸、排水位置和表面工艺。</textarea>
+                <textarea name="summary" rows="5">Custom size, finish, and export packing for luxury bathroom projects.</textarea>
+              </label>
+              <label>
+                中文摘要（可选）
+                <textarea name="summaryZh" rows="5">天然绿色大理石定制浴室立柱盆，可调整尺寸、排水位置和表面工艺。</textarea>
+              </label>
+              <label>
+                展示标签
+                <input name="badge" value="Custom Marble Pedestal Sink">
+              </label>
+              <label>
+                中文展示标签（可选）
+                <input name="badgeZh" value="定制大理石立柱盆">
+              </label>
+              <label>
+                产品详情描述
+                <textarea name="desc" rows="4">A sculptural green marble pedestal sink developed for luxury bathrooms, boutique hotels, villas, and designer-led interiors.</textarea>
+              </label>
+              <label>
+                中文详情描述（可选）
+                <textarea name="descZh" rows="4">这是一款适用于高端浴室、精品酒店、别墅和设计项目的绿色大理石立柱盆。</textarea>
+              </label>
+              <label>
+                产品介绍
+                <textarea name="intro" rows="5">This green marble pedestal sink is designed for buyers who need a strong natural stone statement piece with flexible production support.</textarea>
+              </label>
+              <label>
+                中文产品介绍（可选）
+                <textarea name="introZh" rows="5">这款绿色大理石立柱盆适合需要天然石材视觉效果和灵活生产支持的客户。</textarea>
+              </label>
+              <div class="form-row">
+                <label>
+                  适用场景
+                  <input name="usage" value="Luxury bathrooms, villas, hotels, designer projects">
+                </label>
+                <label>
+                  中文适用场景（可选）
+                  <input name="usageZh" value="高端浴室、别墅、酒店、设计项目">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  表面工艺
+                  <input name="finish" value="Polished, honed, brushed, or sealed finish">
+                </label>
+                <label>
+                  中文表面工艺（可选）
+                  <input name="finishZh" value="抛光、哑光、拉丝或防护处理">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  MOQ
+                  <input name="moq" value="1 piece for sample or custom project">
+                </label>
+                <label>
+                  中文 MOQ（可选）
+                  <input name="moqZh" value="样品或定制项目支持 1 件起订">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  交期
+                  <input name="leadTime" value="20-45 days after drawing and material confirmation">
+                </label>
+                <label>
+                  中文交期（可选）
+                  <input name="leadTimeZh" value="图纸和材料确认后 20-45 天">
+                </label>
+              </div>
+              <label>
+                产品相册（每行一张图片路径）
+                <textarea name="gallery" rows="5">assets/images/green-luxury-marble-pedestal-sink.jpg
+assets/images/green-luxury-marble-pedestal-sink-01.jpg
+assets/images/green-luxury-marble-pedestal-sink02.jpg
+assets/images/green-luxury-marble-pedestal-sink03.jpg</textarea>
               </label>
               <label>
                 可定制选项
-                <textarea name="options" rows="4">材料选择、尺寸、表面工艺、水龙头孔、排水位置、边型细节、出口包装。</textarea>
+                <textarea name="options" rows="5">Custom pedestal sink height, width, basin depth, and overall proportion
+Stone selection based on color tone, veining direction, and project preference
+Drain position, faucet hole, cutout detail, and installation coordination
+Polished, honed, brushed, or other requested finish direction
+Protective export packing with foam support and reinforced wooden crates</textarea>
+              </label>
+              <label>
+                中文可定制选项（可选，每行一项）
+                <textarea name="optionsZh" rows="5">可定制立柱盆高度、宽度、盆深和整体比例
+可按颜色和纹理方向选材
+可确认排水位置、龙头孔位和开孔细节
+支持抛光、哑光、拉丝等表面工艺
+支持加固型出口木箱包装</textarea>
+              </label>
+              <label>
+                FAQ（每行一组，格式：问题 || 答案）
+                <textarea name="faqs" rows="5">Can the sink size be customized? || Yes. We can produce the pedestal sink according to your bathroom layout, drawing, or target dimensions.
+Can I confirm the marble pattern before production? || Yes. We can share slab or block photos and videos before cutting so you can confirm the material direction.
+Is this suitable for export orders? || Yes. We prepare protective inner packing and reinforced export crates for international shipment.</textarea>
               </label>
               <div class="studio-actions">
-                <button class="button secondary" type="button">
+                <button class="button secondary" type="submit" data-submit-mode="draft">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/></svg>
                   保存草稿
                 </button>
-                <button class="button primary" type="submit">
+                <button class="button primary" type="submit" data-submit-mode="published">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   发布
                 </button>
@@ -164,34 +305,85 @@
           <div class="studio-panel-heading">
             <div>
               <p class="eyebrow">博客录入</p>
-              <h3 id="blog-editor-title">发布材料文章。</h3>
+              <h3 id="blog-editor-title">发布和编辑博客文章</h3>
             </div>
             <span class="content-state" data-preview-status>草稿</span>
           </div>
+          <div class="form-row" style="margin-bottom: 1.5rem;">
+            <label>
+              编辑已有文章
+              <select data-post-library>
+                <option value="">选择一篇已发布或草稿文章</option>
+              </select>
+            </label>
+            <label style="justify-content: end;">
+              <span>&nbsp;</span>
+              <button class="button secondary" type="button" data-new-post>新建文章</button>
+            </label>
+          </div>
           <div class="editor-grid">
-            <form class="studio-form" data-preview-form data-fallback-title="未命名文章" data-fallback-summary="填写适合文章卡片的摘要。">
+            <form class="studio-form" data-preview-form data-post-form data-fallback-title="未命名文章" data-fallback-summary="填写适合文章卡片的摘要。">
               <label>
                 文章标题
-                <input name="title" value="如何为定制浴室台盆选择石材">
+                <input name="title" value="How to Choose the Right Stone for a Custom Bathroom Sink">
+              </label>
+              <label>
+                中文标题（可选）
+                <input name="titleZh" value="如何为定制浴室台盆选择合适石材">
               </label>
               <div class="form-row">
                 <label>
                   分类
                   <select name="category">
-                    <option>石材指南</option>
-                    <option>产品灵感</option>
-                    <option>工厂流程</option>
-                    <option>保养</option>
+                    <option>Stone Guide</option>
+                    <option>Product Ideas</option>
+                    <option>Factory Process</option>
+                    <option>Care</option>
                   </select>
                 </label>
                 <label>
+                  中文分类（可选）
+                  <input name="categoryZh" value="石材指南">
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
                   作者
-                  <input name="author" value="稳胜石材">
+                  <input name="author" value="Win-Win Stone">
+                </label>
+                <label>
+                  发布状态
+                  <select name="status">
+                    <option value="draft">草稿</option>
+                    <option value="published" selected>已发布</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  列表排序
+                  <input name="sortOrder" type="number" min="1" step="1" value="10">
+                </label>
+                <label>
+                  精选排序
+                  <input name="featuredOrder" type="number" min="1" step="1" value="1">
+                </label>
+                <label>
+                  <span>精选文章</span>
+                  <input name="featured" type="checkbox" checked>
                 </label>
               </div>
               <label>
                 封面图片路径
-                <input name="image" value="assets/images/calacatta-sink.jpg">
+                <input name="coverImage" value="assets/images/calacatta-sink.jpg">
+              </label>
+              <label>
+                封面 Alt
+                <input name="coverAlt" value="Custom marble bathroom sink material reference">
+              </label>
+              <label>
+                中文封面 Alt（可选）
+                <input name="coverAltZh" value="定制浴室大理石台盆材质参考图">
               </label>
               <label>
                 URL 标识
@@ -199,18 +391,61 @@
               </label>
               <label>
                 摘要
-                <textarea name="summary" rows="5">一篇关于如何为定制台盆项目选择大理石、洞石、石英岩和缟玛瑙的实用指南。</textarea>
+                <textarea name="excerpt" rows="4">A practical guide to choosing marble, travertine, quartzite, and onyx for custom bathroom sink projects.</textarea>
               </label>
               <label>
-                正文提纲
-                <textarea name="body" rows="4">石材表现、表面工艺、厚度、排水、密封、包装和报价信息。</textarea>
+                中文摘要（可选）
+                <textarea name="excerptZh" rows="4">一篇关于如何为定制浴室台盆项目选择大理石、洞石、石英岩和缟玛瑙的实用指南。</textarea>
+              </label>
+              <label>
+                标签（逗号分隔）
+                <input name="tags" value="bathroom sink, stone guide, marble sink, travertine sink">
+              </label>
+              <label>
+                中文标签（逗号分隔）
+                <input name="tagsZh" value="浴室台盆, 石材指南, 大理石台盆, 洞石台盆">
+              </label>
+              <label>
+                英文正文（HTML）
+                <textarea name="body" rows="8"><p>Choosing the right stone for a custom bathroom sink is not only about color. Buyers usually need to balance visual effect, maintenance level, budget, and fabrication feasibility before production starts.</p><h2>Marble</h2><p>Marble is often selected for luxury bathrooms because of its natural veining and broad color range.</p></textarea>
+              </label>
+              <label>
+                中文正文（HTML）
+                <textarea name="bodyZh" rows="8"><p>为定制浴室台盆选择石材，不只是看颜色，还需要综合考虑视觉效果、后期维护、预算和加工可行性。</p><h2>大理石</h2><p>大理石常用于高端浴室项目，因为它纹理自然、颜色丰富。</p></textarea>
+              </label>
+              <label>
+                SEO Title
+                <input name="seoTitle" value="How to Choose Stone for a Custom Bathroom Sink | Win-Win Stone">
+              </label>
+              <label>
+                SEO Description
+                <textarea name="seoDescription" rows="3">Learn how to choose marble, travertine, quartzite, or onyx for a custom bathroom sink project.</textarea>
+              </label>
+              <label>
+                SEO Keywords
+                <input name="seoKeywords" value="custom bathroom sink stone guide, marble sink material, travertine sink guide">
+              </label>
+              <label>
+                关联产品（slug，每行一个）
+                <textarea name="relatedProducts" rows="3">green-marble-pedestal-sink
+custom-marble-vessel-sink</textarea>
+              </label>
+              <label>
+                相关文章（slug，每行一个）
+                <textarea name="relatedPosts" rows="3"></textarea>
+              </label>
+              <label>
+                FAQ（每行一组，格式：问题 || 答案）
+                <textarea name="faqs" rows="5">Which stone is best for a bathroom sink? || It depends on the visual direction, maintenance expectation, and project budget.
+Is marble suitable for custom bathroom sinks? || Yes. Marble is widely used for custom sinks when buyers want strong natural veining and a luxury finish.
+What should I confirm before production? || Usually size, drain position, faucet hole, finish, material selection, and export packing.</textarea>
               </label>
               <div class="studio-actions">
-                <button class="button secondary" type="button">
+                <button class="button secondary" type="submit" data-submit-mode="draft">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/></svg>
                   保存草稿
                 </button>
-                <button class="button primary" type="submit">
+                <button class="button primary" type="submit" data-submit-mode="published">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   发布
                 </button>
@@ -219,9 +454,9 @@
             <aside class="studio-preview article-preview" aria-label="文章预览">
               <img src="assets/images/calacatta-sink.jpg" alt="文章预览" data-preview-image>
               <div>
-                <span class="product-type" data-preview-meta>石材指南 / 稳胜石材</span>
-                <strong data-preview-title>如何为定制浴室台盆选择石材</strong>
-                <p data-preview-text>一篇关于如何为定制台盆项目选择大理石、洞石、石英岩和缟玛瑙的实用指南。</p>
+                <span class="product-type" data-preview-meta>Stone Guide / Win-Win Stone</span>
+                <strong data-preview-title>How to Choose the Right Stone for a Custom Bathroom Sink</strong>
+                <p data-preview-text>A practical guide to choosing marble, travertine, quartzite, and onyx for custom bathroom sink projects.</p>
               </div>
             </aside>
           </div>
@@ -231,30 +466,101 @@
           <div class="studio-panel-heading">
             <div>
               <p class="eyebrow">素材库</p>
-              <h3 id="media-title">产品图片和材料素材。</h3>
+              <h3 id="media-title">登记图片与内容素材</h3>
             </div>
-            <a class="button secondary" href="https://winwinstonecustom.com/products.html">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-              产品目录
-            </a>
+            <span class="content-state" data-preview-status>草稿</span>
           </div>
-          <div class="media-grid">
-            <figure>
-              <img src="assets/images/green-marble-sink.jpg" alt="绿色大理石台盆">
-              <figcaption>green-marble-sink.jpg</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/calacatta-sink.jpg" alt="卡拉卡塔台盆">
-              <figcaption>calacatta-sink.jpg</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/minimalist-table.jpg" alt="洞石餐桌">
-              <figcaption>minimalist-table.jpg</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/marble-bathtub.jpg" alt="大理石浴缸">
-              <figcaption>marble-bathtub.jpg</figcaption>
-            </figure>
+          <div class="form-row" style="margin-bottom: 1.5rem;">
+            <label>
+              编辑已有素材
+              <select data-media-library>
+                <option value="">选择一个已发布或草稿素材</option>
+              </select>
+            </label>
+            <label style="justify-content: end;">
+              <span>&nbsp;</span>
+              <button class="button secondary" type="button" data-new-media>新建素材</button>
+            </label>
+          </div>
+          <div class="editor-grid" style="margin-bottom: 1.5rem;">
+            <form class="studio-form" data-preview-form data-media-form data-fallback-title="未命名素材" data-fallback-summary="填写图片用途、Alt 和关联内容。">
+              <label>
+                素材名称
+                <input name="name" value="Green Marble Sink Hero">
+              </label>
+              <label>
+                素材 ID
+                <input name="id" value="green-marble-sink-hero">
+              </label>
+              <div class="form-row">
+                <label>
+                  分类
+                  <select name="category">
+                    <option>Product Images</option>
+                    <option>Blog Covers</option>
+                    <option>Gallery Details</option>
+                    <option>Brand Assets</option>
+                  </select>
+                </label>
+                <label>
+                  发布状态
+                  <select name="status">
+                    <option value="draft">草稿</option>
+                    <option value="published" selected>已发布</option>
+                  </select>
+                </label>
+                <label>
+                  排序
+                  <input name="sortOrder" type="number" min="1" step="1" value="10">
+                </label>
+              </div>
+              <label>
+                文件路径
+                <input name="filePath" value="assets/images/green-marble-sink.jpg">
+              </label>
+              <label>
+                Alt
+                <input name="alt" value="Green marble pedestal sink hero image">
+              </label>
+              <label>
+                中文 Alt（可选）
+                <input name="altZh" value="绿色大理石立柱盆主图">
+              </label>
+              <label>
+                标签（逗号分隔）
+                <input name="tags" value="sink, marble, hero">
+              </label>
+              <label>
+                关联产品（slug，每行一个）
+                <textarea name="relatedProducts" rows="3">green-marble-pedestal-sink</textarea>
+              </label>
+              <label>
+                关联文章（slug，每行一个）
+                <textarea name="relatedPosts" rows="3"></textarea>
+              </label>
+              <label>
+                用途备注
+                <textarea name="notes" rows="4">Main image used for the green marble pedestal sink product page and homepage feature.</textarea>
+              </label>
+              <div class="studio-actions">
+                <button class="button secondary" type="submit" data-submit-mode="draft">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/></svg>
+                  保存草稿
+                </button>
+                <button class="button primary" type="submit" data-submit-mode="published">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  发布
+                </button>
+              </div>
+            </form>
+            <aside class="studio-preview" aria-label="素材预览">
+              <img src="assets/images/green-marble-sink.jpg" alt="素材预览" data-preview-image>
+              <div>
+                <span class="product-type" data-preview-meta>Product Images / green-marble-sink-hero</span>
+                <strong data-preview-title>Green Marble Sink Hero</strong>
+                <p data-preview-text>Main image used for the green marble pedestal sink product page and homepage feature.</p>
+              </div>
+            </aside>
           </div>
         </section>
 
@@ -271,12 +577,12 @@
               <span>产品已更新</span>
             </li>
             <li>
-              <strong>适合静奢空间的洞石餐桌</strong>
+              <strong>石材选购指南</strong>
               <span>博客草稿已编辑</span>
             </li>
             <li>
-              <strong>天然大理石浴缸</strong>
-              <span>素材已替换</span>
+              <strong>绿色大理石主图</strong>
+              <span>素材已登记</span>
             </li>
           </ol>
         </section>

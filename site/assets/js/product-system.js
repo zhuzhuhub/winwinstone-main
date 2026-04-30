@@ -1,6 +1,6 @@
+const PRODUCT_CONTENT_API_BASE = window.CONTENT_API_BASE || "http://127.0.0.1:8787";
 const params = new URLSearchParams(window.location.search);
-const slug = params.get("slug") || PRODUCTS[0]?.slug;
-const product = PRODUCTS.find((item) => item.slug === slug || item.aliasSlugs?.includes(slug));
+const slug = params.get("slug");
 
 function setText(id, value) {
   const element = document.getElementById(id);
@@ -179,7 +179,11 @@ function renderProduct(currentProduct) {
   const faqList = document.getElementById("product-faq");
   if (faqList) {
     faqList.innerHTML = currentProduct.faqs
-      .map(([question, answer]) => `<article><h3>${question}</h3><p>${answer}</p></article>`)
+      .map((entry) => {
+        const question = Array.isArray(entry) ? entry[0] : entry?.question;
+        const answer = Array.isArray(entry) ? entry[1] : entry?.answer;
+        return question && answer ? `<article><h3>${question}</h3><p>${answer}</p></article>` : "";
+      })
       .join("");
   }
 
@@ -216,11 +220,11 @@ function renderProductNotFound() {
   }
 }
 
-function renderProductList() {
+function renderProductList(products) {
   const list = document.getElementById("product-list");
   if (!list) return;
 
-  list.innerHTML = PRODUCTS.map((item) => `
+  list.innerHTML = products.map((item) => `
     <article class="product-card" data-category="${item.category.toLowerCase().replaceAll(" ", "-")}">
       <a class="product-open" href="product.html?slug=${item.slug}">
         <img src="${item.image}" alt="${item.name}">
@@ -234,10 +238,37 @@ function renderProductList() {
   `).join("");
 }
 
-if (product) {
-  renderProduct(product);
-} else {
-  renderProductNotFound();
+async function loadProducts() {
+  try {
+    const response = await fetch(`${PRODUCT_CONTENT_API_BASE}/products?status=published`);
+
+    if (!response.ok) {
+      throw new Error("Failed to load products.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    if (typeof PRODUCTS !== "undefined" && Array.isArray(PRODUCTS)) {
+      return PRODUCTS;
+    }
+
+    return [];
+  }
 }
 
-renderProductList();
+async function initProductPage() {
+  const products = await loadProducts();
+  const defaultSlug = products[0]?.slug;
+  const currentSlug = slug || defaultSlug;
+  const product = products.find((item) => item.slug === currentSlug || item.aliasSlugs?.includes(currentSlug));
+
+  if (product) {
+    renderProduct(product);
+  } else {
+    renderProductNotFound();
+  }
+
+  renderProductList(products);
+}
+
+initProductPage();
