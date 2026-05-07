@@ -2218,6 +2218,13 @@ h3 {
   }
 }
 
+.eyebrow,
+.latest-products > h3,
+.product-categories > h3,
+.featured-products > h3 {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .nav-shell {
     min-height: 64px;
