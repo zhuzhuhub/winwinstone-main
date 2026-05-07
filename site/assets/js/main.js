@@ -45,8 +45,9 @@ const translations = {
       [".nav-links a:nth-child(4)", "Why Us"],
       [".nav-links a:nth-child(5)", "Contact"],
       [".hero .eyebrow", "Factory-Direct Natural Stone Manufacturer in Yunfu, China"],
-      ["#hero-title", "Custom Marble Sinks, Tables, Vanities and Stone Furniture for Brands, Designers, Projects and Private Clients"],
-      [".hero-copy", "We help brands, wholesalers, designers, project buyers, and private clients develop custom natural stone products with stable production, flexible customization, and export-ready delivery."],
+      [".hero-title-primary", "OEM/ODM"],
+      [".hero-title-secondary", "Custom Marble Sinks, Tables, Vanities and Stone Furniture"],
+      [".hero-copy", "We help brands, wholesalers, designers, project buyers, and private clients develop custom stone products for marble sinks, tables, vanities, fireplace surrounds, and bespoke projects with stable production, flexible customization, and export-ready delivery."],
       [".hero-trust span:nth-child(1)", "15+ Years of Factory Experience"],
       [".hero-trust span:nth-child(2)", "OEM/ODM for Brands and Wholesalers"],
       [".hero-trust span:nth-child(3)", "Custom Sizes, Finishes and Packaging"],
@@ -66,7 +67,6 @@ const translations = {
       [".intro-points span:nth-child(4)", "Support for Trade and Private Clients"],
       [".products .eyebrow", "Featured Products"],
       ["#products-title", "Stone product directions that can be adapted for your market, project, or home."],
-      [".products .section-heading > p:last-child", "Use these featured references as a starting point for custom dimensions, material selection, finish options, and packing requirements."],
       [".filter-button[data-filter='all']", "All"],
       [".filter-button[data-filter='marble-tables']", "Marble Tables"],
       [".filter-button[data-filter='marble-sinks-basins']", "Marble Sinks & Basins"],
@@ -278,8 +278,9 @@ const translations = {
       [".nav-links a:nth-child(4)", "生产实力"],
       [".nav-links a:nth-child(5)", "联系我们"],
       [".hero .eyebrow", "中国云浮天然石材源头工厂"],
-      ["#hero-title", "面向品牌、设计师、工程项目与私人客户的定制大理石台盆、餐桌、浴室柜和石材家具"],
-      [".hero-copy", "我们为品牌方、批发商、设计师、项目采购和私人客户提供天然石材定制开发，支持稳定生产、灵活定制和出口交付。"],
+      [".hero-title-primary", "OEM/ODM"],
+      [".hero-title-secondary", "定制大理石台盆、餐桌、浴室柜与石材家具"],
+      [".hero-copy", "工厂直供定制石材生产，覆盖大理石台盆、餐桌、浴室柜、壁炉和项目定制单品。"],
       [".hero-trust span:nth-child(1)", "15 年以上工厂生产经验"],
       [".hero-trust span:nth-child(2)", "服务品牌方与批发商的 OEM/ODM"],
       [".hero-trust span:nth-child(3)", "支持尺寸、表面与包装定制"],
@@ -996,7 +997,7 @@ async function renderFeaturedProducts(language = currentLanguage) {
   const featuredProducts = products
     .filter((product) => product.status === "published" && product.featured)
     .sort((left, right) => (left.featuredOrder || 999) - (right.featuredOrder || 999))
-    .slice(0, 5);
+    .slice(0, 4);
 
   const finalProducts = featuredProducts.length
     ? featuredProducts
@@ -1044,6 +1045,8 @@ function applyLanguage(language) {
   });
   languageLabel.textContent = copy.switchLabel;
   languageToggle.setAttribute("aria-label", copy.switchAria);
+  languageLabel.textContent = language === "zh" ? "EN" : "中文";
+  languageToggle.setAttribute("aria-label", language === "zh" ? "Switch to English" : "Switch to Chinese");
 
   [
     [".skip-link", language === "zh" ? "跳到主要内容" : "Skip to content"],
@@ -1062,6 +1065,12 @@ function applyLanguage(language) {
   }
 
   pageCopy?.text.forEach(([selector, value]) => setText(selector, value));
+
+  applyGlobalRefinedNavigation(language);
+
+  if (pageKey === "home") {
+    applyHomeRefinedCopy(language);
+  }
 
   if (pageKey === "home") {
     document.querySelectorAll(".process-list li").forEach((item, index) => {
@@ -1121,6 +1130,98 @@ function applyLanguage(language) {
   if (quoteFormStatus?.dataset.state) {
     setQuoteFormStatus(quoteFormStatus.dataset.state);
   }
+}
+
+function setHeroTitleLines(primary, secondary) {
+  const title = document.querySelector("#hero-title");
+  if (!title) return;
+
+  title.textContent = "";
+
+  const primaryLine = document.createElement("span");
+  primaryLine.className = "hero-title-line hero-title-primary";
+  primaryLine.textContent = primary;
+
+  const secondaryLine = document.createElement("span");
+  secondaryLine.className = "hero-title-line hero-title-secondary";
+  secondaryLine.textContent = secondary;
+
+  title.append(primaryLine, secondaryLine);
+}
+
+function applyGlobalRefinedNavigation(language) {
+  const isZh = language === "zh";
+
+  [
+    [".nav-links a[href='products.html'], .footer-links a[href='products.html']", isZh ? "产品" : "Products"],
+    [".nav-links a[href='blog.html'], .footer-links a[href='blog.html']", isZh ? "博客" : "Blog"],
+    [".nav-links a[href='factory.html'], .footer-links a[href='factory.html']", isZh ? "工厂" : "Factory"],
+    [".nav-links a[href='oem-odm.html'], .footer-links a[href='oem-odm.html']", "OEM/ODM"],
+    [".nav-links a[href='why-us.html'], .footer-links a[href='why-us.html']", isZh ? "为什么选择我们" : "Why Us"],
+    [".nav-links a[href='contact.html'], .footer-links a[href='contact.html']", isZh ? "联系我们" : "Contact"]
+  ].forEach(([selector, value]) => setTextAll(selector, value));
+}
+
+function applyHomeRefinedCopy(language) {
+  const isZh = language === "zh";
+
+  if (languageLabel && languageToggle) {
+    languageLabel.textContent = isZh ? "EN" : "中文";
+    languageToggle.setAttribute("aria-label", isZh ? "Switch to English" : "Switch to Chinese");
+  }
+
+  setHeroTitleLines(
+    isZh ? "OEM/ODM" : "OEM/ODM",
+    isZh
+      ? "定制大理石台盆、餐桌、浴室柜与石材家具"
+      : "Custom Marble Sinks, Tables, Vanities and Stone Furniture"
+  );
+
+  [
+    [".nav-links a[href='products.html'], .footer-links a[href='products.html']", isZh ? "产品" : "Products"],
+    [".nav-links a[href='blog.html'], .footer-links a[href='blog.html']", isZh ? "博客" : "Blog"],
+    [".nav-links a[href='factory.html'], .footer-links a[href='factory.html']", isZh ? "工厂" : "Factory"],
+    [".nav-links a[href='oem-odm.html'], .footer-links a[href='oem-odm.html']", "OEM/ODM"],
+    [".nav-links a[href='why-us.html'], .footer-links a[href='why-us.html']", isZh ? "为什么选择我们" : "Why Us"],
+    [".nav-links a[href='contact.html'], .footer-links a[href='contact.html']", isZh ? "联系我们" : "Contact"],
+    [".hero-actions .primary", isZh ? "免费询价" : "Get a Free Quote"],
+    [".why-summary .eyebrow", isZh ? "为什么选择我们" : "Why Work With Us"],
+    ["#why-summary-title", isZh ? "为定制石材订单提供清晰可靠的工厂支持。" : "Focused factory support for custom stone orders."],
+    [".summary-card:nth-child(1) strong", isZh ? "工厂直供价格" : "Factory Direct Pricing"],
+    [".summary-card:nth-child(1) p", isZh ? "减少中间环节，直接对接定制石材生产。" : "Factory-direct custom production without unnecessary trading layers."],
+    [".summary-card:nth-child(2) strong", isZh ? "严格质量控制" : "Strict Quality Control"],
+    [".summary-card:nth-child(2) p", isZh ? "服务品牌、设计师、项目方和私人客户，重点确认生产细节。" : "For brands, designers, projects, and private clients that need reliable details."],
+    [".summary-card:nth-child(3) strong", isZh ? "灵活起订量" : "Flexible MOQ"],
+    [".summary-card:nth-child(3) p", isZh ? "支持样品开发、小批量定制和批量订单。" : "Support for sample development, small custom pieces, and bulk orders."],
+    [".summary-card:nth-child(4) strong", isZh ? "稳定生产周期" : "Fast Production"],
+    [".summary-card:nth-child(4) p", isZh ? "提前确认生产步骤，帮助订单按计划推进。" : "Stable delivery timelines with production steps confirmed in advance."],
+    [".summary-card:nth-child(5) strong", isZh ? "项目支持" : "Project Support"],
+    [".summary-card:nth-child(5) p", isZh ? "从图纸评估、材料建议到包装和安装建议。" : "From drawing review to material advice, packing, and installation notes."],
+    [".why-summary .section-link span", isZh ? "了解更多优势" : "Learn More About Why Us"],
+    [".latest-products .section-link span", isZh ? "查看全部产品" : "View All Products"],
+    [".oem-summary .eyebrow", "OEM / ODM"],
+    ["#oem-summary-title", isZh ? "今天开始你的定制项目" : "Start Your Custom Project Today"],
+    [".oem-summary-copy > p:last-of-type", isZh ? "告诉我们你的想法、图纸或参考图，剩下的交给我们。" : "Tell us your idea, drawing or reference – we will handle the rest."],
+    [".oem-summary-actions .primary", isZh ? "免费询价" : "Get Free Quote"],
+    [".oem-summary-actions .ghost", isZh ? "WhatsApp 沟通" : "Chat on WhatsApp"],
+    [".oem-step-list article:nth-child(1) strong", isZh ? "发送参考图或图纸" : "Send reference or drawing"],
+    [".oem-step-list article:nth-child(2) strong", isZh ? "确认材料与尺寸" : "Confirm material and size"],
+    [".oem-step-list article:nth-child(3) strong", isZh ? "生产与检验" : "Production and inspection"],
+    [".oem-step-list article:nth-child(4) strong", isZh ? "出口包装与交付" : "Export packing and delivery"],
+    [".oem-summary .section-link span", isZh ? "查看 OEM/ODM 流程" : "View OEM/ODM Process"],
+    [".category-card:nth-child(1) h4", isZh ? "石材餐桌" : "Stone Tables"],
+    [".category-card:nth-child(2) h4", isZh ? "石材台盆" : "Stone Sinks & Basins"],
+    [".category-card:nth-child(3) h4", isZh ? "壁炉石材" : "Fireplace Surrounds"],
+    [".category-card:nth-child(4) h4", isZh ? "浴室空间" : "For Bathroom"],
+    [".category-card:nth-child(5) h4", isZh ? "定制项目" : "Custom Projects"],
+    [".category-card:nth-child(6) h4", isZh ? "全部产品 →" : "All Products →"],
+    [".video-band .button", isZh ? "参观我们的工厂" : "Visit Our Factory"],
+    [".journal-summary .eyebrow", isZh ? "石材日志" : "Stone Journal"],
+    ["#journal-summary-title", isZh ? "帮助客户做石材定制决策的材料笔记和工厂指南。" : "Material notes and factory guidance for custom stone decisions."],
+    [".journal-summary .section-link span", isZh ? "阅读更多文章" : "Read More Articles"],
+    ["#contact-title", isZh ? "把图纸、尺寸或参考图发给我们。" : "Send us your drawing, size or reference."],
+    [".contact-cta .button", isZh ? "联系工厂" : "Contact Factory"]
+  ].forEach(([selector, value]) => setTextAll(selector, value));
 }
 
 languageToggle?.addEventListener("click", async () => {

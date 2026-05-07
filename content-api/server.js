@@ -181,10 +181,18 @@ function normalizePost(rawPost, existingPost) {
     body: String(post.body || existing.body || "").trim(),
     bodyZh: String(post.bodyZh || existing.bodyZh || "").trim(),
     faqs: normalizeFaqs(post.faqs || existing.faqs),
+    faqsZh: normalizeFaqs(post.faqsZh || existing.faqsZh),
     seo: {
       title: String(post.seo?.title || existing.seo?.title || title).trim(),
       description: String(post.seo?.description || existing.seo?.description || excerpt).trim(),
       keywords: String(post.seo?.keywords || existing.seo?.keywords || "").trim()
+    },
+    seoZh: {
+      title: String(post.seoZh?.title || existing.seoZh?.title || post.titleZh || existing.titleZh || title).trim(),
+      description: String(
+        post.seoZh?.description || existing.seoZh?.description || post.excerptZh || existing.excerptZh || excerpt
+      ).trim(),
+      keywords: String(post.seoZh?.keywords || existing.seoZh?.keywords || "").trim()
     },
     relatedProducts: normalizeArray(post.relatedProducts || existing.relatedProducts),
     relatedPosts: normalizeArray(post.relatedPosts || existing.relatedPosts),
