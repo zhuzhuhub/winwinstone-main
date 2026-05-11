@@ -1811,6 +1811,66 @@ h3 {
   color: #33443b;
 }
 
+.article-content a {
+  color: var(--green);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 139, 74, 0.45);
+  text-underline-offset: 3px;
+}
+
+.article-content a:hover,
+.article-content a:focus-visible {
+  color: var(--red-stone);
+}
+
+.article-figure,
+.article-image-grid {
+  margin: 30px 0;
+}
+
+.article-figure img,
+.article-image-grid img {
+  margin: 0;
+  border-radius: var(--radius);
+}
+
+.article-figure figcaption,
+.article-image-grid figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.article-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.article-image-grid figure {
+  margin: 0;
+}
+
+.article-content .article-inline-cta {
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid rgba(23, 61, 48, 0.14);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(223, 232, 221, 0.68), rgba(255, 255, 255, 0.96)),
+    var(--white);
+}
+
+.article-content .article-inline-cta p {
+  margin: 0;
+}
+
+.article-content .article-inline-cta p + p {
+  margin-top: 10px;
+}
+
 .article-rail {
   position: sticky;
   top: 94px;
@@ -2371,6 +2431,10 @@ h3 {
     font-size: 1rem;
   }
 
+  .article-image-grid {
+    grid-template-columns: 1fr;
+  }
+
   .page-hero-notes {
     max-width: 100%;
   }
@@ -2500,6 +2564,24 @@ h3 {
 .product-detail-hero {
   padding: 132px 0 70px;
   background: #f7f3eb;
+}
+
+.product-detail-breadcrumbs .breadcrumbs {
+  color: rgba(23, 32, 27, 0.54);
+}
+
+.product-detail-breadcrumbs .breadcrumbs a {
+  color: rgba(23, 61, 48, 0.7);
+}
+
+.product-detail-breadcrumbs .breadcrumbs a:hover,
+.product-detail-breadcrumbs .breadcrumbs a:focus-visible {
+  color: var(--green);
+}
+
+.product-detail-breadcrumbs .breadcrumbs a:not(:last-child)::after,
+.product-detail-breadcrumbs .breadcrumbs span:not(:last-child)::after {
+  color: rgba(23, 32, 27, 0.3);
 }
 
 .product-detail-grid {

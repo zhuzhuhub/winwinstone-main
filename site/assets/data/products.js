@@ -77,7 +77,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "pedestal-sinks"
   },
   {
     "id": "prod_luxury_green_marble_entrance_hall_table",
@@ -162,7 +164,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "stone-tables",
+    "subCategory": "console-tables"
   },
   {
     "id": "prod_calacatta_marble_pedestal_sink",
@@ -244,7 +248,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "pedestal-sinks"
   },
   {
     "id": "prod_custom_marble_vessel_sink",
@@ -323,7 +329,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "vessel-sinks"
   },
   {
     "id": "prod_minimalist_travertine_dining_table",
@@ -404,7 +412,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "stone-tables",
+    "subCategory": "dining-tables"
   },
   {
     "id": "prod_graceful_travertine_dining_table",
@@ -481,7 +491,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "stone-tables",
+    "subCategory": "dining-tables"
   },
   {
     "id": "prod_minimal_travertine_dining_table",
@@ -560,7 +572,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "stone-tables",
+    "subCategory": "dining-tables"
   },
   {
     "id": "prod_natural_marble_bathtub",
@@ -717,7 +731,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "stone-tables",
+    "subCategory": "dining-tables"
   },
   {
     "id": "prod_calacatta_white_marble_pedestal_sink",
@@ -803,7 +819,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "pedestal-sinks"
   },
   {
     "id": "prod_calacatta_viola_marble_pedestal_sink",
@@ -886,7 +904,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "pedestal-sinks"
   },
   {
     "id": "prod_freestanding_cylindrical_pedestal_sink",
@@ -971,7 +991,9 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-04-29T04:30:00.000Z"
+    "updatedAt": "2026-04-29T04:30:00.000Z",
+    "mainCategory": "marble-sinks",
+    "subCategory": "pedestal-sinks"
   },
   {
     "id": "prod_modern_calacatta_white_marble_fireplace_surround",
