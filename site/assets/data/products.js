@@ -9,9 +9,9 @@ const PRODUCTS = [
     "sortOrder": 10,
     "name": "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects",
     "nameZh": "绿色大理石立柱盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Pedestal Sinks",
+    "categoryZh": "立柱盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -87,8 +87,8 @@ const PRODUCTS = [
     "sortOrder": 15,
     "name": "Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors",
     "nameZh": "绿色奢石玄关展示台",
-    "category": "Stone Console Tables",
-    "categoryZh": "石材玄关台",
+    "category": "Console Tables",
+    "categoryZh": "玄关台",
     "mainCategory": "stone-tables",
     "subCategory": "console-tables",
     "filters": [
@@ -168,10 +168,10 @@ const PRODUCTS = [
     "sortOrder": 16,
     "name": "Minimalist calacatta stone box coffee tables",
     "nameZh": "简约风卡拉拉大理石盒子咖啡桌",
-    "category": "Stone Console Tables",
+    "category": "Coffee Tables",
     "categoryZh": "咖啡桌",
     "mainCategory": "stone-tables",
-    "subCategory": "console-tables",
+    "subCategory": "coffee-tables",
     "filters": [
       "tables",
       "furniture",
@@ -252,9 +252,9 @@ const PRODUCTS = [
     "sortOrder": 20,
     "name": "Fluted Rectangular White Marble Pedestal Sink",
     "nameZh": "白色大理石竖纹立柱盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Pedestal Sinks",
+    "categoryZh": "立柱盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -334,9 +334,9 @@ const PRODUCTS = [
     "sortOrder": 30,
     "name": "Custom Marble Vessel Sink",
     "nameZh": "定制大理石台上盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Vessel Sinks",
+    "categoryZh": "台上盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "vessel-sinks",
     "filters": [
       "sinks",
@@ -410,8 +410,8 @@ const PRODUCTS = [
     "sortOrder": 40,
     "name": "Travertine Dining Table for Modern Interiors and OEM Furniture Orders",
     "nameZh": "现代空间用洞石餐桌",
-    "category": "Travertine Tables",
-    "categoryZh": "洞石餐桌",
+    "category": "Dining Tables",
+    "categoryZh": "餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -489,8 +489,8 @@ const PRODUCTS = [
     "sortOrder": 50,
     "name": "Graceful Travertine Dining Table",
     "nameZh": "雅致洞石餐桌",
-    "category": "Travertine Tables",
-    "categoryZh": "洞石餐桌",
+    "category": "Dining Tables",
+    "categoryZh": "餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -566,8 +566,8 @@ const PRODUCTS = [
     "sortOrder": 60,
     "name": "Minimal Travertine Dining Table",
     "nameZh": "极简洞石餐桌",
-    "category": "Travertine Tables",
-    "categoryZh": "洞石餐桌",
+    "category": "Dining Tables",
+    "categoryZh": "餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -643,7 +643,7 @@ const PRODUCTS = [
     "nameZh": "天然大理石浴缸",
     "category": "Stone Bathtubs",
     "categoryZh": "石材浴缸",
-    "mainCategory": "",
+    "mainCategory": "stone-bathtubs",
     "subCategory": "",
     "filters": [
       "bathroom"
@@ -716,8 +716,8 @@ const PRODUCTS = [
     "sortOrder": 80,
     "name": "Red Travertine Dining Table",
     "nameZh": "红色洞石餐桌",
-    "category": "Travertine Tables",
-    "categoryZh": "洞石餐桌",
+    "category": "Dining Tables",
+    "categoryZh": "餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -796,9 +796,9 @@ const PRODUCTS = [
     "sortOrder": 90,
     "name": "Calacatta White Marble Pedestal Sink",
     "nameZh": "卡拉卡塔白大理石立柱盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Pedestal Sinks",
+    "categoryZh": "立柱盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -880,9 +880,9 @@ const PRODUCTS = [
     "sortOrder": 100,
     "name": "Calacatta Viola Marble Pedestal Sink",
     "nameZh": "卡拉卡塔紫大理石立柱盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Pedestal Sinks",
+    "categoryZh": "立柱盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -959,9 +959,9 @@ const PRODUCTS = [
     "sortOrder": 110,
     "name": "Freestanding Cylindrical Marble Pedestal Sink",
     "nameZh": "独立式圆柱大理石立柱盆",
-    "category": "Marble Sinks",
-    "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "category": "Pedestal Sinks",
+    "categoryZh": "立柱盆",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
