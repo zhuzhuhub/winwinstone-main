@@ -14,7 +14,23 @@
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand" href="index.html#home" aria-label="Win-Win Stone"><img src="assets/images/logo.png" alt="" width="36" height="39"><span>Win-Win Stone</span></a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span class="sr-only">Open navigation</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-        <div class="nav-links" id="primary-nav" data-nav-links"><a href="products.html">Products</a><a href="blog.html">Blog</a><a href="factory.html">Factory</a><a class="is-active" href="oem-odm.html">OEM/ODM</a><a href="why-us.html">Why Us</a><a href="contact.html">Contact</a></div>
+        <div class="nav-links" id="primary-nav" data-nav-links>
+          <div class="nav-dropdown">
+            <a href="products.html" class="nav-dropdown-trigger">Products</a>
+            <div class="nav-dropdown-menu">
+              <a href="products/stone-sinks/" class="nav-dropdown-item">Stone Sinks</a>
+              <a href="products/stone-tables/" class="nav-dropdown-item">Stone Tables</a>
+              <a href="products/stone-furniture/" class="nav-dropdown-item">Stone Furniture for Projects</a>
+              <a href="products/stone-bathtubs/" class="nav-dropdown-item">Stone Bathtubs</a>
+              <a href="products/stone-fireplaces/" class="nav-dropdown-item">Stone Fireplaces</a>
+            </div>
+          </div>
+          <a href="blog.html">Blog</a>
+          <a href="factory.html">Factory</a>
+          <a class="is-active" href="oem-odm.html">OEM/ODM</a>
+          <a href="why-us.html">Why Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
         <button class="language-toggle" type="button" data-language-toggle aria-label="Switch to Chinese"><span data-language-label>中文</span></button>
       </nav>
     </header>
@@ -41,7 +57,28 @@
         </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html#home"><img src="assets/images/logo.png" alt="" width="36" height="39"><span>Win-Win Stone</span></a><p>Factory-backed natural stone manufacturing for OEM/ODM orders, project production, and private custom pieces.</p></div><div class="footer-links"><a href="products.html">Products</a><a href="blog.html">Blog</a><a href="factory.html">Factory</a><a href="oem-odm.html">OEM/ODM</a><a href="why-us.html">Why Us</a><a href="contact.html">Contact</a></div></div></footer>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><a class="brand footer-brand" href="index.html#home"><img src="assets/images/logo.png" alt="" width="36" height="39"><span>Win-Win Stone</span></a><p>Factory-backed natural stone manufacturing for OEM/ODM orders, project production, and private custom pieces.</p></div>
+        <div class="footer-links">
+          <div class="nav-dropdown">
+            <a href="products.html" class="nav-dropdown-trigger">Products</a>
+            <div class="nav-dropdown-menu">
+              <a href="products/stone-sinks/" class="nav-dropdown-item">Stone Sinks</a>
+              <a href="products/stone-tables/" class="nav-dropdown-item">Stone Tables</a>
+              <a href="products/stone-furniture/" class="nav-dropdown-item">Stone Furniture for Projects</a>
+              <a href="products/stone-bathtubs/" class="nav-dropdown-item">Stone Bathtubs</a>
+              <a href="products/stone-fireplaces/" class="nav-dropdown-item">Stone Fireplaces</a>
+            </div>
+          </div>
+          <a href="blog.html">Blog</a>
+          <a href="factory.html">Factory</a>
+          <a href="oem-odm.html">OEM/ODM</a>
+          <a href="why-us.html">Why Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
     <script src="assets/data/products.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
