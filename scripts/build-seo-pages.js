@@ -134,39 +134,40 @@ const BLOG_INTENT_PRODUCTS = [
 
 const PRODUCT_CATEGORY_DEFINITIONS = [
   {
-    slug: "marble-sinks",
-    name: "Marble Sinks",
+    slug: "stone-sinks",
+    aliases: ["marble-sinks"],
+    name: "Stone Sinks",
     shortName: "Sinks",
     eyebrow: "Product Category",
-    title: "Custom Marble Sinks for bathrooms, villas, hotels, and design collections.",
+    title: "Custom Stone Sinks for bathrooms, villas, hotels, and design collections.",
     description:
-      "Browse marble sink directions that can be adjusted by size, shape, stone selection, drain position, faucet detail, finish, and export packing.",
-    seoTitle: "Custom Marble Sinks | Pedestal and Vessel Stone Sink Manufacturer",
+      "Browse natural stone sink directions that can be adjusted by size, shape, stone selection, drain position, faucet detail, finish, and export packing.",
+    seoTitle: "Custom Stone Sinks | Pedestal and Vessel Stone Sink Manufacturer",
     seoDescription:
-      "Browse custom marble sinks including pedestal sinks and vessel sinks for bathrooms, hotels, villas, and OEM/ODM stone product collections.",
-    keywords: "custom marble sinks, marble sink manufacturer, pedestal marble sinks, vessel marble sinks",
+      "Browse custom stone sinks including pedestal sinks and vessel sinks for bathrooms, hotels, villas, and OEM/ODM stone product collections.",
+    keywords: "custom stone sinks, marble sink manufacturer, pedestal stone sinks, vessel stone sinks",
     image: "assets/images/green-luxury-marble-pedestal-sink.jpg",
     childSlugs: ["pedestal-sinks", "vessel-sinks"],
     options: [
       "Custom sink size, basin depth, and overall proportion",
-      "Marble color, veining direction, and slab confirmation before cutting",
+      "Stone color, veining direction, and slab confirmation before cutting",
       "Drain position, faucet hole, wall clearance, and installation detail",
       "Polished, honed, brushed, fluted, or sealed surface direction",
       "Protective export packing with foam support and reinforced wooden crates"
     ],
     faqs: [
       {
-        question: "Can marble sink dimensions be customized?",
+        question: "Can stone sink dimensions be customized?",
         answer:
-          "Yes. We can make marble sinks based on your drawing, reference photo, bathroom layout, or target dimensions."
+          "Yes. We can make stone sinks based on your drawing, reference photo, bathroom layout, or target dimensions."
       },
       {
-        question: "Can I choose the marble block or slab before production?",
+        question: "Can I choose the stone block or slab before production?",
         answer:
           "For custom orders, we can share stone photos or videos before cutting so you can confirm tone and veining direction."
       },
       {
-        question: "Are marble sinks suitable for overseas shipping?",
+        question: "Are stone sinks suitable for overseas shipping?",
         answer:
           "Yes. We prepare protective inner packing and reinforced export wooden crates for international delivery."
       }
@@ -174,17 +175,17 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
   },
   {
     slug: "pedestal-sinks",
-    parentSlug: "marble-sinks",
+    parentSlug: "stone-sinks",
     name: "Pedestal Sinks",
     shortName: "Pedestal",
-    eyebrow: "Marble Sink Type",
-    title: "Custom Marble Pedestal Sinks in sculptural and fluted designs.",
+    eyebrow: "Stone Sink Type",
+    title: "Custom Stone Pedestal Sinks in sculptural and fluted designs.",
     description:
       "Explore pedestal sink references for luxury bathrooms, boutique hotels, villas, and designer-led interiors. Each design can be adapted before production.",
-    seoTitle: "Custom Marble Pedestal Sinks | Stone Pedestal Sink Factory",
+    seoTitle: "Custom Stone Pedestal Sinks | Marble Pedestal Sink Factory",
     seoDescription:
-      "Custom marble pedestal sinks with bespoke size, stone color, basin depth, fluted detail, drain position, finish, and export packing.",
-    keywords: "custom marble pedestal sinks, marble pedestal sink manufacturer, stone pedestal sink factory",
+      "Custom stone pedestal sinks with bespoke size, stone color, basin depth, fluted detail, drain position, finish, and export packing.",
+    keywords: "custom stone pedestal sinks, marble pedestal sink manufacturer, stone pedestal sink factory",
     image: "assets/images/fluted-rectangular-white-marble-pedestal-sink.jpg",
     siblingSlugs: ["vessel-sinks"],
     options: [
@@ -214,17 +215,17 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
   },
   {
     slug: "vessel-sinks",
-    parentSlug: "marble-sinks",
+    parentSlug: "stone-sinks",
     name: "Vessel Sinks",
     shortName: "Vessel",
-    eyebrow: "Marble Sink Type",
-    title: "Custom Marble Vessel Sinks for counters, vanities, and boutique bathrooms.",
+    eyebrow: "Stone Sink Type",
+    title: "Custom Stone Vessel Sinks for counters, vanities, and boutique bathrooms.",
     description:
-      "Use vessel sink references as a starting point for round, oval, rectangular, sculptural, or drawing-based marble basin production.",
-    seoTitle: "Custom Marble Vessel Sinks | Stone Vessel Sink Manufacturer",
+      "Use vessel sink references as a starting point for round, oval, rectangular, sculptural, or drawing-based stone basin production.",
+    seoTitle: "Custom Stone Vessel Sinks | Marble Vessel Sink Manufacturer",
     seoDescription:
-      "Custom marble vessel sinks for bathroom counters and vanities with bespoke size, shape, material, finish, drain detail, and export packing.",
-    keywords: "custom marble vessel sinks, stone vessel sink manufacturer, marble basin factory",
+      "Custom stone vessel sinks for bathroom counters and vanities with bespoke size, shape, material, finish, drain detail, and export packing.",
+    keywords: "custom stone vessel sinks, marble vessel sink manufacturer, stone basin factory",
     image: "assets/images/vessel-sink.jpg",
     siblingSlugs: ["pedestal-sinks"],
     options: [
@@ -257,15 +258,15 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
     name: "Stone Tables",
     shortName: "Tables",
     eyebrow: "Product Category",
-    title: "Custom Stone Tables for dining rooms, entrances, showrooms, and interiors.",
+    title: "Custom Stone Tables for dining rooms, living rooms, entrances, and interiors.",
     description:
-      "Browse stone table references for dining tables and console tables, with custom size, stone tone, base structure, edge profile, finish, and packing.",
+      "Browse dining tables, coffee tables, and console tables with custom size, stone tone, base structure, edge profile, finish, and packing.",
     seoTitle: "Custom Stone Tables | Marble and Travertine Table Manufacturer",
     seoDescription:
-      "Custom stone tables including travertine dining tables and marble console tables for homes, villas, showrooms, hotels, and designer interiors.",
-    keywords: "custom stone tables, marble table manufacturer, travertine dining table factory, stone console table",
+      "Custom stone tables including dining tables, coffee tables, and console tables for homes, villas, showrooms, hotels, and designer interiors.",
+    keywords: "custom stone tables, marble table manufacturer, travertine dining table factory, stone coffee table, stone console table",
     image: "assets/images/minimalist-table.jpg",
-    childSlugs: ["dining-tables", "console-tables"],
+    childSlugs: ["dining-tables", "coffee-tables", "console-tables"],
     options: [
       "Custom tabletop length, width, thickness, height, and overall proportion",
       "Marble, travertine, limestone, quartzite, onyx, or similar selected stone",
@@ -305,7 +306,7 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
       "Custom stone dining tables in travertine, marble, limestone, and selected natural stone with bespoke size, base structure, finish, and export packing.",
     keywords: "custom stone dining tables, travertine dining table manufacturer, marble dining table factory",
     image: "assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg",
-    siblingSlugs: ["console-tables"],
+    siblingSlugs: ["coffee-tables", "console-tables"],
     options: [
       "Round, oval, rectangular, square, or drawing-based tabletop shapes",
       "Custom tabletop size, thickness, base height, and seating proportion",
@@ -332,6 +333,46 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
     ]
   },
   {
+    slug: "coffee-tables",
+    parentSlug: "stone-tables",
+    name: "Coffee Tables",
+    shortName: "Coffee",
+    eyebrow: "Stone Table Type",
+    title: "Custom Stone Coffee Tables for living rooms, villas, hotels, and showrooms.",
+    description:
+      "Use coffee table references for box forms, block bases, plinth shapes, and drawing-based natural stone furniture pieces.",
+    seoTitle: "Custom Stone Coffee Tables | Marble Coffee Table Manufacturer",
+    seoDescription:
+      "Custom stone coffee tables in marble, travertine, limestone, and luxury stone with bespoke size, finish, base form, and export packing.",
+    keywords: "custom stone coffee table, marble coffee table manufacturer, calacatta stone coffee table, stone box coffee table",
+    image: "assets/images/products/stone-tables/winwinstone-calacatta-stone-box-coffee-table.webp",
+    siblingSlugs: ["dining-tables", "console-tables"],
+    options: [
+      "Custom length, width, height, thickness, and overall coffee table proportion",
+      "Box table, block table, plinth table, low table, or drawing-based form",
+      "Calacatta, travertine, limestone, green marble, black marble, or selected stone",
+      "Polished, honed, leathered, brushed, or sealed surface finish",
+      "Protective export packing for heavy stone furniture components"
+    ],
+    faqs: [
+      {
+        question: "Can coffee table shapes be customized?",
+        answer:
+          "Yes. Box forms, low tables, block bases, rounded forms, and drawing-based stone coffee tables can be discussed before production."
+      },
+      {
+        question: "Can I choose the stone slab before production?",
+        answer:
+          "Yes. We can share slab or block photos and videos so you can confirm color tone, veining direction, and surface direction."
+      },
+      {
+        question: "Can stone coffee tables be exported safely?",
+        answer:
+          "Yes. We use foam support, corner protection, and reinforced wooden crates for heavy stone furniture shipments."
+      }
+    ]
+  },
+  {
     slug: "console-tables",
     parentSlug: "stone-tables",
     name: "Console Tables",
@@ -345,7 +386,7 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
       "Custom marble and natural stone console tables for entrance halls, villas, showrooms, and interior projects with bespoke size and finish.",
     keywords: "custom stone console table, marble console table manufacturer, entrance hall table factory",
     image: "assets/images/luxury-green-marble-entrance-hall-table.jpg",
-    siblingSlugs: ["dining-tables"],
+    siblingSlugs: ["dining-tables", "coffee-tables"],
     options: [
       "Custom tabletop length, width, height, thickness, and edge detail",
       "Green marble, black marble, Calacatta, travertine, or selected natural stone",
@@ -368,6 +409,120 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
         question: "Can console tables be packed for export?",
         answer:
           "Yes. We use protective support and reinforced wooden crates for international heavy stone furniture delivery."
+      }
+    ]
+  },
+  {
+    slug: "stone-furniture",
+    name: "Stone Furniture",
+    shortName: "Furniture",
+    eyebrow: "Product Category",
+    title: "Custom Stone Furniture for irregular home, hotel, and interior projects.",
+    description:
+      "Group custom stone benches, plinths, shelves, cabinets, display stands, side tables, and designer furniture that does not fit a standard table type.",
+    seoTitle: "Custom Stone Furniture | Marble Furniture and Interior Stone Manufacturer",
+    seoDescription:
+      "Custom stone furniture including marble plinths, benches, side tables, display stands, cabinets, shelves, and irregular designer stone furniture.",
+    keywords: "custom stone furniture, marble furniture manufacturer, stone plinth, marble display stand, designer stone furniture",
+    image: "assets/images/stone-vanity.jpg",
+    options: [
+      "Drawing-based stone furniture size, structure, and proportion",
+      "Marble, travertine, limestone, quartzite, onyx, or selected project stone",
+      "Cabinet, bench, plinth, shelf, side table, or display stand direction",
+      "Polished, honed, brushed, leathered, or sealed finish",
+      "Project packing plan for irregular or heavy stone furniture"
+    ],
+    faqs: [
+      {
+        question: "What products belong in custom stone furniture?",
+        answer:
+          "Benches, plinths, display stands, shelves, cabinets, side tables, and irregular designer furniture can be grouped here."
+      },
+      {
+        question: "Can you review an unusual furniture drawing?",
+        answer:
+          "Yes. Send the drawing, target size, reference image, stone preference, and quantity so we can review fabrication feasibility."
+      },
+      {
+        question: "Can stone furniture be made for hotels or villas?",
+        answer:
+          "Yes. We support one-off custom pieces, project quantities, and repeatable OEM/ODM stone furniture production."
+      }
+    ]
+  },
+  {
+    slug: "stone-bathtubs",
+    name: "Stone Bathtubs",
+    shortName: "Bathtubs",
+    eyebrow: "Product Category",
+    title: "Custom Stone Bathtubs for villas, hotels, spas, and luxury bathrooms.",
+    description:
+      "Browse natural stone bathtub directions with custom size, inner basin shape, drain detail, stone selection, finish, and export packing.",
+    seoTitle: "Custom Stone Bathtubs | Marble Bathtub Manufacturer",
+    seoDescription:
+      "Custom stone bathtubs for villas, hotels, spas, and luxury bathrooms with bespoke size, stone material, finish, drain detail, and packing.",
+    keywords: "custom stone bathtub, marble bathtub manufacturer, luxury stone bathtub, natural stone tub",
+    image: "assets/images/marble-bathtub.jpg",
+    options: [
+      "Custom bathtub length, width, height, wall thickness, and inner basin shape",
+      "Marble, travertine, limestone, or selected natural stone",
+      "Drain position, overflow detail, edge profile, and installation coordination",
+      "Polished, honed, matte, or sealed surface direction",
+      "Reinforced export packing and loading plan for heavy stone bathtubs"
+    ],
+    faqs: [
+      {
+        question: "Can stone bathtub dimensions be customized?",
+        answer:
+          "Yes. We can produce stone bathtubs according to drawings, reference photos, target dimensions, or bathroom layouts."
+      },
+      {
+        question: "Are natural stone bathtubs heavy?",
+        answer:
+          "Yes. Stone bathtubs are heavy, so structure review, packing method, and delivery planning are important before production."
+      },
+      {
+        question: "Can I confirm the material before cutting?",
+        answer:
+          "Yes. We can share stone photos or videos before production so you can confirm the material direction."
+      }
+    ]
+  },
+  {
+    slug: "stone-fireplaces",
+    name: "Stone Fireplaces",
+    shortName: "Fireplaces",
+    eyebrow: "Product Category",
+    title: "Custom Stone Fireplaces for living rooms, villas, hotels, and interiors.",
+    description:
+      "Browse marble and natural stone fireplace surrounds with custom size, mantel proportion, side panels, profile detail, finish, and packing.",
+    seoTitle: "Custom Stone Fireplaces | Marble Fireplace Surround Manufacturer",
+    seoDescription:
+      "Custom stone fireplaces and marble fireplace surrounds for villas, hotels, living rooms, and interior projects with bespoke size and profile.",
+    keywords: "custom stone fireplace, marble fireplace surround manufacturer, natural stone fireplace, custom fireplace surround",
+    image: "assets/images/modern-calacatta-white-marble-fireplace-surround.jpg",
+    options: [
+      "Custom fireplace surround width, height, depth, mantel, and side panels",
+      "Calacatta white marble, pink marble, travertine, limestone, or selected stone",
+      "Classic, modern, carved, straight-line, or drawing-based profile detail",
+      "Polished, honed, brushed, or sealed surface direction",
+      "Separated protective packing for heavy fireplace surround pieces"
+    ],
+    faqs: [
+      {
+        question: "Can fireplace surround size be customized?",
+        answer:
+          "Yes. We can produce surrounds according to wall openings, drawings, reference photos, or project measurements."
+      },
+      {
+        question: "Can I choose another stone material?",
+        answer:
+          "Yes. Calacatta white marble, pink marble, travertine, limestone, and other natural stones can be discussed."
+      },
+      {
+        question: "How are stone fireplace pieces packed?",
+        answer:
+          "We separate and protect stone pieces with foam, corner protection, and reinforced wooden crates for international shipping."
       }
     ]
   }

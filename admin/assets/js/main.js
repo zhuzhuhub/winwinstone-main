@@ -15,35 +15,55 @@ const mediaLibrary = document.querySelector("[data-media-library]");
 const newMediaButton = document.querySelector("[data-new-media]");
 
 const PRODUCT_TAXONOMY = {
-  "marble-sinks": {
-    category: "Marble Sinks",
+  "stone-sinks": {
+    category: "Stone Sinks",
     filters: ["sinks", "bathroom"],
     subcategories: {
       "pedestal-sinks": {
-        category: "Marble Sinks",
+        category: "Pedestal Sinks",
         filters: ["sinks", "bathroom", "project"]
       },
       "vessel-sinks": {
-        category: "Marble Sinks",
+        category: "Vessel Sinks",
         filters: ["sinks", "bathroom"]
       }
     }
   },
   "stone-tables": {
-    category: "Travertine Tables",
+    category: "Stone Tables",
     filters: ["tables", "furniture", "project"],
     subcategories: {
       "dining-tables": {
-        category: "Travertine Tables",
+        category: "Dining Tables",
         filters: ["tables", "furniture"]
       },
+      "coffee-tables": {
+        category: "Coffee Tables",
+        filters: ["tables", "furniture", "project"]
+      },
       "console-tables": {
-        category: "Stone Console Tables",
+        category: "Console Tables",
         filters: ["tables", "furniture", "project"]
       }
     }
+  },
+  "stone-furniture": {
+    category: "Stone Furniture",
+    filters: ["furniture", "project"]
+  },
+  "stone-bathtubs": {
+    category: "Stone Bathtubs",
+    filters: ["bathroom", "bathtubs", "project"]
+  },
+  "stone-fireplaces": {
+    category: "Stone Fireplaces",
+    filters: ["fireplace", "project"]
   }
 };
+
+function normalizeTaxonomySlug(value) {
+  return value === "marble-sinks" ? "stone-sinks" : value;
+}
 
 function setHeaderState() {
   if (!header) return;
@@ -174,8 +194,11 @@ function syncProductTaxonomyFields(form, { updateDerivedFields = false } = {}) {
   const subField = form.elements.subCategory;
   if (!mainField || !subField) return;
 
-  const mainCategory = mainField.value;
+  const mainCategory = normalizeTaxonomySlug(mainField.value);
   let subCategory = subField.value;
+  if (mainField.value !== mainCategory) {
+    mainField.value = mainCategory;
+  }
 
   Array.from(subField.options).forEach((option) => {
     const parent = option.dataset.parentCategory || "";
@@ -219,9 +242,9 @@ function createEmptyProductDraft() {
     sortOrder: 999,
     name: "",
     nameZh: "",
-    category: "Marble Sinks",
+    category: "Stone Sinks",
     categoryZh: "",
-    mainCategory: "marble-sinks",
+    mainCategory: "stone-sinks",
     subCategory: "pedestal-sinks",
     filters: ["sinks"],
     image: "",
@@ -307,7 +330,7 @@ function populateProductForm(form, product) {
     titleZh: product.nameZh || "",
     category: product.category || "Marble Sinks",
     categoryZh: product.categoryZh || "",
-    mainCategory: product.mainCategory || "",
+    mainCategory: normalizeTaxonomySlug(product.mainCategory || ""),
     subCategory: product.subCategory || "",
     material: product.material || "",
     materialZh: product.materialZh || "",
