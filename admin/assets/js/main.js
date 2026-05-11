@@ -14,6 +14,37 @@ const newPostButton = document.querySelector("[data-new-post]");
 const mediaLibrary = document.querySelector("[data-media-library]");
 const newMediaButton = document.querySelector("[data-new-media]");
 
+const PRODUCT_TAXONOMY = {
+  "marble-sinks": {
+    category: "Marble Sinks",
+    filters: ["sinks", "bathroom"],
+    subcategories: {
+      "pedestal-sinks": {
+        category: "Marble Sinks",
+        filters: ["sinks", "bathroom", "project"]
+      },
+      "vessel-sinks": {
+        category: "Marble Sinks",
+        filters: ["sinks", "bathroom"]
+      }
+    }
+  },
+  "stone-tables": {
+    category: "Travertine Tables",
+    filters: ["tables", "furniture", "project"],
+    subcategories: {
+      "dining-tables": {
+        category: "Travertine Tables",
+        filters: ["tables", "furniture"]
+      },
+      "console-tables": {
+        category: "Stone Console Tables",
+        filters: ["tables", "furniture", "project"]
+      }
+    }
+  }
+};
+
 function setHeaderState() {
   if (!header) return;
   header.classList.toggle("is-scrolled", window.scrollY > 20);
@@ -131,6 +162,54 @@ function serializeFaqLines(value) {
     .join("\n");
 }
 
+function getTaxonomyConfig(mainCategory, subCategory) {
+  const mainConfig = PRODUCT_TAXONOMY[mainCategory] || null;
+  return mainConfig?.subcategories?.[subCategory] || mainConfig || null;
+}
+
+function syncProductTaxonomyFields(form, { updateDerivedFields = false } = {}) {
+  if (!form) return;
+
+  const mainField = form.elements.mainCategory;
+  const subField = form.elements.subCategory;
+  if (!mainField || !subField) return;
+
+  const mainCategory = mainField.value;
+  let subCategory = subField.value;
+
+  Array.from(subField.options).forEach((option) => {
+    const parent = option.dataset.parentCategory || "";
+    const available = !option.value || !parent || parent === mainCategory;
+    option.hidden = !available;
+    option.disabled = !available;
+  });
+
+  const selectedOption = subField.selectedOptions[0];
+  if (selectedOption?.disabled) {
+    const firstAvailable = Array.from(subField.options).find((option) => option.value && !option.disabled);
+    subField.value = firstAvailable?.value || "";
+    subCategory = subField.value;
+  }
+
+  if (!mainCategory) {
+    subField.value = "";
+    subCategory = "";
+  }
+
+  if (!updateDerivedFields) return;
+
+  const config = getTaxonomyConfig(mainCategory, subCategory);
+  if (!config) return;
+
+  if (form.elements.category) {
+    form.elements.category.value = config.category;
+  }
+
+  if (form.elements.filters) {
+    form.elements.filters.value = config.filters.join(", ");
+  }
+}
+
 function createEmptyProductDraft() {
   return {
     slug: "",
@@ -142,6 +221,8 @@ function createEmptyProductDraft() {
     nameZh: "",
     category: "Marble Sinks",
     categoryZh: "",
+    mainCategory: "marble-sinks",
+    subCategory: "pedestal-sinks",
     filters: ["sinks"],
     image: "",
     gallery: [],
@@ -226,6 +307,8 @@ function populateProductForm(form, product) {
     titleZh: product.nameZh || "",
     category: product.category || "Marble Sinks",
     categoryZh: product.categoryZh || "",
+    mainCategory: product.mainCategory || "",
+    subCategory: product.subCategory || "",
     material: product.material || "",
     materialZh: product.materialZh || "",
     filters: (product.filters || []).join(", "),
@@ -266,6 +349,7 @@ function populateProductForm(form, product) {
     form.elements.featured.checked = Boolean(product.featured);
   }
 
+  syncProductTaxonomyFields(form);
   form.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
@@ -475,6 +559,8 @@ function buildProductPayload(form, mode) {
   const titleZh = form.elements.titleZh?.value?.trim() || "";
   const category = form.elements.category?.value?.trim() || "";
   const categoryZh = form.elements.categoryZh?.value?.trim() || "";
+  const mainCategory = form.elements.mainCategory?.value?.trim() || "";
+  const subCategory = form.elements.subCategory?.value?.trim() || "";
   const material = form.elements.material?.value?.trim() || "";
   const materialZh = form.elements.materialZh?.value?.trim() || "";
   const image = form.elements.image?.value?.trim() || "";
@@ -512,6 +598,8 @@ function buildProductPayload(form, mode) {
     nameZh: titleZh,
     category,
     categoryZh,
+    mainCategory,
+    subCategory,
     filters,
     image,
     gallery: gallery.length ? gallery : [image].filter(Boolean),
@@ -858,6 +946,8 @@ document.querySelectorAll("[data-preview-form]").forEach((form) => {
       form.dataset.fallbackTitle ||
       "Untitled Draft";
     const category = form.elements.category?.value || "Draft";
+    const mainCategory = form.elements.mainCategory?.value || "";
+    const subCategory = form.elements.subCategory?.value || "";
     const material =
       form.elements.material?.value ||
       form.elements.author?.value ||
@@ -876,7 +966,11 @@ document.querySelectorAll("[data-preview-form]").forEach((form) => {
       form.elements.filePath?.value;
 
     if (previewTitle) previewTitle.textContent = title;
-    if (previewMeta) previewMeta.textContent = `${category} / ${material}`;
+    if (previewMeta) {
+      previewMeta.textContent = mainCategory || subCategory
+        ? `${category} / ${[mainCategory, subCategory].filter(Boolean).join(" > ")}`
+        : `${category} / ${material}`;
+    }
     if (previewText) previewText.textContent = summary;
     if (previewImage && image) previewImage.src = image;
   }
@@ -885,6 +979,15 @@ document.querySelectorAll("[data-preview-form]").forEach((form) => {
   updatePreview();
 
   if (form.hasAttribute("data-product-form")) {
+    syncProductTaxonomyFields(form);
+    form.elements.mainCategory?.addEventListener("change", () => {
+      syncProductTaxonomyFields(form, { updateDerivedFields: true });
+      updatePreview();
+    });
+    form.elements.subCategory?.addEventListener("change", () => {
+      syncProductTaxonomyFields(form, { updateDerivedFields: true });
+      updatePreview();
+    });
     initializeProductLibrary(form, status);
   }
 

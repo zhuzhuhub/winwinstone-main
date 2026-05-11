@@ -108,6 +108,8 @@ function normalizeProduct(rawProduct, existingProduct) {
     nameZh: String(product.nameZh || existing.nameZh || "").trim(),
     category,
     categoryZh: String(product.categoryZh || existing.categoryZh || "").trim(),
+    mainCategory: String(product.mainCategory || existing.mainCategory || "").trim(),
+    subCategory: String(product.subCategory || existing.subCategory || "").trim(),
     filters: inferFilters({ ...existing, ...product, category, slug }),
     image,
     gallery: normalizeArray(product.gallery || existing.gallery || (image ? [image] : [])),

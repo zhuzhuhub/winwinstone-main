@@ -133,6 +133,24 @@
                   <input name="categoryZh" value="台盆">
                 </label>
                 <label>
+                  产品主分类
+                  <select name="mainCategory" data-main-category-select>
+                    <option value="">暂不归入第一期分类</option>
+                    <option value="marble-sinks" selected>Marble Sinks</option>
+                    <option value="stone-tables">Stone Tables</option>
+                  </select>
+                </label>
+                <label>
+                  产品子分类
+                  <select name="subCategory" data-sub-category-select>
+                    <option value="">暂不归入子分类</option>
+                    <option value="pedestal-sinks" data-parent-category="marble-sinks" selected>Pedestal Sinks</option>
+                    <option value="vessel-sinks" data-parent-category="marble-sinks">Vessel Sinks</option>
+                    <option value="dining-tables" data-parent-category="stone-tables">Dining Tables</option>
+                    <option value="console-tables" data-parent-category="stone-tables">Console Tables</option>
+                  </select>
+                </label>
+                <label>
                   材料
                   <input name="material" value="Natural green marble or similar selected stone">
                 </label>
