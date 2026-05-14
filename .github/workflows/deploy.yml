@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '24'
-          cache: 'npm'
           
       - name: Run build script
         run: node scripts/build-static-site.js
