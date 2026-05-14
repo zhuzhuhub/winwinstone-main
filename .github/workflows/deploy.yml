@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: zhuzhu19870718-6100s-projects
+      VERCEL_PROJECT_ID: winwinstonecustom
     
     steps:
       - name: Checkout code
@@ -26,12 +29,5 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
         
-      - name: Link Vercel project
-        run: vercel link --org-id zhuzhu19870718-6100s-projects --project-id winwinstonecustom --yes
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        
       - name: Deploy to Vercel
-        run: vercel --prod --yes
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel --prod --yes --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
