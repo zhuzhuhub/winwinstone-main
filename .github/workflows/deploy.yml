@@ -19,10 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v5
         with:
-          node-version: '24.x'
+          node-version: '24'
+          cache: 'npm'
           
       - name: Run build script
         run: node scripts/build-static-site.js
