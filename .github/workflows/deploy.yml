@@ -30,6 +30,4 @@ jobs:
         run: vercel --prod --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: zhuzhu19870718-6100s-projects
-          VERCEL_PROJECT_ID: winwinstonecustom
         working-directory: ./site
