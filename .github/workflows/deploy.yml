@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'content-api/data/**'
-      - 'scripts/**'
-      - 'site/**'
 
 jobs:
   build-and-deploy:
