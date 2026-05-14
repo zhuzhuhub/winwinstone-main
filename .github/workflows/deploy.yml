@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      VERCEL_ORG_ID: zhuzhu19870718-6100s
+      VERCEL_PROJECT_ID: winwinstonecustom
     
     steps:
       - name: Checkout code
