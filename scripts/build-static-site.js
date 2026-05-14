@@ -37,7 +37,10 @@ async function buildSite() {
     // 步骤3：生成博客详情页
     await generatePostPages(posts);
     
-    // 步骤4：生成 sitemap.xml
+    // 步骤4：生成分类页面（材料、空间）
+    await generateCategoryPages(products);
+    
+    // 步骤5：生成 sitemap.xml
     await generateSitemap(products, posts);
     
     console.log('\n✅ Static site build completed!');
@@ -240,6 +243,116 @@ function generatePostHtml(post) {
       </article>
     </main>
     <script src="/assets/js/post-system.js"></script>
+  </body>
+</html>`;
+}
+
+async function generateCategoryPages(products) {
+  const publishedProducts = products.filter(p => p.status === 'published');
+  
+  // 材料分类配置
+  const materialConfig = {
+    'marble': { name: 'Marble', nameZh: '大理石', desc: '天然大理石产品系列', descZh: '天然大理石产品系列' },
+    'travertine': { name: 'Travertine', nameZh: '洞石', desc: '天然洞石产品系列', descZh: '天然洞石产品系列' },
+    'limestone': { name: 'Limestone', nameZh: '石灰石', desc: '天然石灰石产品系列', descZh: '天然石灰石产品系列' }
+  };
+  
+  // 空间分类配置
+  const spaceConfig = {
+    'bathroom': { name: 'Bathroom', nameZh: '浴室', desc: '浴室空间解决方案', descZh: '浴室空间解决方案' },
+    'living-room': { name: 'Living Room', nameZh: '客厅', desc: '客厅空间解决方案', descZh: '客厅空间解决方案' },
+    'hotel': { name: 'Hotel', nameZh: '酒店', desc: '酒店项目解决方案', descZh: '酒店项目解决方案' }
+  };
+  
+  // 生成材料分类页面
+  for (const [key, config] of Object.entries(materialConfig)) {
+    const materialProducts = publishedProducts.filter(p => p.materialTag === key);
+    if (materialProducts.length > 0) {
+      const html = generateMaterialPage(config, materialProducts);
+      const dirPath = path.join(SITE_DIR, 'materials', key);
+      await fs.mkdir(dirPath, { recursive: true });
+      await fs.writeFile(path.join(dirPath, 'index.html'), html, 'utf8');
+      console.log(`Generated: /materials/${key}/`);
+    }
+  }
+  
+  // 生成空间分类页面
+  for (const [key, config] of Object.entries(spaceConfig)) {
+    const spaceProducts = publishedProducts.filter(p => p.spaceTags?.includes(key));
+    if (spaceProducts.length > 0) {
+      const html = generateSpacePage(config, spaceProducts);
+      const dirPath = path.join(SITE_DIR, 'spaces', key);
+      await fs.mkdir(dirPath, { recursive: true });
+      await fs.writeFile(path.join(dirPath, 'index.html'), html, 'utf8');
+      console.log(`Generated: /spaces/${key}/`);
+    }
+  }
+}
+
+function generateMaterialPage(config, products) {
+  return `<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${config.nameZh} | 稳胜石材</title>
+    <meta name="description" content="${config.descZh}">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main>
+      <div class="category-header">
+        <h1>${config.nameZh}</h1>
+        <p>${config.descZh}</p>
+      </div>
+      
+      <div class="product-grid">
+        ${products.map(p => `
+        <article class="product-card">
+          <a href="/products/${p.slug}/">
+            <img src="${p.image}" alt="${p.nameZh || p.name}">
+            <h3>${p.nameZh || p.name}</h3>
+            <p>${p.summaryZh || p.summary}</p>
+          </a>
+        </article>`).join('\n')}
+      </div>
+    </main>
+    <script src="/assets/js/product-system.js"></script>
+  </body>
+</html>`;
+}
+
+function generateSpacePage(config, products) {
+  return `<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${config.nameZh} | 稳胜石材</title>
+    <meta name="description" content="${config.descZh}">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main>
+      <div class="category-header">
+        <h1>${config.nameZh}</h1>
+        <p>${config.descZh}</p>
+      </div>
+      
+      <div class="product-grid">
+        ${products.map(p => `
+        <article class="product-card">
+          <a href="/products/${p.slug}/">
+            <img src="${p.image}" alt="${p.nameZh || p.name}">
+            <h3>${p.nameZh || p.name}</h3>
+            <p>${p.summaryZh || p.summary}</p>
+          </a>
+        </article>`).join('\n')}
+      </div>
+    </main>
+    <script src="/assets/js/product-system.js"></script>
   </body>
 </html>`;
 }

@@ -75,7 +75,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_luxury_green_marble_entrance_hall_table",
@@ -156,7 +162,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "living-room",
+      "bathroom",
+      "hotel"
+    ]
   },
   {
     "id": "prod_winwinstone_calacatta_stone_box_coffee_table",
@@ -240,7 +252,13 @@
       }
     ],
     "createdAt": "2026-05-11T02:13:58.996Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "living-room",
+      "bathroom",
+      "hotel"
+    ]
   },
   {
     "id": "prod_calacatta_marble_pedestal_sink",
@@ -320,7 +338,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_custom_marble_vessel_sink",
@@ -398,7 +422,11 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "travertine",
+    "spaceTags": [
+      "bathroom"
+    ]
   },
   {
     "id": "prod_minimalist_travertine_dining_table",
@@ -477,7 +505,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "travertine",
+    "spaceTags": [
+      "living-room",
+      "bathroom",
+      "hotel"
+    ]
   },
   {
     "id": "prod_graceful_travertine_dining_table",
@@ -552,7 +586,12 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "travertine",
+    "spaceTags": [
+      "hotel",
+      "living-room"
+    ]
   },
   {
     "id": "prod_minimal_travertine_dining_table",
@@ -629,7 +668,12 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "travertine",
+    "spaceTags": [
+      "living-room",
+      "bathroom"
+    ]
   },
   {
     "id": "prod_natural_marble_bathtub",
@@ -704,7 +748,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_red_travertine_dining_table",
@@ -788,7 +838,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "travertine",
+    "spaceTags": [
+      "living-room",
+      "bathroom",
+      "hotel"
+    ]
   },
   {
     "id": "prod_calacatta_white_marble_pedestal_sink",
@@ -872,7 +928,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_calacatta_viola_marble_pedestal_sink",
@@ -953,7 +1015,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_freestanding_cylindrical_pedestal_sink",
@@ -1036,7 +1104,13 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "bathroom",
+      "living-room",
+      "hotel"
+    ]
   },
   {
     "id": "prod_modern_calacatta_white_marble_fireplace_surround",
@@ -1115,6 +1189,12 @@
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T04:06:04.425Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z",
+    "materialTag": "marble",
+    "spaceTags": [
+      "living-room",
+      "bathroom",
+      "hotel"
+    ]
   }
 ]
