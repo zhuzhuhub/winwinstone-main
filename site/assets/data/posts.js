@@ -1,4 +1,4 @@
-const POSTS = [
+export const posts = [
   {
     "id": "post_choose_stone_custom_bathroom_sink",
     "slug": "choose-stone-custom-bathroom-sink",
@@ -82,4 +82,3 @@ const POSTS = [
     "updatedAt": "2026-05-07T08:00:00.000Z"
   }
 ];
-window.POSTS = POSTS;

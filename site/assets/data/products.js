@@ -1,4 +1,4 @@
-const PRODUCTS = [
+export const products = [
   {
     "id": "prod_green_marble_pedestal_sink",
     "slug": "green-marble-pedestal-sink",
@@ -9,9 +9,9 @@ const PRODUCTS = [
     "sortOrder": 10,
     "name": "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects",
     "nameZh": "绿色大理石立柱盆",
-    "category": "Pedestal Sinks",
-    "categoryZh": "立柱盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -75,7 +75,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_luxury_green_marble_entrance_hall_table",
@@ -87,8 +87,8 @@ const PRODUCTS = [
     "sortOrder": 15,
     "name": "Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors",
     "nameZh": "绿色奢石玄关展示台",
-    "category": "Console Tables",
-    "categoryZh": "玄关台",
+    "category": "Stone Console Tables",
+    "categoryZh": "石材玄关台",
     "mainCategory": "stone-tables",
     "subCategory": "console-tables",
     "filters": [
@@ -156,7 +156,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_winwinstone_calacatta_stone_box_coffee_table",
@@ -168,10 +168,10 @@ const PRODUCTS = [
     "sortOrder": 16,
     "name": "Minimalist calacatta stone box coffee tables",
     "nameZh": "简约风卡拉拉大理石盒子咖啡桌",
-    "category": "Coffee Tables",
+    "category": "Stone Console Tables",
     "categoryZh": "咖啡桌",
     "mainCategory": "stone-tables",
-    "subCategory": "coffee-tables",
+    "subCategory": "console-tables",
     "filters": [
       "tables",
       "furniture",
@@ -240,7 +240,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-05-11T02:13:58.996Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_calacatta_marble_pedestal_sink",
@@ -252,9 +252,9 @@ const PRODUCTS = [
     "sortOrder": 20,
     "name": "Fluted Rectangular White Marble Pedestal Sink",
     "nameZh": "白色大理石竖纹立柱盆",
-    "category": "Pedestal Sinks",
-    "categoryZh": "立柱盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -320,7 +320,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_custom_marble_vessel_sink",
@@ -334,9 +334,9 @@ const PRODUCTS = [
     "sortOrder": 30,
     "name": "Custom Marble Vessel Sink",
     "nameZh": "定制大理石台上盆",
-    "category": "Vessel Sinks",
-    "categoryZh": "台上盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "vessel-sinks",
     "filters": [
       "sinks",
@@ -398,7 +398,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_minimalist_travertine_dining_table",
@@ -410,8 +410,8 @@ const PRODUCTS = [
     "sortOrder": 40,
     "name": "Travertine Dining Table for Modern Interiors and OEM Furniture Orders",
     "nameZh": "现代空间用洞石餐桌",
-    "category": "Dining Tables",
-    "categoryZh": "餐桌",
+    "category": "Travertine Tables",
+    "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -477,7 +477,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_graceful_travertine_dining_table",
@@ -489,8 +489,8 @@ const PRODUCTS = [
     "sortOrder": 50,
     "name": "Graceful Travertine Dining Table",
     "nameZh": "雅致洞石餐桌",
-    "category": "Dining Tables",
-    "categoryZh": "餐桌",
+    "category": "Travertine Tables",
+    "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -552,7 +552,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_minimal_travertine_dining_table",
@@ -566,8 +566,8 @@ const PRODUCTS = [
     "sortOrder": 60,
     "name": "Minimal Travertine Dining Table",
     "nameZh": "极简洞石餐桌",
-    "category": "Dining Tables",
-    "categoryZh": "餐桌",
+    "category": "Travertine Tables",
+    "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
@@ -629,7 +629,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_natural_marble_bathtub",
@@ -643,7 +643,7 @@ const PRODUCTS = [
     "nameZh": "天然大理石浴缸",
     "category": "Stone Bathtubs",
     "categoryZh": "石材浴缸",
-    "mainCategory": "stone-bathtubs",
+    "mainCategory": "",
     "subCategory": "",
     "filters": [
       "bathroom"
@@ -704,45 +704,51 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_red_travertine_dining_table",
     "slug": "red-travertine-dining-table",
     "aliasSlugs": [],
     "status": "published",
-    "featured": false,
-    "featuredOrder": null,
+    "featured": true,
+    "featuredOrder": 2,
     "sortOrder": 80,
-    "name": "Red Travertine Dining Table",
-    "nameZh": "红色洞石餐桌",
-    "category": "Dining Tables",
-    "categoryZh": "餐桌",
+    "name": "Minimalist Red Travertine Dining Table",
+    "nameZh": "极简风红色洞石餐桌",
+    "category": "Travertine Tables",
+    "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
-      "tables"
+      "tables",
+      "furniture",
+      "project"
     ],
-    "image": "assets/images/red-travertine-marble-dining-table-designed-for-living-room.jpg",
+    "image": "assets\\images\\products\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table.webp",
     "gallery": [
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room.jpg",
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room01.jpg",
       "assets/images/red-travertine-marble-dining-table-designed-for-living-room02.jpg",
-      "assets/images/red-travertine-marble-dining-table-designed-for-living-room03.jpg"
+      "assets/images/red-travertine-marble-dining-table-designed-for-living-room03.jpg",
+      "assets/images\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table.webp",
+      "assets/images\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table-01.webp",
+      "assets/images\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table-02.webp",
+      "assets/images\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table-03.webp"
     ],
     "badge": "Red Travertine Dining Table",
     "badgeZh": "红色洞石餐桌",
-    "summary": "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
-    "summaryZh": "一款为客厅与餐厅空间设计的红色洞石餐桌，适合需要温暖石材质感和视觉焦点家具的空间。",
-    "desc": "A red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
-    "descZh": "这是一款适用于客厅、餐厅和高端室内项目的红色洞石餐桌，兼具温暖的天然纹理与鲜明的家具存在感。",
+    "summary": "A minimalist red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
+    "summaryZh": "一款为客厅与餐厅空间设计的极简风红色洞石餐桌，适合需要温暖石材质感和视觉焦点家具的空间。",
+    "desc": "A minimalist red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
+    "descZh": "这是一款适用于客厅、餐厅和高端室内项目的极简风红色洞石餐桌，兼具温暖的天然纹理与鲜明的家具存在感。",
     "seo": {
-      "title": "Red Travertine Dining Table Manufacturer | Custom Stone Furniture",
-      "description": "Custom red travertine dining table for dining rooms, villas, showrooms, and designer interiors. Factory-direct production with custom size, edge detail, base structure, finish, and export packing.",
-      "keywords": "red travertine marble dining table, red travertine table for living room, custom stone furniture factory"
+      "title": "Minimalist Red Travertine Dining Table",
+      "description": "A minimalist red travertine marble dining table designed for living rooms that need warm natural stone texture and a memorable furniture centerpiece.",
+      "keywords": "red travertine dining table, Travertine Tables"
     },
-    "material": "Natural Red Travertine Marble",
-    "materialZh": "天然红色洞石",
+    "material": "Natural Red Travertine  or other Natural Stone",
+    "materialZh": "天然红色洞石或其他天然石材",
     "usage": "Living Room, Dining Room, Villa, Hotel, Interior Project",
     "usageZh": "客厅、餐厅、别墅、酒店、室内项目",
     "finish": "Filled or unfilled, honed, polished, or sealed finish",
@@ -782,7 +788,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_calacatta_white_marble_pedestal_sink",
@@ -796,9 +802,9 @@ const PRODUCTS = [
     "sortOrder": 90,
     "name": "Calacatta White Marble Pedestal Sink",
     "nameZh": "卡拉卡塔白大理石立柱盆",
-    "category": "Pedestal Sinks",
-    "categoryZh": "立柱盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -866,7 +872,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_calacatta_viola_marble_pedestal_sink",
@@ -880,9 +886,9 @@ const PRODUCTS = [
     "sortOrder": 100,
     "name": "Calacatta Viola Marble Pedestal Sink",
     "nameZh": "卡拉卡塔紫大理石立柱盆",
-    "category": "Pedestal Sinks",
-    "categoryZh": "立柱盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -947,7 +953,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_freestanding_cylindrical_pedestal_sink",
@@ -959,9 +965,9 @@ const PRODUCTS = [
     "sortOrder": 110,
     "name": "Freestanding Cylindrical Marble Pedestal Sink",
     "nameZh": "独立式圆柱大理石立柱盆",
-    "category": "Pedestal Sinks",
-    "categoryZh": "立柱盆",
-    "mainCategory": "stone-sinks",
+    "category": "Marble Sinks",
+    "categoryZh": "石材台盆",
+    "mainCategory": "marble-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
       "sinks"
@@ -1030,7 +1036,7 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   },
   {
     "id": "prod_modern_calacatta_white_marble_fireplace_surround",
@@ -1109,7 +1115,6 @@ const PRODUCTS = [
       }
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
-    "updatedAt": "2026-05-11T02:13:58.996Z"
+    "updatedAt": "2026-05-11T04:06:04.425Z"
   }
 ];
-window.PRODUCTS = PRODUCTS;
