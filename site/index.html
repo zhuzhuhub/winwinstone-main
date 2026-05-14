@@ -43,8 +43,31 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
         <div class="nav-links" id="primary-nav" data-nav-links>
-          <a href="products.html">Products</a>
-          <a href="blog.html">Blog</a>
+          <div class="nav-item dropdown">
+            <a href="products.html" class="nav-link">Products</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-section">
+                <h4>By Material</h4>
+                <a href="materials/marble/">Marble</a>
+                <a href="materials/travertine/">Travertine</a>
+              </div>
+              <div class="dropdown-section">
+                <h4>By Space</h4>
+                <a href="spaces/bathroom/">Bathroom</a>
+                <a href="spaces/living-room/">Living Room</a>
+                <a href="spaces/hotel/">Hotel</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="blog.html" class="nav-link">Blog</a>
+            <div class="dropdown-menu">
+              <a href="blog/category/stone-guide/">Stone Guide</a>
+              <a href="blog/category/care-maintenance/">Care & Maintenance</a>
+              <a href="blog/category/factory-process/">Factory Process</a>
+              <a href="blog/category/product-ideas/">Product Ideas</a>
+            </div>
+          </div>
           <a href="factory.html">Factory</a>
           <a href="oem-odm.html">OEM/ODM</a>
           <a href="why-us.html">Why Us</a>
