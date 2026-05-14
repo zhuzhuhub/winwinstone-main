@@ -49,15 +49,53 @@ async function buildSite() {
 }
 
 async function syncDataFiles(products, posts) {
-  // 更新前端产品数据文件
-  const productsJsContent = `export const products = ${JSON.stringify(products, null, 2)};`;
-  await fs.writeFile(path.join(SITE_DIR, 'assets/data/products.js'), productsJsContent, 'utf8');
-  console.log('Updated: site/assets/data/products.js');
+  // 生成产品轻量索引（仅包含列表展示所需字段）
+  const lightIndex = products
+    .filter(p => p.status === 'published')
+    .map(p => ({
+      id: p.id,
+      slug: p.slug,
+      name: p.name,
+      nameZh: p.nameZh,
+      category: p.mainCategory,
+      thumbnail: p.thumbnail || p.image,
+      coverAlt: p.coverAlt || p.imageAlt || p.name,
+      summary: p.summary,
+      summaryZh: p.summaryZh,
+      featured: p.featured || false,
+      featuredOrder: p.featuredOrder || 999,
+      sortOrder: p.sortOrder || 999,
+      updatedAt: p.updatedAt
+    }));
   
-  // 更新前端博客数据文件
-  const postsJsContent = `export const posts = ${JSON.stringify(posts, null, 2)};`;
+  // 更新前端产品数据文件（轻量索引）
+  const productsJsContent = `export const products = ${JSON.stringify(lightIndex, null, 2)};`;
+  await fs.writeFile(path.join(SITE_DIR, 'assets/data/products.js'), productsJsContent, 'utf8');
+  console.log('Updated: site/assets/data/products.js (light index)');
+  
+  // 生成博客轻量索引
+  const lightPosts = posts
+    .filter(post => post.status === 'published')
+    .map(post => ({
+      id: post.id,
+      slug: post.slug,
+      title: post.title,
+      titleZh: post.titleZh,
+      category: post.category,
+      categoryZh: post.categoryZh,
+      coverImage: post.coverImage,
+      coverAlt: post.coverAlt || post.title,
+      excerpt: post.excerpt,
+      excerptZh: post.excerptZh,
+      featured: post.featured || false,
+      sortOrder: post.sortOrder || 999,
+      updatedAt: post.updatedAt
+    }));
+  
+  // 更新前端博客数据文件（轻量索引）
+  const postsJsContent = `export const posts = ${JSON.stringify(lightPosts, null, 2)};`;
   await fs.writeFile(path.join(SITE_DIR, 'assets/data/posts.js'), postsJsContent, 'utf8');
-  console.log('Updated: site/assets/data/posts.js');
+  console.log('Updated: site/assets/data/posts.js (light index)');
 }
 
 async function generateProductPages(products) {
