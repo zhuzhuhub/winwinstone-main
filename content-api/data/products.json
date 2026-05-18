@@ -9,12 +9,14 @@
     "sortOrder": 10,
     "name": "Green Marble Pedestal Sink for Luxury Bathrooms and Custom Projects",
     "nameZh": "绿色大理石立柱盆",
-    "category": "Marble Sinks",
+    "category": "Pedestal Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
-      "sinks"
+      "sinks",
+      "bathroom",
+      "project"
     ],
     "image": "assets/images/green-luxury-marble-pedestal-sink.jpg",
     "gallery": [
@@ -79,7 +81,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -93,7 +94,7 @@
     "sortOrder": 15,
     "name": "Luxury Green Marble Entrance Hall Table for Villas, Showrooms, and Designer Interiors",
     "nameZh": "绿色奢石玄关展示台",
-    "category": "Stone Console Tables",
+    "category": "Console Tables",
     "categoryZh": "石材玄关台",
     "mainCategory": "stone-tables",
     "subCategory": "console-tables",
@@ -166,7 +167,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "living-room",
-      "bathroom",
       "hotel"
     ]
   },
@@ -180,10 +180,10 @@
     "sortOrder": 16,
     "name": "Minimalist calacatta stone box coffee tables",
     "nameZh": "简约风卡拉拉大理石盒子咖啡桌",
-    "category": "Stone Console Tables",
+    "category": "Coffee Tables",
     "categoryZh": "咖啡桌",
     "mainCategory": "stone-tables",
-    "subCategory": "console-tables",
+    "subCategory": "coffee-tables",
     "filters": [
       "tables",
       "furniture",
@@ -256,7 +256,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "living-room",
-      "bathroom",
       "hotel"
     ]
   },
@@ -270,12 +269,14 @@
     "sortOrder": 20,
     "name": "Fluted Rectangular White Marble Pedestal Sink",
     "nameZh": "白色大理石竖纹立柱盆",
-    "category": "Marble Sinks",
+    "category": "Pedestal Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
-      "sinks"
+      "sinks",
+      "bathroom",
+      "project"
     ],
     "image": "assets/images/fluted-rectangular-white-marble-pedestal-sink.jpg",
     "gallery": [
@@ -342,7 +343,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -358,13 +358,13 @@
     "sortOrder": 30,
     "name": "Custom Marble Vessel Sink",
     "nameZh": "定制大理石台上盆",
-    "category": "Marble Sinks",
+    "category": "Vessel Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "vessel-sinks",
     "filters": [
       "sinks",
-      "project"
+      "bathroom"
     ],
     "image": "assets/images/vessel-sink.jpg",
     "gallery": [
@@ -423,9 +423,10 @@
     ],
     "createdAt": "2026-04-29T00:00:00.000Z",
     "updatedAt": "2026-05-11T04:06:04.425Z",
-    "materialTag": "travertine",
+    "materialTag": "marble",
     "spaceTags": [
-      "bathroom"
+      "bathroom",
+      "hotel"
     ]
   },
   {
@@ -438,12 +439,13 @@
     "sortOrder": 40,
     "name": "Travertine Dining Table for Modern Interiors and OEM Furniture Orders",
     "nameZh": "现代空间用洞石餐桌",
-    "category": "Travertine Tables",
+    "category": "Dining Tables",
     "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
-      "tables"
+      "tables",
+      "furniture"
     ],
     "image": "assets/images/travertine-marble-dining-table-designed-for-modern-interiors.jpg",
     "gallery": [
@@ -509,7 +511,6 @@
     "materialTag": "travertine",
     "spaceTags": [
       "living-room",
-      "bathroom",
       "hotel"
     ]
   },
@@ -523,12 +524,13 @@
     "sortOrder": 50,
     "name": "Graceful Travertine Dining Table",
     "nameZh": "雅致洞石餐桌",
-    "category": "Travertine Tables",
+    "category": "Dining Tables",
     "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
-      "tables"
+      "tables",
+      "furniture"
     ],
     "image": "assets/images/graceful-table.jpg",
     "gallery": [
@@ -589,8 +591,8 @@
     "updatedAt": "2026-05-11T04:06:04.425Z",
     "materialTag": "travertine",
     "spaceTags": [
-      "hotel",
-      "living-room"
+      "living-room",
+      "hotel"
     ]
   },
   {
@@ -605,12 +607,13 @@
     "sortOrder": 60,
     "name": "Minimal Travertine Dining Table",
     "nameZh": "极简洞石餐桌",
-    "category": "Travertine Tables",
+    "category": "Dining Tables",
     "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
-      "tables"
+      "tables",
+      "furniture"
     ],
     "image": "assets/images/simple-table.jpg",
     "gallery": [
@@ -672,7 +675,7 @@
     "materialTag": "travertine",
     "spaceTags": [
       "living-room",
-      "bathroom"
+      "hotel"
     ]
   },
   {
@@ -687,10 +690,12 @@
     "nameZh": "天然大理石浴缸",
     "category": "Stone Bathtubs",
     "categoryZh": "石材浴缸",
-    "mainCategory": "",
+    "mainCategory": "stone-bathtubs",
     "subCategory": "",
     "filters": [
-      "bathroom"
+      "bathroom",
+      "bathtubs",
+      "project"
     ],
     "image": "assets/images/marble-bathtub.jpg",
     "gallery": [
@@ -752,7 +757,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -766,14 +770,13 @@
     "sortOrder": 80,
     "name": "Minimalist Red Travertine Dining Table",
     "nameZh": "极简风红色洞石餐桌",
-    "category": "Travertine Tables",
+    "category": "Dining Tables",
     "categoryZh": "洞石餐桌",
     "mainCategory": "stone-tables",
     "subCategory": "dining-tables",
     "filters": [
       "tables",
-      "furniture",
-      "project"
+      "furniture"
     ],
     "image": "assets\\images\\products\\stone-tables\\winwinstone-red-travertine-minimalist-stone-dining table.webp",
     "gallery": [
@@ -842,7 +845,6 @@
     "materialTag": "travertine",
     "spaceTags": [
       "living-room",
-      "bathroom",
       "hotel"
     ]
   },
@@ -858,12 +860,14 @@
     "sortOrder": 90,
     "name": "Calacatta White Marble Pedestal Sink",
     "nameZh": "卡拉卡塔白大理石立柱盆",
-    "category": "Marble Sinks",
+    "category": "Pedestal Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
-      "sinks"
+      "sinks",
+      "bathroom",
+      "project"
     ],
     "image": "assets/images/calacatta-white-marble-pedestal-sink-design.jpg",
     "gallery": [
@@ -932,7 +936,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -948,12 +951,14 @@
     "sortOrder": 100,
     "name": "Calacatta Viola Marble Pedestal Sink",
     "nameZh": "卡拉卡塔紫大理石立柱盆",
-    "category": "Marble Sinks",
+    "category": "Pedestal Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
-      "sinks"
+      "sinks",
+      "bathroom",
+      "project"
     ],
     "image": "assets/images/calacatta-viola-marble-pedestal-sink.jpg",
     "gallery": [
@@ -1019,7 +1024,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -1033,12 +1037,14 @@
     "sortOrder": 110,
     "name": "Freestanding Cylindrical Marble Pedestal Sink",
     "nameZh": "独立式圆柱大理石立柱盆",
-    "category": "Marble Sinks",
+    "category": "Pedestal Sinks",
     "categoryZh": "石材台盆",
-    "mainCategory": "marble-sinks",
+    "mainCategory": "stone-sinks",
     "subCategory": "pedestal-sinks",
     "filters": [
-      "sinks"
+      "sinks",
+      "bathroom",
+      "project"
     ],
     "image": "assets/images/freestanding-cylindrical-pedestal-sink-black-marble.jpg",
     "gallery": [
@@ -1108,7 +1114,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "bathroom",
-      "living-room",
       "hotel"
     ]
   },
@@ -1124,9 +1129,10 @@
     "nameZh": "现代卡拉卡塔白大理石壁炉框",
     "category": "Fireplace Surrounds",
     "categoryZh": "壁炉饰面",
-    "mainCategory": "",
+    "mainCategory": "stone-fireplaces",
     "subCategory": "",
     "filters": [
+      "fireplace",
       "project"
     ],
     "image": "assets/images/modern-calacatta-white-marble-fireplace-surround.jpg",
@@ -1193,7 +1199,6 @@
     "materialTag": "marble",
     "spaceTags": [
       "living-room",
-      "bathroom",
       "hotel"
     ]
   }
