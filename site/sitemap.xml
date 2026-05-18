@@ -1,105 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.winwinstonecustom.com/</loc>
+    <loc>https://winwinstonecustom.com/</loc>
+
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.winwinstonecustom.com/products.html</loc>
+    <loc>https://winwinstonecustom.com/products.html</loc>
+
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.winwinstonecustom.com/blog.html</loc>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/green-marble-pedestal-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
-  </url>
+    <loc>https://winwinstonecustom.com/products/stone-sinks/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/luxury-green-marble-entrance-hall-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.82</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-sinks/pedestal-sinks/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/winwinstone-calacatta-stone-box-coffee-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.78</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-sinks/vessel-sinks/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/calacatta-marble-pedestal-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.78</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-tables/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/custom-marble-vessel-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.82</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-tables/dining-tables/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/minimalist-travertine-dining-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.78</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-tables/coffee-tables/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/graceful-travertine-dining-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.78</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-tables/console-tables/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/minimal-travertine-dining-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.78</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-furniture/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/natural-marble-bathtub/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.82</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-bathtubs/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/red-travertine-dining-table/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.82</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/stone-fireplaces/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/calacatta-white-marble-pedestal-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.82</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog/category/stone-guide/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog/category/product-ideas/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/calacatta-viola-marble-pedestal-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog/category/factory-process/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/freestanding-cylindrical-pedestal-sink/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog/category/care-maintenance/</loc>
 
-  <url>
-    <loc>https://www.winwinstonecustom.com/products/modern-calacatta-white-marble-fireplace-surround/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-05-11T04:06:04.425Z</lastmod>
+    <priority>0.75</priority>
   </url>
-  
   <url>
-    <loc>https://www.winwinstonecustom.com/blog/choose-stone-custom-bathroom-sink/</loc>
+    <loc>https://winwinstonecustom.com/products/green-marble-pedestal-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.8</priority>
-    <lastmod>2026-05-07T08:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/luxury-green-marble-entrance-hall-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/winwinstone-calacatta-stone-box-coffee-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/calacatta-marble-pedestal-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/custom-marble-vessel-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/minimalist-travertine-dining-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/graceful-travertine-dining-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/minimal-travertine-dining-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/natural-marble-bathtub/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/red-travertine-dining-table/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/calacatta-white-marble-pedestal-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/calacatta-viola-marble-pedestal-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/freestanding-cylindrical-pedestal-sink/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/products/modern-calacatta-white-marble-fireplace-surround/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/blog/choose-stone-custom-bathroom-sink/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://winwinstonecustom.com/zh/blog/choose-stone-custom-bathroom-sink/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.65</priority>
   </url>
 </urlset>
