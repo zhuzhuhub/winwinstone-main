@@ -8,26 +8,24 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Set up Node.js 24
+      - name: Set up Node.js 
         uses: actions/setup-node@v5
         with:
-          node-version: '24'
+          node-version: '20'
           
       - name: Run build script
         run: node scripts/build-static-site.js
-        
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: team_YdzDr0kPFNHqK7WPq8TZHngG
-          vercel-project-id: prj_VfJoLsw9yNtXQmIV5hoqE0Tw7Drm
-          vercel-args: '--prod'
-          working-directory: ./
+        run: vercel --prod --yes
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        working-directory: ./site
