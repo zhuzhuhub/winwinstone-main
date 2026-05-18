@@ -30,4 +30,4 @@ jobs:
           vercel-org-id: team_YdzDr0kPFNHqK7WPq8TZHngG
           vercel-project-id: prj_VfJoLsw9yNtXQmIV5hoqE0Tw7Drm
           vercel-args: '--prod'
-          vercel-working-directory: ./
+          working-directory: ./
