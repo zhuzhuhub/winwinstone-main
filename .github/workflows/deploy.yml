@@ -27,7 +27,7 @@ jobs:
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: zhuzhu19870718-6100s-projects
-          vercel-project-id: winwinstonecustom
+          vercel-org-id: team_YdzDr0kPFNHqK7WPq8TZHngG
+          vercel-project-id: prj_VfJoLsw9yNtXQmIV5hoqE0Tw7Drm
           vercel-args: '--prod'
           vercel-working-directory: ./
