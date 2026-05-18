@@ -30,10 +30,4 @@ jobs:
         run: npm install -g vercel@latest
         
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: zhuzhu19870718-6100s-projects
-          vercel-project-id: winwinstonecustom
-          vercel-args: '--prod'
-          vercel-working-directory: ./
+        run: vercel --prod --yes --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
