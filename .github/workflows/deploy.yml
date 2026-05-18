@@ -41,4 +41,4 @@ jobs:
           echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
         
       - name: Deploy to Vercel
-        run: vercel --prod --yes --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
+        run: vercel --prod --yes --scope $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
