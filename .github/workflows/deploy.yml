@@ -24,7 +24,7 @@ jobs:
           node-version: '24'
           
       - name: Run build script
-        run: node scripts/build-static-site.js
+        run: node scripts/build-seo-pages.js
         
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
