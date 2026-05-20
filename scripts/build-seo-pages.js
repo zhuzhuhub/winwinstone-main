@@ -1269,10 +1269,36 @@ function renderLayout({
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
         <div class="nav-links" id="primary-nav" data-nav-links>
-          <a${activeNav === "products" ? ` class="is-active"` : ""} href="${escapeHtml(productsHref)}">${escapeHtml(labels.navProducts)}</a>
-          <a${activeNav === "blog" ? ` class="is-active"` : ""} href="${escapeHtml(blogHref)}">${escapeHtml(labels.navBlog)}</a>
-          <a href="${escapeHtml(serviceHref)}">${escapeHtml(labels.navService)}</a>
-          <a href="${escapeHtml(contactHref)}">${escapeHtml(labels.navContact)}</a>
+          <div class="nav-item dropdown">
+            <a href="${escapeHtml(productsHref)}" class="nav-link">${escapeHtml(labels.navProducts)}</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-section">
+                <h4>By Material</h4>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "materials/marble/"))}">Marble</a>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "materials/travertine/"))}">Travertine</a>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "materials/limestone/"))}">Limestone</a>
+              </div>
+              <div class="dropdown-section">
+                <h4>By Space</h4>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "spaces/bathroom/"))}">Bathroom</a>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "spaces/living-room/"))}">Living Room</a>
+                <a href="${escapeHtml(getRelativeUrl(rootPrefix, "spaces/hotel/"))}">Hotel</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="${escapeHtml(blogHref)}" class="nav-link">${escapeHtml(labels.navBlog)}</a>
+            <div class="dropdown-menu">
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/category/stone-guide/"))}">Stone Guide</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/category/care-maintenance/"))}">Care & Maintenance</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/category/factory-process/"))}">Factory Process</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/category/product-ideas/"))}">Product Ideas</a>
+            </div>
+          </div>
+          <a href="${escapeHtml(getRelativeUrl(rootPrefix, "factory.html"))}">Factory</a>
+          <a href="${escapeHtml(getRelativeUrl(rootPrefix, "oem-odm.html"))}">OEM/ODM</a>
+          <a href="${escapeHtml(getRelativeUrl(rootPrefix, "why-us.html"))}">Why Us</a>
+          <a href="${escapeHtml(getRelativeUrl(rootPrefix, "contact.html"))}">Contact</a>
         </div>
         ${headerControls}
       </nav>
