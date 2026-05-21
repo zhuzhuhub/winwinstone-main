@@ -27,6 +27,8 @@ async function buildSite() {
     // 读取博客数据
     const posts = await readJsonFile(POSTS_FILE);
     console.log(`Loaded ${posts.length} posts`);
+    await copyStaticPages();
+
     
     // 步骤1：同步数据到前端 data 文件
     await syncDataFiles(products, posts);
@@ -393,5 +395,24 @@ async function generateSitemap(products, posts) {
   console.log('Generated: /sitemap.xml');
 }
 
-// 运行构建
+async function copyStaticPages() {
+  const staticPages = [
+    'index.html',
+    'products.html',
+    'blog.html',
+  
+  ];
+
+  for (const page of staticPages) {
+    const source = path.join(__dirname, '../site', page);
+    const destination = path.join(SITE_DIR, page);
+
+    try {
+      await fs.copyFile(source, destination);
+      console.log(`Copied: ${page}`);
+    } catch (err) {
+      console.log(`Skipped: ${page}`);
+    }
+  }
+}
 buildSite();
