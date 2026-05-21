@@ -1,8 +1,13 @@
 {
-  "buildCommand": "node scripts/build-seo-pages.js",
+  "buildCommand": "node scripts/build-static-site.js",
   "outputDirectory": "site",
   "framework": null,
-  "redirects": [],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
