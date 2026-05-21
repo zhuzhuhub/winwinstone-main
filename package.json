@@ -1,0 +1,9 @@
+{
+  "name": "winwinstone-main",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-static-site.js",
+    "build:seo": "node scripts/build-seo-pages.js",
+    "build:all": "npm run build && npm run build:seo"
+  }
+}
