@@ -2460,6 +2460,7 @@ async function main() {
   }
 
   await Promise.all([
+    writeSiteFile("index.html", renderProductsLandingPage(publishedProducts)),
     writeSiteFile("products.html", renderProductsLandingPage(publishedProducts)),
     writeSiteFile("blog.html", renderBlogLandingPage(publishedPosts, publishedProducts))
   ]);
