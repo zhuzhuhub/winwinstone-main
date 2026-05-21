@@ -1330,9 +1330,16 @@ function renderLayout({
 function renderProductPage(product) {
   const title = product.seo?.title || product.name;
   const description = product.seo?.description || product.summary || product.desc || "";
-  const canonicalPath = toUrlPath("products", product.slug);
-  const usageItems = splitUsage(product.usage);
   const productCategoryCrumbs = getProductCategoryCrumbs(product);
+  
+  const depth = productCategoryCrumbs.length + 1;
+  const rootPrefix = "../".repeat(depth);
+  
+  const canonicalPath = productCategoryCrumbs.length > 0
+    ? toUrlPath("products", ...productCategoryCrumbs.map(c => c.slug), product.slug)
+    : toUrlPath("products", product.slug);
+  const usageItems = splitUsage(product.usage);
+  
   const breadcrumbItems = [
     { label: "Home", href: "index.html" },
     { label: "Products", href: "products.html" },
@@ -1340,14 +1347,14 @@ function renderProductPage(product) {
       label: category.name,
       href: getProductCategoryPath(category).replace(/^\/+/, "")
     })),
-    { label: product.name, href: `products/${product.slug}/` }
+    { label: product.name, href: getProductPageHref("", product) }
   ];
   const galleryItems = (product.gallery || []).length ? product.gallery : [product.image].filter(Boolean);
   const galleryHtml = galleryItems
     .map(
       (image, index) => `
-            <button class="product-gallery-thumb${index === 0 ? " is-active" : ""}" type="button" data-gallery-image="../../${escapeHtml(image)}" aria-label="View ${escapeHtml(product.name)} image ${index + 1}">
-              <img src="../../${escapeHtml(image)}" alt="${escapeHtml(product.name)} view ${index + 1}">
+            <button class="product-gallery-thumb${index === 0 ? " is-active" : ""}" type="button" data-gallery-image="${escapeHtml(getRelativeUrl(rootPrefix, image))}" aria-label="View ${escapeHtml(product.name)} image ${index + 1}">
+              <img src="${escapeHtml(getRelativeUrl(rootPrefix, image))}" alt="${escapeHtml(product.name)} view ${index + 1}">
             </button>`
     )
     .join("");
@@ -1473,15 +1480,15 @@ function renderProductPage(product) {
     <main id="main">
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-breadcrumbs">
-          ${renderBreadcrumbs(breadcrumbItems, "../../")}
+          ${renderBreadcrumbs(breadcrumbItems, rootPrefix)}
         </div>
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img id="product-image" src="../../${escapeHtml(product.image || galleryItems[0] || "")}" alt="${escapeHtml(product.name)}">
+            <img id="product-image" src="${escapeHtml(getRelativeUrl(rootPrefix, product.image || galleryItems[0] || ""))}" alt="${escapeHtml(product.name)}">
             <div id="product-gallery" class="product-gallery">${galleryHtml}</div>
           </div>
           <div class="product-detail-copy">
-            <a class="text-link product-back-link" href="../../products.html">
+            <a class="text-link product-back-link" href="${escapeHtml(getRelativeUrl(rootPrefix, "products.html"))}">
               <span id="product-back-link-text">Back to products</span>
             </a>
             <p class="eyebrow" id="product-badge">${escapeHtml(product.badge || product.category || "Custom Natural Stone")}</p>
@@ -1752,7 +1759,7 @@ function renderProductPage(product) {
     body,
     schema,
     headerControls: `<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span data-language-label>中文</span></button>`,
-    rootPrefix: "../../",
+    rootPrefix,
     activeNav: "products",
     scripts: renderSharedPageScript()
   });
@@ -2423,7 +2430,11 @@ async function main() {
   ]);
 
   for (const product of publishedProducts) {
-    await writeGeneratedPage(path.join("products", product.slug), renderProductPage(product));
+    const categoryCrumbs = getProductCategoryCrumbs(product);
+    const productDir = categoryCrumbs.length > 0
+      ? path.join("products", ...categoryCrumbs.map(c => c.slug), product.slug)
+      : path.join("products", product.slug);
+    await writeGeneratedPage(productDir, renderProductPage(product));
   }
 
   for (const category of PRODUCT_CATEGORY_DEFINITIONS) {

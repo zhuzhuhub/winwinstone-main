@@ -2,38 +2,7 @@
   "buildCommand": "node scripts/build-seo-pages.js",
   "outputDirectory": "site",
   "framework": null,
-  "redirects": [
-    {
-      "source": "/products/stone-sinks/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/products/stone-tables/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/products/stone-bathtubs/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/products/stone-fireplaces/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/products/stone-furniture/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    },
-    {
-      "source": "/products/marble-sinks/(.*)",
-      "destination": "/products/$1",
-      "statusCode": 301
-    }
-  ],
+  "redirects": [],
   "headers": [
     {
       "source": "/assets/(.*)",
