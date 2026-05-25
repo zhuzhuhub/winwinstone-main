@@ -396,12 +396,15 @@ async function generateSitemap(products, posts) {
 }
 
 async function copyStaticPages() {
-  const staticPages = [
-    'index.html',
-    'products.html',
-    'blog.html',
-  
-  ];
+ const staticPages = [
+  'index.html',
+  'products.html',
+  'blog.html',
+  'factory.html',
+  'contact.html',
+  'why-us.html',
+  'oem-odm.html'
+];
 
   for (const page of staticPages) {
     const source = path.join(__dirname, '../site', page);

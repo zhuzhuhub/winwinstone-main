@@ -77,9 +77,9 @@ function splitUsage(value) {
 const BLOG_CATEGORY_DEFINITIONS = [
   {
     key: "guide",
-    slug: "stone-guide",
-    name: "Stone Guide",
-    shortName: "Guides",
+    slug: "material-guides",
+    name: "Material Guides",
+    shortName: "Materials",
     description:
       "Material comparisons, finish advice, and practical stone selection notes for sinks, tables, and custom projects.",
     heroTitle: "Stone Material Guides for Custom Natural Stone Projects",
@@ -89,9 +89,9 @@ const BLOG_CATEGORY_DEFINITIONS = [
   },
   {
     key: "ideas",
-    slug: "product-ideas",
-    name: "Product Ideas",
-    shortName: "Ideas",
+    slug: "interior-design",
+    name: "Interior Design",
+    shortName: "Design",
     description:
       "Design directions, product styling references, and room-based inspiration for stone sinks, tables, and statement interiors.",
     heroTitle: "Stone Product Ideas for Bathrooms, Tables, and Interior Projects",
@@ -101,9 +101,9 @@ const BLOG_CATEGORY_DEFINITIONS = [
   },
   {
     key: "process",
-    slug: "factory-process",
-    name: "Factory Process",
-    shortName: "Process",
+    slug: "custom-projects",
+    name: "Custom Projects",
+    shortName: "Projects",
     description:
       "Production workflows, quote preparation, inspection notes, and export packing guidance for OEM/ODM and custom orders.",
     heroTitle: "Custom Stone Production and OEM/ODM Process Guides",
@@ -113,8 +113,8 @@ const BLOG_CATEGORY_DEFINITIONS = [
   },
   {
     key: "care",
-    slug: "care-maintenance",
-    name: "Care & Maintenance",
+    slug: "stone-care",
+    name: "Stone Care",
     shortName: "Care",
     description:
       "Daily cleaning, sealing, maintenance tips, and common mistakes to avoid when using natural stone products.",
@@ -124,6 +124,19 @@ const BLOG_CATEGORY_DEFINITIONS = [
     ctaLabel: "Ask About Stone Maintenance"
   }
 ];
+
+const LEGACY_BLOG_CATEGORY_SLUGS = {
+  guide: "stone-guide",
+  ideas: "product-ideas",
+  process: "factory-process",
+  care: "care-maintenance"
+};
+
+const PRODUCT_CATEGORY_ALIASES = {
+  "marble-sinks": "stone-sinks",
+  "stone-fireplaces": "fireplace-surrounds",
+  "stone-furniture": "custom-stone-furniture"
+};
 
 const BLOG_INTENT_PRODUCTS = [
   "green-marble-pedestal-sink",
@@ -413,8 +426,8 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
     ]
   },
   {
-    slug: "stone-furniture",
-    name: "Stone Furniture",
+    slug: "custom-stone-furniture",
+    name: "Custom Stone Furniture",
     shortName: "Furniture",
     eyebrow: "Product Category",
     title: "Custom Stone Furniture for irregular home, hotel, and interior projects.",
@@ -489,9 +502,9 @@ const PRODUCT_CATEGORY_DEFINITIONS = [
     ]
   },
   {
-    slug: "stone-fireplaces",
-    name: "Stone Fireplaces",
-    shortName: "Fireplaces",
+    slug: "fireplace-surrounds",
+    name: "Fireplace Surrounds",
+    shortName: "Fireplace",
     eyebrow: "Product Category",
     title: "Custom Stone Fireplaces for living rooms, villas, hotels, and interiors.",
     description:
@@ -568,7 +581,12 @@ function getBlogCategoryDefinitionBySlug(slug) {
 }
 
 function getBlogCategoryPath(category) {
-  return toUrlPath("blog", "category", category.slug);
+  return toUrlPath("blog", category.slug);
+}
+
+function getLegacyBlogCategoryPath(category) {
+  const legacySlug = LEGACY_BLOG_CATEGORY_SLUGS[category.key] || category.slug;
+  return toUrlPath("blog", "category", legacySlug);
 }
 
 function getLocalizedBlogCategory(category, locale = "en") {
@@ -640,8 +658,15 @@ function getProductImageUrl(rootPrefix, product) {
   return getRelativeUrl(rootPrefix, product.image || "assets/images/minimalist-table.jpg");
 }
 
-function getPostPath(post, locale = "en") {
-  return locale === "zh" ? toUrlPath("zh", "blog", post.slug) : toUrlPath("blog", post.slug);
+function getPostPath(post, locale = "en", { legacy = false } = {}) {
+  if (legacy) {
+    return locale === "zh" ? toUrlPath("zh", "blog", post.slug) : toUrlPath("blog", post.slug);
+  }
+
+  const category = getBlogCategoryDefinitionByKey(getPostCategoryKey(post));
+  return locale === "zh"
+    ? toUrlPath("zh", "blog", category.slug, post.slug)
+    : toUrlPath("blog", category.slug, post.slug);
 }
 
 function getPostCanonicalUrl(post, locale = "en") {
@@ -649,20 +674,20 @@ function getPostCanonicalUrl(post, locale = "en") {
 }
 
 function getProductCanonicalUrl(product) {
-  return `${siteUrl}${toUrlPath("products", product.slug)}`;
+  return `${siteUrl}${getProductPath(product)}`;
 }
 
-function getPostPageHref(rootPrefix, post, { locale = "en" } = {}) {
-  const path = locale === "zh" ? `zh/blog/${encodeURIComponent(post.slug)}/` : `blog/${encodeURIComponent(post.slug)}/`;
-  return getRelativeUrl(rootPrefix, path);
+function getPostPageHref(rootPrefix, post, { locale = "en", legacy = false } = {}) {
+  return getRelativeUrl(rootPrefix, getPostPath(post, locale, { legacy }).replace(/^\/+/, ""));
 }
 
 function getProductPageHref(rootPrefix, product) {
-  return getRelativeUrl(rootPrefix, `products/${encodeURIComponent(product.slug)}/`);
+  return getRelativeUrl(rootPrefix, getProductPath(product).replace(/^\/+/, ""));
 }
 
 function getProductCategoryDefinition(slug) {
-  return PRODUCT_CATEGORY_DEFINITIONS.find((entry) => entry.slug === slug) || null;
+  const normalizedSlug = PRODUCT_CATEGORY_ALIASES[slug] || slug;
+  return PRODUCT_CATEGORY_DEFINITIONS.find((entry) => entry.slug === normalizedSlug) || null;
 }
 
 function getProductCategoryPath(category) {
@@ -676,10 +701,10 @@ function getProductCategoryHref(rootPrefix, category) {
 }
 
 function getProductMainCategorySlug(product) {
-  if (product.mainCategory) return product.mainCategory;
+  if (product.mainCategory) return PRODUCT_CATEGORY_ALIASES[product.mainCategory] || product.mainCategory;
 
   const text = `${product.category || ""} ${product.usage || ""} ${(product.filters || []).join(" ")}`.toLowerCase();
-  if (/sink|basin|pedestal|vessel/.test(text)) return "marble-sinks";
+  if (/sink|basin|pedestal|vessel/.test(text)) return "stone-sinks";
   if (/table|console|dining|furniture/.test(text)) return "stone-tables";
   return "";
 }
@@ -717,6 +742,38 @@ function getProductCategoryCrumbs(product) {
   const mainCategory = getProductCategoryDefinition(getProductMainCategorySlug(product));
   const subCategory = getProductCategoryDefinition(getProductSubCategorySlug(product));
   return [mainCategory, subCategory].filter(Boolean);
+}
+
+function getProductPath(product) {
+  const productCategoryCrumbs = getProductCategoryCrumbs(product);
+  const mainCategory = productCategoryCrumbs[0];
+  const subCategory = productCategoryCrumbs[1];
+
+  if (mainCategory && subCategory) {
+    return toUrlPath("products", mainCategory.slug, subCategory.slug, product.slug);
+  }
+
+  if (mainCategory) {
+    return toUrlPath("products", mainCategory.slug, product.slug);
+  }
+
+  return toUrlPath("products", product.slug);
+}
+
+function getLegacyProductPath(product) {
+  return toUrlPath("products", product.slug);
+}
+
+function rewriteProductLinksToSeoPaths(html, products) {
+  return products.reduce((content, product) => {
+    const newPath = getProductPath(product);
+    const legacyPath = getLegacyProductPath(product);
+    if (newPath === legacyPath) return content;
+
+    return content
+      .replaceAll(`href='${legacyPath}'`, `href='${newPath}'`)
+      .replaceAll(`href="${legacyPath}"`, `href="${newPath}"`);
+  }, String(html || ""));
 }
 
 function getPostRelatedPosts(post, posts) {
@@ -865,7 +922,7 @@ function renderProductCategoryFaqs(category) {
     .join("");
 }
 
-function renderProductsLandingPage(products) {
+function renderProductsLandingPage(products, { rootPrefix = "", canonicalPath = "/products/" } = {}) {
   const mainCategories = PRODUCT_CATEGORY_DEFINITIONS.filter((category) => !category.parentSlug);
   const featuredProducts = products.filter((product) => product.featured).slice(0, 8);
   const otherProducts = products.filter((product) => !getProductMainCategorySlug(product)).slice(0, 4);
@@ -873,8 +930,8 @@ function renderProductsLandingPage(products) {
     <main id="main">
       <section class="page-hero product-hero" aria-labelledby="products-hero-title">
         <picture class="page-hero-media">
-          <source srcset="assets/images/minimalist-table.jpg" media="(min-width: 760px)">
-          <img src="assets/images/stone-vanity.jpg" alt="Custom natural stone product references">
+          <source srcset="${escapeHtml(getRelativeUrl(rootPrefix, "assets/images/minimalist-table.jpg"))}" media="(min-width: 760px)">
+          <img src="${escapeHtml(getRelativeUrl(rootPrefix, "assets/images/stone-vanity.jpg"))}" alt="Custom natural stone product references">
         </picture>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
@@ -883,7 +940,7 @@ function renderProductsLandingPage(products) {
           <p>Start from Marble Sinks or Stone Tables, then move into the product type that best matches your drawing, reference image, or sourcing plan.</p>
           <div class="hero-actions">
             <a class="button primary" href="#categories">Browse Categories</a>
-            <a class="button ghost" href="contact.html">Request Factory Quote</a>
+            <a class="button ghost" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">Request Factory Quote</a>
           </div>
           <div class="page-hero-notes" aria-label="Catalog highlights">
             <span>Factory-direct from Yunfu, China</span>
@@ -900,7 +957,7 @@ function renderProductsLandingPage(products) {
             <h2 id="product-categories-title">First-phase catalog structure for current product strengths.</h2>
             <p>These category pages group existing product details into clearer sourcing paths for buyers and search engines.</p>
           </div>
-          <div class="link-grid">${mainCategories.map((category) => renderProductCategoryCard(category, products)).join("")}</div>
+          <div class="link-grid">${mainCategories.map((category) => renderProductCategoryCard(category, products, { rootPrefix })).join("")}</div>
         </div>
       </section>
 
@@ -932,7 +989,7 @@ function renderProductsLandingPage(products) {
             <p class="eyebrow">Featured Products</p>
             <h2 id="featured-products-title">Current product detail pages connected to the new category structure.</h2>
           </div>
-          <div class="link-grid">${featuredProducts.map((product) => renderProductLinkCard(product)).join("")}</div>
+          <div class="link-grid">${featuredProducts.map((product) => renderProductLinkCard(product, { rootPrefix })).join("")}</div>
         </div>
       </section>
 
@@ -943,7 +1000,7 @@ function renderProductsLandingPage(products) {
             <p class="eyebrow">Other Product Directions</p>
             <h2 id="other-products-title">Kept in the catalog while future categories are prepared.</h2>
           </div>
-          <div class="link-grid">${otherProducts.map((product) => renderProductLinkCard(product)).join("")}</div>
+          <div class="link-grid">${otherProducts.map((product) => renderProductLinkCard(product, { rootPrefix })).join("")}</div>
         </div>
       </section>
       ` : ""}
@@ -954,7 +1011,7 @@ function renderProductsLandingPage(products) {
             <p class="eyebrow">Start Inquiry</p>
             <h2 id="products-cta-title">Send the closest product reference, target size, or drawing for review.</h2>
           </div>
-          <a class="button primary" href="contact.html">Request Factory Quote</a>
+          <a class="button primary" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">Request Factory Quote</a>
         </div>
       </section>
     </main>
@@ -967,7 +1024,7 @@ function renderProductsLandingPage(products) {
         "@type": "CollectionPage",
         name: "Products",
         description: "Custom natural stone product catalog with marble sinks and stone tables.",
-        url: `${siteUrl}/products.html`
+        url: `${siteUrl}/products/`
       },
       {
         "@type": "ItemList",
@@ -986,11 +1043,12 @@ function renderProductsLandingPage(products) {
     description:
       "Browse custom stone product categories including marble sinks, pedestal sinks, vessel sinks, dining tables, and console tables.",
     keywords: "custom stone products, marble sinks, stone tables, pedestal sinks, vessel sinks",
-    canonicalPath: "/products.html",
+    canonicalPath,
     ogType: "website",
     ogImage: `${siteUrl}/assets/images/stone-vanity.jpg`,
     body,
     schema,
+    rootPrefix,
     activeNav: "products",
     bodyAttributes: `data-page="products"`,
     scripts: renderSharedPageScript()
@@ -1009,7 +1067,7 @@ function renderProductCategoryPage(category, products) {
   const categoryPath = getProductCategoryPath(category);
   const breadcrumbItems = [
     { label: "Home", href: "index.html" },
-    { label: "Products", href: "products.html" }
+    { label: "Products", href: "products/" }
   ];
 
   if (parentCategory) {
@@ -1082,7 +1140,7 @@ function renderProductCategoryPage(category, products) {
             <p class="eyebrow">Next Step</p>
             <h2 id="category-cta-title">Send your drawing, reference image, target size, or quantity for review.</h2>
           </div>
-          <a class="button primary" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact.html"))}">Request Factory Quote</a>
+          <a class="button primary" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">Request Factory Quote</a>
         </div>
       </section>
     </main>
@@ -1207,10 +1265,12 @@ function renderLayout({
 }) {
   const canonicalUrl = `${siteUrl}${canonicalPath}`;
   const homeHref = getRelativeUrl(rootPrefix, "index.html");
-  const productsHref = getRelativeUrl(rootPrefix, "products.html");
-  const blogHref = getRelativeUrl(rootPrefix, "blog.html");
-  const serviceHref = getRelativeUrl(rootPrefix, "index.html#service");
-  const contactHref = getRelativeUrl(rootPrefix, "index.html#contact");
+  const productsHref = getRelativeUrl(rootPrefix, "products/");
+  const blogHref = getRelativeUrl(rootPrefix, "blog/");
+  const serviceHref = getRelativeUrl(rootPrefix, "oem-odm/");
+  const whyHref = getRelativeUrl(rootPrefix, "why-us/");
+  const factoryHref = getRelativeUrl(rootPrefix, "factory/");
+  const contactHref = getRelativeUrl(rootPrefix, "contact/");
   const labels =
     locale === "zh"
       ? {
@@ -1269,10 +1329,30 @@ function renderLayout({
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
         <div class="nav-links" id="primary-nav" data-nav-links>
-          <a${activeNav === "products" ? ` class="is-active"` : ""} href="${escapeHtml(productsHref)}">${escapeHtml(labels.navProducts)}</a>
-          <a${activeNav === "blog" ? ` class="is-active"` : ""} href="${escapeHtml(blogHref)}">${escapeHtml(labels.navBlog)}</a>
-          <a href="${escapeHtml(serviceHref)}">${escapeHtml(labels.navService)}</a>
-          <a href="${escapeHtml(contactHref)}">${escapeHtml(labels.navContact)}</a>
+          <a data-nav-label="home" href="${escapeHtml(homeHref)}">Home</a>
+          <div class="nav-item dropdown">
+            <a data-nav-label="products"${activeNav === "products" ? ` class="is-active"` : ""} href="${escapeHtml(productsHref)}">${escapeHtml(labels.navProducts)}</a>
+            <div class="dropdown-menu">
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "products/stone-tables/"))}">Stone Tables</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "products/stone-sinks/"))}">Stone Sinks</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "products/stone-bathtubs/"))}">Stone Bathtubs</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "products/fireplace-surrounds/"))}">Fireplace Surrounds</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "products/custom-stone-furniture/"))}">Custom Stone Furniture</a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a data-nav-label="blog"${activeNav === "blog" ? ` class="is-active"` : ""} href="${escapeHtml(blogHref)}">${escapeHtml(labels.navBlog)}</a>
+            <div class="dropdown-menu">
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/material-guides/"))}">Material Guides</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/stone-care/"))}">Stone Care</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/interior-design/"))}">Interior Design</a>
+              <a href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/custom-projects/"))}">Custom Projects</a>
+            </div>
+          </div>
+          <a data-nav-label="service" href="${escapeHtml(serviceHref)}">${escapeHtml(labels.navService)}</a>
+          <a data-nav-label="why" href="${escapeHtml(whyHref)}">Why Us</a>
+          <a data-nav-label="factory" href="${escapeHtml(factoryHref)}">Factory</a>
+          <a data-nav-label="contact" href="${escapeHtml(contactHref)}">${escapeHtml(labels.navContact)}</a>
         </div>
         ${headerControls}
       </nav>
@@ -1288,9 +1368,12 @@ function renderLayout({
           <p>${escapeHtml(labels.footer)}</p>
         </div>
         <div class="footer-links">
+          <a href="${escapeHtml(homeHref)}">Home</a>
           <a href="${escapeHtml(productsHref)}">${escapeHtml(labels.navProducts)}</a>
           <a href="${escapeHtml(blogHref)}">${escapeHtml(labels.navBlog)}</a>
           <a href="${escapeHtml(serviceHref)}">${escapeHtml(labels.navService)}</a>
+          <a href="${escapeHtml(whyHref)}">Why Us</a>
+          <a href="${escapeHtml(factoryHref)}">Factory</a>
           <a href="${escapeHtml(contactHref)}">${escapeHtml(labels.navContact)}</a>
         </div>
       </div>
@@ -1301,27 +1384,29 @@ function renderLayout({
 `;
 }
 
-function renderProductPage(product) {
+function renderProductPage(product, { legacy = false } = {}) {
   const title = product.seo?.title || product.name;
   const description = product.seo?.description || product.summary || product.desc || "";
-  const canonicalPath = toUrlPath("products", product.slug);
+  const canonicalPath = getProductPath(product);
+  const currentPath = legacy ? getLegacyProductPath(product) : canonicalPath;
+  const rootPrefix = "../".repeat(currentPath.replace(/^\/+|\/+$/g, "").split("/").length);
   const usageItems = splitUsage(product.usage);
   const productCategoryCrumbs = getProductCategoryCrumbs(product);
   const breadcrumbItems = [
     { label: "Home", href: "index.html" },
-    { label: "Products", href: "products.html" },
+    { label: "Products", href: "products/" },
     ...productCategoryCrumbs.map((category) => ({
       label: category.name,
       href: getProductCategoryPath(category).replace(/^\/+/, "")
     })),
-    { label: product.name, href: `products/${product.slug}/` }
+    { label: product.name, href: currentPath.replace(/^\/+/, "") }
   ];
   const galleryItems = (product.gallery || []).length ? product.gallery : [product.image].filter(Boolean);
   const galleryHtml = galleryItems
     .map(
       (image, index) => `
-            <button class="product-gallery-thumb${index === 0 ? " is-active" : ""}" type="button" data-gallery-image="../../${escapeHtml(image)}" aria-label="View ${escapeHtml(product.name)} image ${index + 1}">
-              <img src="../../${escapeHtml(image)}" alt="${escapeHtml(product.name)} view ${index + 1}">
+            <button class="product-gallery-thumb${index === 0 ? " is-active" : ""}" type="button" data-gallery-image="${escapeHtml(getRelativeUrl(rootPrefix, image))}" aria-label="View ${escapeHtml(product.name)} image ${index + 1}">
+              <img src="${escapeHtml(getRelativeUrl(rootPrefix, image))}" alt="${escapeHtml(product.name)} view ${index + 1}">
             </button>`
     )
     .join("");
@@ -1447,15 +1532,15 @@ function renderProductPage(product) {
     <main id="main">
       <section class="product-detail-hero" aria-labelledby="product-title">
         <div class="container product-detail-breadcrumbs">
-          ${renderBreadcrumbs(breadcrumbItems, "../../")}
+          ${renderBreadcrumbs(breadcrumbItems, rootPrefix)}
         </div>
         <div class="container product-detail-grid">
           <div class="product-detail-media">
-            <img id="product-image" src="../../${escapeHtml(product.image || galleryItems[0] || "")}" alt="${escapeHtml(product.name)}">
+            <img id="product-image" src="${escapeHtml(getRelativeUrl(rootPrefix, product.image || galleryItems[0] || ""))}" alt="${escapeHtml(product.name)}">
             <div id="product-gallery" class="product-gallery">${galleryHtml}</div>
           </div>
           <div class="product-detail-copy">
-            <a class="text-link product-back-link" href="../../products.html">
+            <a class="text-link product-back-link" href="${escapeHtml(getRelativeUrl(rootPrefix, "products/"))}">
               <span id="product-back-link-text">Back to products</span>
             </a>
             <p class="eyebrow" id="product-badge">${escapeHtml(product.badge || product.category || "Custom Natural Stone")}</p>
@@ -1637,14 +1722,15 @@ function renderProductPage(product) {
           setText("faq-text", copy.sections.faqText);
           setHtml("product-faq-list", renderFaqs(copy.faqItems || []));
 
-          document.querySelectorAll(".nav-links a")[0].textContent = copy.navProducts;
-          document.querySelectorAll(".nav-links a")[1].textContent = copy.navBlog;
-          document.querySelectorAll(".nav-links a")[2].textContent = copy.navOem;
-          document.querySelectorAll(".nav-links a")[3].textContent = copy.navContact;
-          document.querySelectorAll(".footer-links a")[0].textContent = copy.navProducts;
-          document.querySelectorAll(".footer-links a")[1].textContent = copy.navBlog;
-          document.querySelectorAll(".footer-links a")[2].textContent = copy.navOem;
-          document.querySelectorAll(".footer-links a")[3].textContent = copy.navContact;
+          [
+            ["products", copy.navProducts],
+            ["blog", copy.navBlog],
+            ["service", copy.navOem],
+            ["contact", copy.navContact]
+          ].forEach(function (entry) {
+            const item = document.querySelector("[data-nav-label='" + entry[0] + "']");
+            if (item) item.textContent = entry[1];
+          });
 
           const footerCopy = document.querySelector(".site-footer p");
           if (footerCopy) {
@@ -1698,7 +1784,7 @@ function renderProductPage(product) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-          { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products.html` },
+          { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products/` },
           ...productCategoryCrumbs.map((category, index) => ({
             "@type": "ListItem",
             position: index + 3,
@@ -1726,13 +1812,13 @@ function renderProductPage(product) {
     body,
     schema,
     headerControls: `<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span data-language-label>中文</span></button>`,
-    rootPrefix: "../../",
+    rootPrefix,
     activeNav: "products",
     scripts: renderSharedPageScript()
   });
 }
 
-function renderBlogLandingPage(posts, products) {
+function renderBlogLandingPage(posts, products, { rootPrefix = "", canonicalPath = "/blog/" } = {}) {
   const featuredPost =
     posts
       .filter((post) => post.featured)
@@ -1751,7 +1837,7 @@ function renderBlogLandingPage(posts, products) {
                 <span>${count} article${count === 1 ? "" : "s"}</span>
                 <span>SEO topic cluster</span>
               </div>
-              <a class="text-link" href="${escapeHtml(getRelativeUrl("", `blog/category/${category.slug}/`))}">
+              <a class="text-link" href="${escapeHtml(getRelativeUrl(rootPrefix, getBlogCategoryPath(category).replace(/^\/+/, "")))}">
                 <span>View Articles</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
               </a>
@@ -1762,8 +1848,8 @@ function renderBlogLandingPage(posts, products) {
     <main id="main">
       <section class="page-hero journal-hero" aria-labelledby="journal-hero-title">
         <picture class="page-hero-media">
-          <source srcset="assets/images/green-marble-sink.jpg" media="(min-width: 760px)">
-          <img src="assets/images/minimalist-table.jpg" alt="Natural stone sink and table references for editorial guidance">
+          <source srcset="${escapeHtml(getRelativeUrl(rootPrefix, "assets/images/green-marble-sink.jpg"))}" media="(min-width: 760px)">
+          <img src="${escapeHtml(getRelativeUrl(rootPrefix, "assets/images/minimalist-table.jpg"))}" alt="Natural stone sink and table references for editorial guidance">
         </picture>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
@@ -1775,7 +1861,7 @@ function renderBlogLandingPage(posts, products) {
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h6"/></svg>
               Browse Articles
             </a>
-            <a class="button ghost" href="index.html#contact">
+            <a class="button ghost" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
               Send Drawing for Quote
             </a>
@@ -1791,7 +1877,7 @@ function renderBlogLandingPage(posts, products) {
 
       <section class="journal-feature section-pad" aria-labelledby="feature-title">
         <div class="container feature-story">
-          <img src="${escapeHtml(getPostImageUrl("", featuredPost))}" alt="${escapeHtml(featuredPost.coverAlt || featuredPost.title)}">
+          <img src="${escapeHtml(getPostImageUrl(rootPrefix, featuredPost))}" alt="${escapeHtml(featuredPost.coverAlt || featuredPost.title)}">
           <div>
             <p class="eyebrow">Featured Article</p>
             <h2 id="feature-title">${escapeHtml(featuredPost.title)}</h2>
@@ -1801,7 +1887,7 @@ function renderBlogLandingPage(posts, products) {
               <span>${escapeHtml(formatDisplayDate(featuredPost.updatedAt || featuredPost.publishedAt))}</span>
               <span>${estimateReadingTime(featuredPost.body)} min read</span>
             </div>
-            <a class="text-link" href="${escapeHtml(getPostPageHref("", featuredPost))}">
+            <a class="text-link" href="${escapeHtml(getPostPageHref(rootPrefix, featuredPost))}">
               <span>Read Article</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
             </a>
@@ -1831,12 +1917,12 @@ function renderBlogLandingPage(posts, products) {
           </div>
           <div class="filter-bar" role="tablist" aria-label="Article filters" data-filter-group>
             <button class="filter-button active" type="button" data-blog-filter="all" role="tab" aria-selected="true">All</button>
-            <button class="filter-button" type="button" data-blog-filter="guide" role="tab" aria-selected="false">Stone Guide</button>
-            <button class="filter-button" type="button" data-blog-filter="ideas" role="tab" aria-selected="false">Product Ideas</button>
-            <button class="filter-button" type="button" data-blog-filter="process" role="tab" aria-selected="false">Factory Process</button>
-            <button class="filter-button" type="button" data-blog-filter="care" role="tab" aria-selected="false">Care</button>
+            <button class="filter-button" type="button" data-blog-filter="guide" role="tab" aria-selected="false">Material Guides</button>
+            <button class="filter-button" type="button" data-blog-filter="ideas" role="tab" aria-selected="false">Interior Design</button>
+            <button class="filter-button" type="button" data-blog-filter="process" role="tab" aria-selected="false">Custom Projects</button>
+            <button class="filter-button" type="button" data-blog-filter="care" role="tab" aria-selected="false">Stone Care</button>
           </div>
-          <div class="article-grid">${latestPosts.map((post) => renderBlogArticleCard(post)).join("")}</div>
+          <div class="article-grid">${latestPosts.map((post) => renderBlogArticleCard(post, { rootPrefix })).join("")}</div>
         </div>
       </section>
 
@@ -1847,10 +1933,10 @@ function renderBlogLandingPage(posts, products) {
             <h2 id="buyer-intent-title">What are you trying to source right now?</h2>
           </div>
           <div class="intent-grid">
-            <a class="intent-card" href="products/green-marble-pedestal-sink/"><strong>Custom bathroom sinks</strong><span>Stone options, drain details, finishes, and export packing.</span></a>
-            <a class="intent-card" href="products/minimalist-travertine-dining-table/"><strong>Travertine tables</strong><span>Dining table ideas, slab direction, and base structure notes.</span></a>
-            <a class="intent-card" href="products/natural-marble-bathtub/"><strong>Stone bathtubs</strong><span>Luxury project guidance, maintenance notes, and production scope.</span></a>
-            <a class="intent-card" href="index.html#service"><strong>OEM/ODM stone products</strong><span>Quote preparation, repeat-order control, inspection, and delivery.</span></a>
+            <a class="intent-card" href="${escapeHtml(getProductPageHref(rootPrefix, products.find((product) => product.slug === "green-marble-pedestal-sink") || { slug: "green-marble-pedestal-sink" }))}"><strong>Custom bathroom sinks</strong><span>Stone options, drain details, finishes, and export packing.</span></a>
+            <a class="intent-card" href="${escapeHtml(getProductPageHref(rootPrefix, products.find((product) => product.slug === "minimalist-travertine-dining-table") || { slug: "minimalist-travertine-dining-table" }))}"><strong>Travertine tables</strong><span>Dining table ideas, slab direction, and base structure notes.</span></a>
+            <a class="intent-card" href="${escapeHtml(getProductPageHref(rootPrefix, products.find((product) => product.slug === "natural-marble-bathtub") || { slug: "natural-marble-bathtub" }))}"><strong>Stone bathtubs</strong><span>Luxury project guidance, maintenance notes, and production scope.</span></a>
+            <a class="intent-card" href="${escapeHtml(getRelativeUrl(rootPrefix, "oem-odm/"))}"><strong>OEM/ODM stone products</strong><span>Quote preparation, repeat-order control, inspection, and delivery.</span></a>
           </div>
         </div>
       </section>
@@ -1861,7 +1947,7 @@ function renderBlogLandingPage(posts, products) {
             <p class="eyebrow">Popular Product References</p>
             <h2 id="product-reference-title">Products that pair naturally with blog traffic and early inquiries.</h2>
           </div>
-          <div class="link-grid">${popularProducts.map((product) => renderProductLinkCard(product)).join("")}</div>
+          <div class="link-grid">${popularProducts.map((product) => renderProductLinkCard(product, { rootPrefix })).join("")}</div>
         </div>
       </section>
 
@@ -1872,8 +1958,8 @@ function renderBlogLandingPage(posts, products) {
             <h2 id="journal-cta-title">Send your drawing, target size, or closest product reference.</h2>
           </div>
           <div class="cta-band-actions">
-            <a class="button primary" href="index.html#contact">Contact Factory</a>
-            <a class="button ghost" href="products.html">Browse Products</a>
+            <a class="button primary" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">Contact Factory</a>
+            <a class="button ghost" href="${escapeHtml(getRelativeUrl(rootPrefix, "products/"))}">Browse Products</a>
           </div>
         </div>
       </section>
@@ -1887,7 +1973,7 @@ function renderBlogLandingPage(posts, products) {
         "@type": "Blog",
         name: "Stone Journal",
         description: "Blog articles about natural stone materials, custom product development, factory process, and maintenance.",
-        url: `${siteUrl}/blog.html`
+        url: `${siteUrl}/blog/`
       },
       {
         "@type": "ItemList",
@@ -1907,21 +1993,25 @@ function renderBlogLandingPage(posts, products) {
       "Read static SEO-ready articles on natural stone materials, product ideas, factory process, packing, care, and OEM/ODM sourcing.",
     keywords:
       "stone journal, natural stone blog, marble sink guide, travertine table guide, OEM ODM stone process",
-    canonicalPath: "/blog.html",
+    canonicalPath,
     ogType: "website",
     ogImage: `${siteUrl}/${(featuredPost.coverImage || "assets/images/minimalist-table.jpg").replace(/^\/+/, "")}`,
     body,
     schema,
+    rootPrefix,
     activeNav: "blog",
     scripts: renderSharedPageScript({ enableBlogFilters: true })
   });
 }
 
-function renderBlogCategoryPage(category, posts, products) {
+function renderBlogCategoryPage(category, posts, products, { legacy = false } = {}) {
+  const canonicalPath = getBlogCategoryPath(category);
+  const currentPath = legacy ? getLegacyBlogCategoryPath(category) : canonicalPath;
+  const rootPrefix = "../".repeat(currentPath.replace(/^\/+|\/+$/g, "").split("/").length);
   const featuredPost = posts[0] || null;
   const relatedProducts = getCategoryProducts(category, products);
   const categoryArticles = posts.length
-    ? posts.map((post) => renderBlogArticleCard(post, { rootPrefix: "../../../" })).join("")
+    ? posts.map((post) => renderBlogArticleCard(post, { rootPrefix })).join("")
     : `<article class="article-rail-card">
             <span class="product-type">Coming Next</span>
             <strong>More ${escapeHtml(category.name)} articles are planned.</strong>
@@ -1934,10 +2024,10 @@ function renderBlogCategoryPage(category, posts, products) {
           ${renderBreadcrumbs(
             [
               { label: "Home", href: "index.html" },
-              { label: "Blog", href: "blog.html" },
-              { label: category.name, href: `blog/category/${category.slug}/` }
+              { label: "Blog", href: "blog/" },
+              { label: category.name, href: currentPath.replace(/^\/+/, "") }
             ],
-            "../../../"
+            rootPrefix
           )}
           <p class="eyebrow">Blog Category</p>
           <h1 id="category-title">${escapeHtml(category.heroTitle)}</h1>
@@ -1952,7 +2042,7 @@ function renderBlogCategoryPage(category, posts, products) {
       ${featuredPost ? `
       <section class="journal-feature section-pad" aria-labelledby="category-feature-title">
         <div class="container feature-story">
-          <img src="${escapeHtml(getPostImageUrl("../../../", featuredPost))}" alt="${escapeHtml(featuredPost.coverAlt || featuredPost.title)}">
+          <img src="${escapeHtml(getPostImageUrl(rootPrefix, featuredPost))}" alt="${escapeHtml(featuredPost.coverAlt || featuredPost.title)}">
           <div>
             <p class="eyebrow">Featured ${escapeHtml(category.shortName)}</p>
             <h2 id="category-feature-title">${escapeHtml(featuredPost.title)}</h2>
@@ -1961,7 +2051,7 @@ function renderBlogCategoryPage(category, posts, products) {
               <span>${escapeHtml(formatDisplayDate(featuredPost.publishedAt || featuredPost.updatedAt))}</span>
               <span>${estimateReadingTime(featuredPost.body)} min read</span>
             </div>
-            <a class="text-link" href="${escapeHtml(getPostPageHref("../../../", featuredPost))}">
+            <a class="text-link" href="${escapeHtml(getPostPageHref(rootPrefix, featuredPost))}">
               <span>Read Article</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
             </a>
@@ -1987,7 +2077,7 @@ function renderBlogCategoryPage(category, posts, products) {
             <p class="eyebrow">Related Products</p>
             <h2 id="category-products-title">Product pages that fit this topic cluster.</h2>
           </div>
-          <div class="link-grid">${relatedProducts.map((product) => renderProductLinkCard(product, { rootPrefix: "../../../" })).join("")}</div>
+          <div class="link-grid">${relatedProducts.map((product) => renderProductLinkCard(product, { rootPrefix })).join("")}</div>
         </div>
       </section>
 
@@ -1998,8 +2088,8 @@ function renderBlogCategoryPage(category, posts, products) {
             <h2 id="category-cta-title">${escapeHtml(category.ctaLabel)}</h2>
           </div>
           <div class="cta-band-actions">
-            <a class="button primary" href="../../../index.html#contact">Contact Factory</a>
-            <a class="button ghost" href="../../../blog.html">Back to Blog</a>
+            <a class="button primary" href="${escapeHtml(getRelativeUrl(rootPrefix, "contact/"))}">Contact Factory</a>
+            <a class="button ghost" href="${escapeHtml(getRelativeUrl(rootPrefix, "blog/"))}">Back to Blog</a>
           </div>
         </div>
       </section>
@@ -2024,7 +2114,7 @@ function renderBlogCategoryPage(category, posts, products) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-          { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog.html` },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog/` },
           { "@type": "ListItem", position: 3, name: category.name, item: `${siteUrl}${getBlogCategoryPath(category)}` }
         ]
       },
@@ -2044,12 +2134,12 @@ function renderBlogCategoryPage(category, posts, products) {
     title: `${category.name} Articles | Win-Win Stone`,
     description: category.heroDescription,
     keywords: `${category.name.toLowerCase()}, natural stone articles, Win-Win Stone blog`,
-    canonicalPath: getBlogCategoryPath(category),
+    canonicalPath,
     ogType: "website",
     ogImage: `${siteUrl}/${((featuredPost && featuredPost.coverImage) || "assets/images/minimalist-table.jpg").replace(/^\/+/, "")}`,
     body,
     schema,
-    rootPrefix: "../../../",
+    rootPrefix,
     activeNav: "blog",
     extraHead: lastUpdated ? `<meta property="article:modified_time" content="${escapeHtml(lastUpdated)}">` : "",
     scripts: renderSharedPageScript()
